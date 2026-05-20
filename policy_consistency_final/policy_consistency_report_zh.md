@@ -167,6 +167,12 @@ $$
 
 ### 2.2 Fitted Minimax-DQN / NNQ
 
+本报告没有采用最原始的 online sampled DQN 作为最终 policy consistency 对象，原因是这个问题比普通 single-agent DQN 更敏感。每个 state 下要学习的不是一个 action value vector，而是一个 attacker-defender matrix game；最终动作由 matrix game equilibrium 决定。这样会带来一个实际困难：如果 Q matrix 中 action-dependent 的差异本来就很小，少量 sampling noise 或 bootstrap error 就可能改变 equilibrium regime，导致 attacker / defender 的 mixed policy 或 argmax action 发生明显跳变。也就是说，raw DQN 的不稳定不一定说明目标策略不同，很多时候只是 sampled TD target、replay coverage 和 target-network bootstrap 的噪声被 matrix-game solver 放大了。
+
+因此，本模块采用 fitted minimax-DQN / NNQ 作为最终 DQN 口径：仍然用神经网络表示 $Q_\theta(s,a,b)$，仍然通过 Bellman / minimax-Q target 训练，仍然在 policy extraction 时解 zero-sum matrix game；但在训练工程上使用更低噪声、更稳定的 target 构造和 fitting 过程。这样做的目的不是让 DQN “照抄” BVI policy，而是尽量检验一个神经网络 Q 近似器在同一 stochastic game 结构下能否学到与 BVI 一致的 equilibrium policy。换句话说，raw online DQN 更适合用来研究训练难度和 sample complexity；本报告的目标则是研究最终 policy consistency，所以采用稳定后的 fitted minimax-DQN 作为 NNQ 代表。
+
+需要强调的是，本报告的 DQN 侧不使用 BVI policy label、AMQ teacher 或手写 action rule。训练对象仍然是 minimax-Q / Bellman target，最终策略仍然来自神经网络输出的 Q matrix。
+
 本报告中的 DQN / NNQ 可以用一句话概括：
 
 ```text
