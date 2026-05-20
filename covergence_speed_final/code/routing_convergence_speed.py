@@ -33,9 +33,13 @@ from typing import Any, Iterable
 import numpy as np
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[3] / "minimax_queueing_experiments"
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+REPO_ROOT = Path(__file__).resolve().parents[2]
+POLICY_CODE_ROOT = REPO_ROOT / "policy_consistency_final" / "code"
+POLICY_SRC_ROOT = POLICY_CODE_ROOT / "src"
+LEGACY_PROJECT_ROOT = Path(__file__).resolve().parents[3] / "minimax_queueing_experiments"
+for candidate in (POLICY_CODE_ROOT, POLICY_SRC_ROOT, LEGACY_PROJECT_ROOT):
+    if candidate.exists() and str(candidate) not in sys.path:
+        sys.path.insert(0, str(candidate))
 
 from experiments.source_faithful_routing_consistency.routing_bvi_dqn_consistency import (  # noqa: E402
     RoutingSecurityParams,
@@ -52,8 +56,7 @@ from experiments.source_faithful_routing_consistency.routing_bvi_dqn_consistency
 
 
 DEFAULT_OUTPUT_DIR = (
-    Path("/Users/zheqihu/research/minimax_queueing_results_report")
-    / "covergence_speed_final"
+    Path(__file__).resolve().parents[1]
     / "results"
     / "routing_smoke"
 )

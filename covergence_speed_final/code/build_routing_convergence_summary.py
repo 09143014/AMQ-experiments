@@ -13,16 +13,11 @@ from typing import Any
 
 
 DEFAULT_RESULTS_DIR = (
-    Path("/Users/zheqihu/research/minimax_queueing_results_report")
-    / "covergence_speed_final"
-    / "results"
+    Path(__file__).resolve().parents[1] / "results"
 )
 DEFAULT_OUTPUT_JSON = DEFAULT_RESULTS_DIR / "routing_b20_5seed_summary.json"
 DEFAULT_OUTPUT_SVG = (
-    Path("/Users/zheqihu/research/minimax_queueing_results_report")
-    / "covergence_speed_final"
-    / "figures"
-    / "routing_b20_convergence_speed.svg"
+    Path(__file__).resolve().parents[1] / "figures" / "routing_b20_convergence_speed.svg"
 )
 
 

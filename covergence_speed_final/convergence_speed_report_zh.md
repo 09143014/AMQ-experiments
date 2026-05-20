@@ -217,13 +217,76 @@ Policy consistency 与 convergence speed 是两个不同模块：
 - AMQ learning rate 是为本次 B=20 / max-queue setting 选择的数值稳定配置，不等同于原论文所有图表的 hyperparameter。
 - 本报告只比较 convergence speed，不比较最终 performance，也不替代 policy consistency 结论。
 
-## 11. 文件索引
+## 11. 文件、代码结构与复现线索
 
-- Work schema：`docs/work_accounting_schema.json`
-- Routing summary：`results/routing_b20_10seed_summary.json`
-- Polling summary：`results/polling_10seed_fullgrid_summary.json`
-- Service-rate summary：`results/service_rate_3seed_summary.json`
-- Routing details：`docs/routing_convergence_progress_zh.md`
-- Polling details：`docs/polling_convergence_progress_zh.md`
-- Service-rate details：`docs/service_rate_convergence_progress_zh.md`
-- Cursor alignment notes：`docs/cursor_alignment_notes_zh.md`
+本目录是 convergence speed 模块的最终工作区。目录结构如下：
+
+```text
+covergence_speed_final/
+  convergence_speed_report_zh.md
+  code/
+  docs/
+  figures/
+  results/
+```
+
+其中 `convergence_speed_report_zh.md` 是本报告；`figures/` 保存报告中的 convergence speed 曲线；`results/` 保存每个 seed 的 `summary.json` 与聚合后的 summary；`docs/` 保存实验计划、work accounting schema 与阶段性说明；`code/` 保存最终 runner 与聚合脚本。
+
+代码结构如下：
+
+```text
+code/
+  routing_convergence_speed.py
+  polling_convergence_speed.py
+  service_rate_convergence_speed.py
+  build_routing_convergence_summary.py
+```
+
+各文件作用如下。
+
+| Path | Role |
+|---|---|
+| `code/routing_convergence_speed.py` | Routing convergence-speed runner。实现 paper-form AMQ1/AMQ2 线性 minimax-Q update，并与 routing 的 fitted minimax-DQN / `neural_fixed_point_q` 做 self-stabilization 比较。 |
+| `code/polling_convergence_speed.py` | Polling 三队列 convergence-speed runner。AMQ 侧使用 paper-form AMQ2 特征模板；DQN 侧使用最终 policy-consistency 口径中的 `NNQTrainer + full_action + polling_augmented`。脚本在 training loop 内记录 exact distinct-state target work。 |
+| `code/service_rate_convergence_speed.py` | Service-rate-control extension runner。AMQ 侧为线性 AMQ extension；DQN 侧使用 `NNQTrainer + sampled backup + service_rate_augmented`。 |
+| `code/build_routing_convergence_summary.py` | 通用聚合与绘图脚本。读取多个 per-seed `summary.json`，计算 mean/median `work_to_stable`、horizon censoring、per-seed ratio，并生成报告用 SVG 曲线。虽然文件名保留 routing，它也用于 polling 与 service-rate 的 summary 聚合。 |
+
+这些 convergence runner 复用同仓库 `policy_consistency_final/code` 中的最终算法实现：
+
+- `policy_consistency_final/code/src/adversarial_queueing/algorithms/nnq.py`
+- `policy_consistency_final/code/src/adversarial_queueing/algorithms/minimax_solver.py`
+- `policy_consistency_final/code/src/adversarial_queueing/envs/`
+- `policy_consistency_final/code/experiments/source_faithful_routing_consistency/routing_bvi_dqn_consistency.py`
+
+也就是说，本模块本身负责 convergence-speed 协议、checkpoint、work accounting 与聚合；底层 benchmark 环境、DQN/NNQ 网络、matrix-game solver 与 routing fitted minimax-DQN 由 `policy_consistency_final/code` 提供。这样可以避免 convergence speed 与 policy consistency 使用两套不一致的算法实现。
+
+关键文档与结果文件如下：
+
+| Path | Content |
+|---|---|
+| `docs/work_accounting_schema.json` | 预注册 work 账本：定义 `work_to_stable`、native checkpoint、horizon censoring 与 secondary work。 |
+| `docs/convergence_speed_experiment_plan_zh.md` | convergence speed 实验设计与方法口径。 |
+| `docs/routing_convergence_progress_zh.md` | Routing 实验过程、参数与中间判断。 |
+| `docs/polling_convergence_progress_zh.md` | Polling full-grid / 10-seed 实验过程与结果解释。 |
+| `docs/service_rate_convergence_progress_zh.md` | Service-rate-control extension 的过程说明。 |
+| `docs/cursor_alignment_notes_zh.md` | 与外部审阅反馈对齐后的修正记录。 |
+| `results/routing_b20_10seed_summary.json` | Routing 10-seed 聚合结果。 |
+| `results/polling_10seed_fullgrid_summary.json` | Polling 10-seed full-grid 聚合结果。 |
+| `results/service_rate_3seed_summary.json` | Service-rate-control 3-seed extension 聚合结果。 |
+
+每个 per-seed 结果目录，例如 `results/routing_b20_seed0/`、`results/polling_fullgrid_seed0_50k/`、`results/service_rate_seed0/`，都包含一个 `summary.json`。这些文件记录：
+
+- AMQ 与 DQN 的 config；
+- 每个 checkpoint 的 policy gap；
+- `work_to_checkpoint` / effective target work；
+- `stable_checkpoint`；
+- `stable_before_horizon` 与 `censored_at_horizon`；
+- 用于聚合表和曲线的 per-seed 统计量。
+
+复现时的顺序是：
+
+1. 用对应 runner 生成每个 seed 的 `summary.json`；
+2. 用 `code/build_routing_convergence_summary.py` 聚合多个 seed；
+3. 读取聚合 summary 与 SVG 更新本报告。
+
+需要注意，本目录名沿用了历史拼写 `covergence_speed_final`；为了路径稳定，没有在最终仓库中改名。
