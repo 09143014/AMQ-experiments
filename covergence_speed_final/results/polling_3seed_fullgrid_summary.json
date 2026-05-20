@@ -1,0 +1,287 @@
+{
+  "benchmark": "polling",
+  "num_seeds": 3,
+  "seed_rows": [
+    {
+      "seed": 0,
+      "amq_stable_checkpoint": 50,
+      "amq_accounting_checkpoint": 50,
+      "amq_final_checkpoint": 10000,
+      "amq_stable_before_horizon": true,
+      "amq_censored_at_horizon": false,
+      "amq_not_stabilized_within_horizon": false,
+      "amq_stable_elapsed_seconds": 0.0035347919911146164,
+      "amq_stable_work_to_stable": 50,
+      "amq_stable_secondary_fitting_target_entries": 0,
+      "dqn_stable_checkpoint": 50000,
+      "dqn_accounting_checkpoint": 50000,
+      "dqn_final_checkpoint": 50000,
+      "dqn_stable_before_horizon": false,
+      "dqn_censored_at_horizon": true,
+      "dqn_not_stabilized_within_horizon": false,
+      "dqn_stable_elapsed_seconds": 561.3737068340415,
+      "dqn_stable_work_to_stable": 6392172,
+      "dqn_stable_secondary_fitting_target_entries": 0
+    },
+    {
+      "seed": 1,
+      "amq_stable_checkpoint": 100,
+      "amq_accounting_checkpoint": 100,
+      "amq_final_checkpoint": 10000,
+      "amq_stable_before_horizon": true,
+      "amq_censored_at_horizon": false,
+      "amq_not_stabilized_within_horizon": false,
+      "amq_stable_elapsed_seconds": 0.005920291994698346,
+      "amq_stable_work_to_stable": 100,
+      "amq_stable_secondary_fitting_target_entries": 0,
+      "dqn_stable_checkpoint": 50000,
+      "dqn_accounting_checkpoint": 50000,
+      "dqn_final_checkpoint": 50000,
+      "dqn_stable_before_horizon": false,
+      "dqn_censored_at_horizon": true,
+      "dqn_not_stabilized_within_horizon": false,
+      "dqn_stable_elapsed_seconds": 557.6458377920208,
+      "dqn_stable_work_to_stable": 6391964,
+      "dqn_stable_secondary_fitting_target_entries": 0
+    },
+    {
+      "seed": 2,
+      "amq_stable_checkpoint": 200,
+      "amq_accounting_checkpoint": 200,
+      "amq_final_checkpoint": 10000,
+      "amq_stable_before_horizon": true,
+      "amq_censored_at_horizon": false,
+      "amq_not_stabilized_within_horizon": false,
+      "amq_stable_elapsed_seconds": 0.01137908297823742,
+      "amq_stable_work_to_stable": 200,
+      "amq_stable_secondary_fitting_target_entries": 0,
+      "dqn_stable_checkpoint": 50000,
+      "dqn_accounting_checkpoint": 50000,
+      "dqn_final_checkpoint": 50000,
+      "dqn_stable_before_horizon": false,
+      "dqn_censored_at_horizon": true,
+      "dqn_not_stabilized_within_horizon": false,
+      "dqn_stable_elapsed_seconds": 558.7950501669548,
+      "dqn_stable_work_to_stable": 6391592,
+      "dqn_stable_secondary_fitting_target_entries": 0
+    }
+  ],
+  "aggregate": {
+    "amq": {
+      "mean_stable_checkpoint": 116.66666666666667,
+      "median_stable_checkpoint": 100,
+      "auxiliary_mean_stable_elapsed_seconds": 0.0069447223213501275,
+      "auxiliary_median_stable_elapsed_seconds": 0.005920291994698346,
+      "mean_work_to_stable": 116.66666666666667,
+      "median_work_to_stable": 100,
+      "mean_secondary_fitting_target_entries_at_stable": 0,
+      "median_secondary_fitting_target_entries_at_stable": 0,
+      "stable_before_horizon_count": 3,
+      "censored_at_horizon_count": 0,
+      "not_stabilized_within_horizon_count": 0,
+      "mean_stable_elapsed_seconds": 0.0069447223213501275,
+      "median_stable_elapsed_seconds": 0.005920291994698346,
+      "mean_stable_effective_bellman_backups": 116.66666666666667,
+      "median_stable_effective_bellman_backups": 100
+    },
+    "dqn": {
+      "mean_stable_checkpoint": 50000,
+      "median_stable_checkpoint": 50000,
+      "auxiliary_mean_stable_elapsed_seconds": 559.2715315976724,
+      "auxiliary_median_stable_elapsed_seconds": 558.7950501669548,
+      "mean_work_to_stable": 6391909.333333333,
+      "median_work_to_stable": 6391964,
+      "mean_secondary_fitting_target_entries_at_stable": 0,
+      "median_secondary_fitting_target_entries_at_stable": 0,
+      "stable_before_horizon_count": 0,
+      "censored_at_horizon_count": 3,
+      "not_stabilized_within_horizon_count": 0,
+      "mean_stable_elapsed_seconds": 559.2715315976724,
+      "median_stable_elapsed_seconds": 558.7950501669548,
+      "mean_stable_effective_bellman_backups": 6391909.333333333,
+      "median_stable_effective_bellman_backups": 6391964
+    }
+  },
+  "work_ratio_dqn_over_amq": 54787.794285714284,
+  "median_work_ratio_dqn_over_amq": 63919.64,
+  "per_seed_work_ratios_dqn_over_amq": [
+    {
+      "seed": 0,
+      "dqn_over_amq": 127843.44
+    },
+    {
+      "seed": 1,
+      "dqn_over_amq": 63919.64
+    },
+    {
+      "seed": 2,
+      "dqn_over_amq": 31957.96
+    }
+  ],
+  "seed_win_counts_by_work": {
+    "amq_less_work": 3,
+    "dqn_less_work": 0,
+    "tie": 0
+  },
+  "curves": {
+    "amq": [
+      {
+        "checkpoint": 1,
+        "mean_joint_gap": 0.172789880612713,
+        "mean_policy_similarity_percent": 82.72101193872871,
+        "mean_elapsed_seconds": 0.0009052503349569937,
+        "mean_work_to_checkpoint": 1.0
+      },
+      {
+        "checkpoint": 2,
+        "mean_joint_gap": 0.17248777595023107,
+        "mean_policy_similarity_percent": 82.7512224049769,
+        "mean_elapsed_seconds": 0.001009625014072905,
+        "mean_work_to_checkpoint": 2.0
+      },
+      {
+        "checkpoint": 5,
+        "mean_joint_gap": 0.16861636064583263,
+        "mean_policy_similarity_percent": 83.13836393541673,
+        "mean_elapsed_seconds": 0.0012041110118540626,
+        "mean_work_to_checkpoint": 5.0
+      },
+      {
+        "checkpoint": 10,
+        "mean_joint_gap": 0.1603196714891522,
+        "mean_policy_similarity_percent": 83.96803285108479,
+        "mean_elapsed_seconds": 0.0014870973342719178,
+        "mean_work_to_checkpoint": 10.0
+      },
+      {
+        "checkpoint": 20,
+        "mean_joint_gap": 0.13792476474998042,
+        "mean_policy_similarity_percent": 86.20752352500196,
+        "mean_elapsed_seconds": 0.0019952363606231907,
+        "mean_work_to_checkpoint": 20.0
+      },
+      {
+        "checkpoint": 50,
+        "mean_joint_gap": 0.08752363689257382,
+        "mean_policy_similarity_percent": 91.24763631074262,
+        "mean_elapsed_seconds": 0.003473569347988814,
+        "mean_work_to_checkpoint": 50.0
+      },
+      {
+        "checkpoint": 100,
+        "mean_joint_gap": 0.039558927192776344,
+        "mean_policy_similarity_percent": 96.04410728072236,
+        "mean_elapsed_seconds": 0.00594712500848497,
+        "mean_work_to_checkpoint": 100.0
+      },
+      {
+        "checkpoint": 200,
+        "mean_joint_gap": 0.011320533046893356,
+        "mean_policy_similarity_percent": 98.86794669531066,
+        "mean_elapsed_seconds": 0.011616680344256261,
+        "mean_work_to_checkpoint": 200.0
+      },
+      {
+        "checkpoint": 500,
+        "mean_joint_gap": 0.0021818670068141383,
+        "mean_policy_similarity_percent": 99.78181329931859,
+        "mean_elapsed_seconds": 0.027125139022246003,
+        "mean_work_to_checkpoint": 500.0
+      },
+      {
+        "checkpoint": 1000,
+        "mean_joint_gap": 0.0008168014948586262,
+        "mean_policy_similarity_percent": 99.91831985051414,
+        "mean_elapsed_seconds": 0.05250077768384168,
+        "mean_work_to_checkpoint": 1000.0
+      },
+      {
+        "checkpoint": 2000,
+        "mean_joint_gap": 0.000377630828102447,
+        "mean_policy_similarity_percent": 99.96223691718976,
+        "mean_elapsed_seconds": 0.10320068032403167,
+        "mean_work_to_checkpoint": 2000.0
+      },
+      {
+        "checkpoint": 5000,
+        "mean_joint_gap": 7.55261656204894e-05,
+        "mean_policy_similarity_percent": 99.99244738343795,
+        "mean_elapsed_seconds": 0.2548572776722722,
+        "mean_work_to_checkpoint": 5000.0
+      },
+      {
+        "checkpoint": 10000,
+        "mean_joint_gap": 0.0,
+        "mean_policy_similarity_percent": 100.0,
+        "mean_elapsed_seconds": 0.5110275833285414,
+        "mean_work_to_checkpoint": 10000.0
+      }
+    ],
+    "dqn": [
+      {
+        "checkpoint": 100,
+        "mean_joint_gap": 0.7666357722287135,
+        "mean_policy_similarity_percent": 23.33642277712865,
+        "mean_elapsed_seconds": 0.16224540300512066,
+        "mean_work_to_checkpoint": 8694.666666666666
+      },
+      {
+        "checkpoint": 200,
+        "mean_joint_gap": 0.6570656128020993,
+        "mean_policy_similarity_percent": 34.293438719790075,
+        "mean_elapsed_seconds": 0.3862623473396525,
+        "mean_work_to_checkpoint": 21417.333333333332
+      },
+      {
+        "checkpoint": 500,
+        "mean_joint_gap": 0.17968536317734057,
+        "mean_policy_similarity_percent": 82.03146368226594,
+        "mean_elapsed_seconds": 1.1937626946601085,
+        "mean_work_to_checkpoint": 59622.666666666664
+      },
+      {
+        "checkpoint": 1000,
+        "mean_joint_gap": 0.2107188915632278,
+        "mean_policy_similarity_percent": 78.92811084367722,
+        "mean_elapsed_seconds": 2.7361140556943915,
+        "mean_work_to_checkpoint": 123460.0
+      },
+      {
+        "checkpoint": 2000,
+        "mean_joint_gap": 0.22545289720511222,
+        "mean_policy_similarity_percent": 77.45471027948878,
+        "mean_elapsed_seconds": 7.617289930659656,
+        "mean_work_to_checkpoint": 251308.0
+      },
+      {
+        "checkpoint": 5000,
+        "mean_joint_gap": 0.17061629269549716,
+        "mean_policy_similarity_percent": 82.93837073045029,
+        "mean_elapsed_seconds": 31.95217287534615,
+        "mean_work_to_checkpoint": 635033.3333333334
+      },
+      {
+        "checkpoint": 10000,
+        "mean_joint_gap": 0.18967031265658144,
+        "mean_policy_similarity_percent": 81.03296873434185,
+        "mean_elapsed_seconds": 81.55235172231914,
+        "mean_work_to_checkpoint": 1274705.3333333333
+      },
+      {
+        "checkpoint": 20000,
+        "mean_joint_gap": 0.06535194336937046,
+        "mean_policy_similarity_percent": 93.46480566306296,
+        "mean_elapsed_seconds": 189.929659291675,
+        "mean_work_to_checkpoint": 2554070.6666666665
+      },
+      {
+        "checkpoint": 50000,
+        "mean_joint_gap": 0.0,
+        "mean_policy_similarity_percent": 100.0,
+        "mean_elapsed_seconds": 559.2715315976724,
+        "mean_work_to_checkpoint": 6391909.333333333
+      }
+    ]
+  },
+  "note": "Main speed metric is work_to_stable: cumulative effective Bellman/target evaluations at the first sustained self-stabilizing checkpoint. Runtime is recorded only as auxiliary implementation metadata."
+}

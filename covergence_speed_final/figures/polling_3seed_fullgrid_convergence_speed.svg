@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+<rect width="100%" height="100%" fill="#fbfcfe"/>
+<text x="60" y="44" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#172033">Polling convergence speed: AMQ vs fitted minimax-DQN</text>
+<text x="60" y="72" font-family="Arial, sans-serif" font-size="14" fill="#536173">3 seed(s). Similarity is measured against each method’s own final policy, using attacker+defender joint gap.</text>
+<line x1="80" y1="440" x2="580" y2="440" stroke="#b8c2d0"/>
+<line x1="80" y1="80" x2="80" y2="440" stroke="#b8c2d0"/>
+<text x="80" y="56" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#172033">Policy stabilization curve</text>
+<text x="175" y="488" font-family="Arial, sans-serif" font-size="13" fill="#536173">cumulative effective Bellman / target work (log scale)</text>
+<text x="20" y="290" font-family="Arial, sans-serif" font-size="13" fill="#536173" transform="rotate(-90 20 290)">policy similarity (%)</text>
+<line x1="75" y1="440.0" x2="580" y2="440.0" stroke="#e4e9f0"/>
+<text x="36" y="444.0" font-family="Arial, sans-serif" font-size="12" fill="#536173">0</text>
+<line x1="75" y1="350.0" x2="580" y2="350.0" stroke="#e4e9f0"/>
+<text x="36" y="354.0" font-family="Arial, sans-serif" font-size="12" fill="#536173">25</text>
+<line x1="75" y1="260.0" x2="580" y2="260.0" stroke="#e4e9f0"/>
+<text x="36" y="264.0" font-family="Arial, sans-serif" font-size="12" fill="#536173">50</text>
+<line x1="75" y1="170.0" x2="580" y2="170.0" stroke="#e4e9f0"/>
+<text x="36" y="174.0" font-family="Arial, sans-serif" font-size="12" fill="#536173">75</text>
+<line x1="75" y1="80.0" x2="580" y2="80.0" stroke="#e4e9f0"/>
+<text x="36" y="84.0" font-family="Arial, sans-serif" font-size="12" fill="#536173">100</text>
+<path d="M 80.0 142.2 L 102.1 142.1 L 131.4 140.7 L 153.5 137.7 L 175.6 129.7 L 204.8 111.5 L 226.9 94.2 L 249.1 84.1 L 278.3 80.8 L 300.4 80.3 L 322.5 80.1 L 351.8 80.0 L 373.9 80.0" fill="none" stroke="#1b7f5a" stroke-width="3"/>
+<circle cx="80.0" cy="142.2" r="4" fill="#1b7f5a"/>
+<circle cx="102.1" cy="142.1" r="4" fill="#1b7f5a"/>
+<circle cx="131.4" cy="140.7" r="4" fill="#1b7f5a"/>
+<circle cx="153.5" cy="137.7" r="4" fill="#1b7f5a"/>
+<circle cx="175.6" cy="129.7" r="4" fill="#1b7f5a"/>
+<circle cx="204.8" cy="111.5" r="4" fill="#1b7f5a"/>
+<circle cx="226.9" cy="94.2" r="4" fill="#1b7f5a"/>
+<circle cx="249.1" cy="84.1" r="4" fill="#1b7f5a"/>
+<circle cx="278.3" cy="80.8" r="4" fill="#1b7f5a"/>
+<circle cx="300.4" cy="80.3" r="4" fill="#1b7f5a"/>
+<circle cx="322.5" cy="80.1" r="4" fill="#1b7f5a"/>
+<circle cx="351.8" cy="80.0" r="4" fill="#1b7f5a"/>
+<circle cx="373.9" cy="80.0" r="4" fill="#1b7f5a"/>
+<path d="M 369.4 356.0 L 398.2 316.5 L 430.8 144.7 L 454.1 155.9 L 476.7 161.2 L 506.3 141.4 L 528.6 148.3 L 550.7 103.5 L 580.0 80.0" fill="none" stroke="#b23b3b" stroke-width="3"/>
+<circle cx="369.4" cy="356.0" r="4" fill="#b23b3b"/>
+<circle cx="398.2" cy="316.5" r="4" fill="#b23b3b"/>
+<circle cx="430.8" cy="144.7" r="4" fill="#b23b3b"/>
+<circle cx="454.1" cy="155.9" r="4" fill="#b23b3b"/>
+<circle cx="476.7" cy="161.2" r="4" fill="#b23b3b"/>
+<circle cx="506.3" cy="141.4" r="4" fill="#b23b3b"/>
+<circle cx="528.6" cy="148.3" r="4" fill="#b23b3b"/>
+<circle cx="550.7" cy="103.5" r="4" fill="#b23b3b"/>
+<circle cx="580.0" cy="80.0" r="4" fill="#b23b3b"/>
+<rect x="460" y="98" width="14" height="14" fill="#1b7f5a"/>
+<text x="480" y="110" font-family="Arial, sans-serif" font-size="13" fill="#172033">AMQ</text>
+<rect x="460" y="122" width="14" height="14" fill="#b23b3b"/>
+<text x="480" y="134" font-family="Arial, sans-serif" font-size="13" fill="#172033">fitted minimax-DQN</text>
+<text x="690" y="56" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#172033">Stable work summary</text>
+<text x="690" y="120" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#172033">Mean work_to_stable</text>
+<text x="690" y="164" font-family="Arial, sans-serif" font-size="13" fill="#172033">AMQ</text>
+<rect x="752" y="148" width="0.0" height="24" rx="3" fill="#1b7f5a"/>
+<text x="762.0" y="165" font-family="Arial, sans-serif" font-size="13" fill="#172033">117</text>
+<text x="690" y="212" font-family="Arial, sans-serif" font-size="13" fill="#172033">DQN</text>
+<rect x="752" y="196" width="360.0" height="24" rx="3" fill="#b23b3b"/>
+<text x="1122.0" y="213" font-family="Arial, sans-serif" font-size="13" fill="#172033">6,391,909</text>
+<text x="690" y="290" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#172033">Mean native stable checkpoint</text>
+<text x="690" y="334" font-family="Arial, sans-serif" font-size="13" fill="#172033">AMQ</text>
+<rect x="752" y="318" width="0.8" height="24" rx="3" fill="#1b7f5a"/>
+<text x="762.8" y="335" font-family="Arial, sans-serif" font-size="13" fill="#172033">117</text>
+<text x="690" y="382" font-family="Arial, sans-serif" font-size="13" fill="#172033">DQN</text>
+<rect x="752" y="366" width="360.0" height="24" rx="3" fill="#b23b3b"/>
+<text x="1122.0" y="383" font-family="Arial, sans-serif" font-size="13" fill="#172033">50,000</text>
+<text x="690" y="574" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#172033">DQN / AMQ work ratio: 54,787.8x</text>
+<text x="690" y="598" font-family="Arial, sans-serif" font-size="13" fill="#536173">Runtime depends on hardware and is kept out of the main comparison.</text>
+<text x="690" y="622" font-family="Arial, sans-serif" font-size="13" fill="#536173">Stable condition: joint policy gap &lt;= 0.05 and remains stable at later checkpoints.</text>
+</svg>

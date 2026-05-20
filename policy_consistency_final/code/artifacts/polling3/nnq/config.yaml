@@ -1,0 +1,52 @@
+experiment:
+  name: polling3_nnq_policy_probe_max30
+  output_dir: results
+
+env:
+  name: polling
+  lambda_arrivals: [1.0, 1.25, 1.5]
+  mu_service: 2.0
+  gamma: 0.95
+  attack_cost: 0.5
+  defend_cost: 0.2
+  switch_cost: 0.3
+  queue_cost: sum
+  initial_queues: [0, 0, 0]
+  initial_position: 0
+  uniformization_rate: 6.0
+
+algorithm:
+  name: nnq
+
+nnq:
+  hidden_size: 64
+  learning_rate: 0.001
+  total_steps: 50000
+  batch_size: 32
+  replay_capacity: 4096
+  target_update_interval: 200
+  epsilon: 0.15
+  seed: 0
+  log_interval: 5000
+  state_scale: 30.0
+  state_feature_set: polling_augmented
+  exploring_starts_probability: 0.5
+  exploring_starts_max_queue_length: 30
+  backup_mode: full_action
+
+bvi:
+  max_queue_length: 30
+  tolerance: 0.000001
+  max_iterations: 1000
+  boundary_mode: clip
+
+evaluation:
+  num_episodes: 20
+  horizon: 50
+  seed: 400
+  tail_threshold: 30
+  boundary_state: 30
+
+policy_grid:
+  max_state: 30
+  high_probability_threshold: 0.5

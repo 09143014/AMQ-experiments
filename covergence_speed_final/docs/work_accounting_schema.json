@@ -1,0 +1,83 @@
+{
+  "schema_name": "convergence_speed_work_accounting",
+  "version": "2026-05-20",
+  "primary_speed_metric": "work_to_stable",
+  "stabilization_rule": {
+    "definition": "first checkpoint t such that joint_gap(t, final_checkpoint) <= epsilon and every later checkpoint also satisfies the same inequality",
+    "epsilon": 0.05,
+    "joint_gap": "0.5 * attacker_policy_gap + 0.5 * defender_policy_gap",
+    "final_policy": "same algorithm, same benchmark, same seed, final checkpoint",
+    "horizon_censoring": {
+      "stable_before_horizon": "stable_checkpoint is not null and stable_checkpoint < final_checkpoint",
+      "censored_at_horizon": "stable_checkpoint is null or stable_checkpoint == final_checkpoint",
+      "interpretation": "If censored_at_horizon is true, work_to_stable should be read as a training-budget ceiling, not as evidence of early sustained stabilization."
+    }
+  },
+  "runtime_policy": {
+    "wall_clock_runtime": "auxiliary_only",
+    "reason": "Runtime depends on hardware, BLAS/backend, cache effects, and implementation details; it is not used for cross-method speed conclusions."
+  },
+  "benchmarks": {
+    "routing": {
+      "amq": {
+        "native_step": "online transition/update index k",
+        "work_increment_per_native_step": 1,
+        "work_unit": "sampled online TD target with one 2x2 minimax continuation game",
+        "work_to_checkpoint": "checkpoint"
+      },
+      "fitted_minimax_dqn": {
+        "native_step": "neural fitting epoch after the model-based fixed point is computed",
+        "phase_a_primary_work": "num_states * num_attacker_actions * num_defender_actions * fixed_point_iterations",
+        "phase_b_secondary_work": {
+          "fitting_gradient_updates": "number of MLP optimizer batches",
+          "fitting_target_entries": "epoch * num_states * num_attacker_actions * num_defender_actions"
+        },
+        "work_to_checkpoint": "phase_a_primary_work",
+        "notes": [
+          "Phase B is reported as secondary neural fitting work, not as additional Bellman work.",
+          "Routing AMQ checkpoints and DQN epochs are not directly comparable as raw steps."
+        ]
+      }
+    },
+    "polling": {
+      "amq": {
+        "native_step": "online transition/update index k",
+        "work_increment_per_native_step": 1,
+        "work_unit": "sampled online TD target with one 2x2 minimax continuation game",
+        "work_to_checkpoint": "checkpoint"
+      },
+      "fitted_minimax_dqn": {
+        "native_step": "online interaction/training step",
+        "backup_mode": "full_action",
+        "work_increment_per_training_batch": "number_of_distinct_states_in_replay_batch * num_attacker_actions * num_defender_actions",
+        "work_unit": "model target evaluation for one state-action pair",
+        "work_to_checkpoint": "cumulative exact work counter stored in snapshot"
+      }
+    },
+    "service_rate_control": {
+      "amq": {
+        "native_step": "online transition/update index k",
+        "work_increment_per_native_step": 1,
+        "work_unit": "sampled online TD target with one 2x3 minimax continuation game",
+        "work_to_checkpoint": "checkpoint",
+        "note": "This is an extension benchmark; service-rate-control is not one of the original AMQ paper benchmarks."
+      },
+      "fitted_minimax_dqn": {
+        "native_step": "online interaction/training step",
+        "backup_mode": "sampled",
+        "work_increment_per_training_batch": "batch_size sampled TD targets",
+        "work_unit": "sampled TD target",
+        "work_to_checkpoint": "cumulative exact work counter stored in snapshot"
+      }
+    }
+  },
+  "reporting_rules": [
+    "Use work_to_stable as the main cross-algorithm speed metric.",
+    "Report censored_at_horizon counts whenever any method first satisfies the rule only at the final checkpoint.",
+    "Report both mean and median work ratios when seed-level stable work is heterogeneous.",
+    "Report stable_native_step as a secondary within-method learning-curve descriptor.",
+    "Plot joint_gap or policy_similarity against cumulative work on a log-scale x axis.",
+    "Do not use wall-clock runtime as main evidence.",
+    "Do not use defender-only gap or BVI-vs-DQN policy consistency for this convergence-speed module."
+  ]
+}

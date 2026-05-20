@@ -1,0 +1,28 @@
+{
+  "algorithm": "bvi",
+  "benchmark": "service_rate_control",
+  "evaluation": {
+    "average_cost_mean": 0.13181114285714288,
+    "average_cost_std": 0.09991998939110415,
+    "boundary_hit_fraction_mean": 0.0,
+    "discounted_cost_mean": 1.8429377826164564,
+    "final_load_mean": 1.32,
+    "final_state_mean": 1.32,
+    "horizon": 50,
+    "num_episodes": 50,
+    "seed": 200,
+    "tail_fraction_mean": 0.0,
+    "tail_threshold": 8
+  },
+  "iterations": 240,
+  "max_queue_length": 20,
+  "num_states": 21,
+  "policy_grid": {
+    "first_state_p_high_at_least_threshold": 2,
+    "first_state_p_medium_at_least_threshold": 1,
+    "high_probability_threshold": 0.5,
+    "policy_grid_max_state": 20
+  },
+  "residual": 9.515722467767773e-07,
+  "value_at_initial_state": 2.544211111863196
+}

@@ -1,0 +1,194 @@
+{
+  "benchmark": "polling",
+  "num_seeds": 1,
+  "seed_rows": [
+    {
+      "seed": 0,
+      "amq_stable_checkpoint": 50,
+      "amq_stable_elapsed_seconds": 0.002685124985873699,
+      "amq_stable_effective_bellman_backups": 50,
+      "dqn_stable_checkpoint": 50000,
+      "dqn_stable_elapsed_seconds": 381.0410144579946,
+      "dqn_stable_effective_bellman_backups": 6396032
+    }
+  ],
+  "aggregate": {
+    "amq": {
+      "mean_stable_checkpoint": 50,
+      "median_stable_checkpoint": 50,
+      "mean_stable_elapsed_seconds": 0.002685124985873699,
+      "median_stable_elapsed_seconds": 0.002685124985873699,
+      "mean_stable_effective_bellman_backups": 50,
+      "median_stable_effective_bellman_backups": 50
+    },
+    "dqn": {
+      "mean_stable_checkpoint": 50000,
+      "median_stable_checkpoint": 50000,
+      "mean_stable_elapsed_seconds": 381.0410144579946,
+      "median_stable_elapsed_seconds": 381.0410144579946,
+      "mean_stable_effective_bellman_backups": 6396032,
+      "median_stable_effective_bellman_backups": 6396032
+    }
+  },
+  "curves": {
+    "amq": [
+      {
+        "checkpoint": 1,
+        "mean_joint_gap": 0.10107421875,
+        "mean_policy_similarity_percent": 89.892578125,
+        "mean_elapsed_seconds": 0.0002169999643228948,
+        "mean_effective_bellman_backups": 1.0
+      },
+      {
+        "checkpoint": 2,
+        "mean_joint_gap": 0.0966796875,
+        "mean_policy_similarity_percent": 90.33203125,
+        "mean_elapsed_seconds": 0.0003107910160906613,
+        "mean_effective_bellman_backups": 2.0
+      },
+      {
+        "checkpoint": 5,
+        "mean_joint_gap": 0.087890625,
+        "mean_policy_similarity_percent": 91.2109375,
+        "mean_elapsed_seconds": 0.0005810830043628812,
+        "mean_effective_bellman_backups": 5.0
+      },
+      {
+        "checkpoint": 10,
+        "mean_joint_gap": 0.08203125,
+        "mean_policy_similarity_percent": 91.796875,
+        "mean_elapsed_seconds": 0.0008578330161981285,
+        "mean_effective_bellman_backups": 10.0
+      },
+      {
+        "checkpoint": 20,
+        "mean_joint_gap": 0.0673828125,
+        "mean_policy_similarity_percent": 93.26171875,
+        "mean_elapsed_seconds": 0.001338540983851999,
+        "mean_effective_bellman_backups": 20.0
+      },
+      {
+        "checkpoint": 50,
+        "mean_joint_gap": 0.02197265625,
+        "mean_policy_similarity_percent": 97.802734375,
+        "mean_elapsed_seconds": 0.002685124985873699,
+        "mean_effective_bellman_backups": 50.0
+      },
+      {
+        "checkpoint": 100,
+        "mean_joint_gap": 0.005859375,
+        "mean_policy_similarity_percent": 99.4140625,
+        "mean_elapsed_seconds": 0.005008707987144589,
+        "mean_effective_bellman_backups": 100.0
+      },
+      {
+        "checkpoint": 200,
+        "mean_joint_gap": 0.0,
+        "mean_policy_similarity_percent": 100.0,
+        "mean_elapsed_seconds": 0.009700833004899323,
+        "mean_effective_bellman_backups": 200.0
+      },
+      {
+        "checkpoint": 500,
+        "mean_joint_gap": 0.0,
+        "mean_policy_similarity_percent": 100.0,
+        "mean_elapsed_seconds": 0.024225457978900522,
+        "mean_effective_bellman_backups": 500.0
+      },
+      {
+        "checkpoint": 1000,
+        "mean_joint_gap": 0.0,
+        "mean_policy_similarity_percent": 100.0,
+        "mean_elapsed_seconds": 0.04831391596235335,
+        "mean_effective_bellman_backups": 1000.0
+      },
+      {
+        "checkpoint": 2000,
+        "mean_joint_gap": 0.0,
+        "mean_policy_similarity_percent": 100.0,
+        "mean_elapsed_seconds": 0.09538666601292789,
+        "mean_effective_bellman_backups": 2000.0
+      },
+      {
+        "checkpoint": 5000,
+        "mean_joint_gap": 0.0,
+        "mean_policy_similarity_percent": 100.0,
+        "mean_elapsed_seconds": 0.23719687497941777,
+        "mean_effective_bellman_backups": 5000.0
+      },
+      {
+        "checkpoint": 10000,
+        "mean_joint_gap": 0.0,
+        "mean_policy_similarity_percent": 100.0,
+        "mean_elapsed_seconds": 0.47516770800575614,
+        "mean_effective_bellman_backups": 10000.0
+      }
+    ],
+    "dqn": [
+      {
+        "checkpoint": 100,
+        "mean_joint_gap": 0.9178158531282297,
+        "mean_policy_similarity_percent": 8.218414687177034,
+        "mean_elapsed_seconds": 0.14551070804009214,
+        "mean_effective_bellman_backups": 8832.0
+      },
+      {
+        "checkpoint": 200,
+        "mean_joint_gap": 0.9186633743615283,
+        "mean_policy_similarity_percent": 8.133662563847166,
+        "mean_elapsed_seconds": 0.3381920410320163,
+        "mean_effective_bellman_backups": 21632.0
+      },
+      {
+        "checkpoint": 500,
+        "mean_joint_gap": 0.23605438499522413,
+        "mean_policy_similarity_percent": 76.3945615004776,
+        "mean_elapsed_seconds": 1.14407941600075,
+        "mean_effective_bellman_backups": 60032.0
+      },
+      {
+        "checkpoint": 1000,
+        "mean_joint_gap": 0.25393517972811575,
+        "mean_policy_similarity_percent": 74.60648202718842,
+        "mean_elapsed_seconds": 2.639607416000217,
+        "mean_effective_bellman_backups": 124032.0
+      },
+      {
+        "checkpoint": 2000,
+        "mean_joint_gap": 0.17395666074763977,
+        "mean_policy_similarity_percent": 82.60433392523603,
+        "mean_elapsed_seconds": 7.195996500027832,
+        "mean_effective_bellman_backups": 252032.0
+      },
+      {
+        "checkpoint": 5000,
+        "mean_joint_gap": 0.13702038927515917,
+        "mean_policy_similarity_percent": 86.29796107248409,
+        "mean_elapsed_seconds": 28.318675665999763,
+        "mean_effective_bellman_backups": 636032.0
+      },
+      {
+        "checkpoint": 10000,
+        "mean_joint_gap": 0.19138776783140093,
+        "mean_policy_similarity_percent": 80.86122321685991,
+        "mean_elapsed_seconds": 67.61113779101288,
+        "mean_effective_bellman_backups": 1276032.0
+      },
+      {
+        "checkpoint": 20000,
+        "mean_joint_gap": 0.058093067905628994,
+        "mean_policy_similarity_percent": 94.1906932094371,
+        "mean_elapsed_seconds": 145.93168650002917,
+        "mean_effective_bellman_backups": 2556032.0
+      },
+      {
+        "checkpoint": 50000,
+        "mean_joint_gap": 0.0,
+        "mean_policy_similarity_percent": 100.0,
+        "mean_elapsed_seconds": 381.0410144579946,
+        "mean_effective_bellman_backups": 6396032.0
+      }
+    ]
+  },
+  "note": "AMQ checkpoints are sampled AMQ updates; DQN checkpoints are fitted Bellman/minimax iterations. Effective Bellman backups and runtime are included for cross-method compute comparison."
+}

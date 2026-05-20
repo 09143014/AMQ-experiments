@@ -1,0 +1,288 @@
+{
+  "benchmark": "routing",
+  "status": "smoke",
+  "note": "AMQ checkpoints count sampled AMQ updates; DQN checkpoints count fitted Bellman/minimax iterations. Compare stable_checkpoint within method and runtime/update metadata with this unit difference in mind.",
+  "params": {
+    "arrival_rate": 0.15,
+    "service_rate": 0.375,
+    "discount_rate": 0.1,
+    "attack_cost": 0.1,
+    "defend_cost": 0.2,
+    "bound": 20,
+    "num_queues": 3
+  },
+  "num_eval_states": 512,
+  "amq_config": {
+    "seed": 0,
+    "feature_set": "amq2",
+    "eta0": 1e-06,
+    "decay_power": 0.6,
+    "reward_scale": 1.0,
+    "initial_state_sampling": "random_grid"
+  },
+  "dqn_config": {
+    "seed": 0,
+    "hidden_size": 256,
+    "architecture": "standard",
+    "feature_set": "structural",
+    "batch_size": 1024,
+    "learning_rate": 0.0007,
+    "reward_scale": "denominator",
+    "loss_type": "mse",
+    "huber_delta": 1.0,
+    "grad_clip_norm": 20.0,
+    "fixed_point_tolerance": 1e-08,
+    "fixed_point_max_iterations": 2000,
+    "center_targets": true
+  },
+  "amq_snapshots": {
+    "1": {
+      "elapsed_seconds": 0.0004888750263489783,
+      "mean_abs_td_error_recent": 40.2,
+      "weight_norm": 0.014343459147639386,
+      "parameter_type": "linear_weights",
+      "num_parameters": 15,
+      "effective_bellman_backups": 1
+    },
+    "2": {
+      "elapsed_seconds": 0.0005448330193758011,
+      "mean_abs_td_error_recent": 39.653569000000005,
+      "weight_norm": 0.023370378352672236,
+      "parameter_type": "linear_weights",
+      "num_parameters": 15,
+      "effective_bellman_backups": 2
+    },
+    "5": {
+      "elapsed_seconds": 0.0006179169868119061,
+      "mean_abs_td_error_recent": 36.00758573698742,
+      "weight_norm": 0.03728599452954737,
+      "parameter_type": "linear_weights",
+      "num_parameters": 15,
+      "effective_bellman_backups": 5
+    },
+    "10": {
+      "elapsed_seconds": 0.0007262080325745046,
+      "mean_abs_td_error_recent": 21.3185594435865,
+      "weight_norm": 0.039415886150571566,
+      "parameter_type": "linear_weights",
+      "num_parameters": 15,
+      "effective_bellman_backups": 10
+    },
+    "20": {
+      "elapsed_seconds": 0.0009258750360459089,
+      "mean_abs_td_error_recent": 10.756825421988697,
+      "weight_norm": 0.03941610697434497,
+      "parameter_type": "linear_weights",
+      "num_parameters": 15,
+      "effective_bellman_backups": 20
+    },
+    "50": {
+      "elapsed_seconds": 0.0014950829790905118,
+      "mean_abs_td_error_recent": 4.479369493721916,
+      "weight_norm": 0.039417366631872654,
+      "parameter_type": "linear_weights",
+      "num_parameters": 15,
+      "effective_bellman_backups": 50
+    },
+    "100": {
+      "elapsed_seconds": 0.002424791979137808,
+      "mean_abs_td_error_recent": 11.351378606451165,
+      "weight_norm": 0.05367570582228475,
+      "parameter_type": "linear_weights",
+      "num_parameters": 15,
+      "effective_bellman_backups": 100
+    },
+    "200": {
+      "elapsed_seconds": 0.004225292010232806,
+      "mean_abs_td_error_recent": 19.128619592365578,
+      "weight_norm": 0.06666668464620512,
+      "parameter_type": "linear_weights",
+      "num_parameters": 15,
+      "effective_bellman_backups": 200
+    },
+    "500": {
+      "elapsed_seconds": 0.009838666999712586,
+      "mean_abs_td_error_recent": 16.3368653020299,
+      "weight_norm": 0.09851356728565365,
+      "parameter_type": "linear_weights",
+      "num_parameters": 15,
+      "effective_bellman_backups": 500
+    },
+    "1000": {
+      "elapsed_seconds": 0.020771541981957853,
+      "mean_abs_td_error_recent": 12.477676198362772,
+      "weight_norm": 0.1321786487646294,
+      "parameter_type": "linear_weights",
+      "num_parameters": 15,
+      "effective_bellman_backups": 1000
+    }
+  },
+  "dqn_snapshots": {
+    "1": {
+      "elapsed_seconds": 15.265145040990319,
+      "loss_mean_recent": 0.03551053313662082,
+      "target_fit_error_recent": 0.12008654433972313,
+      "fixed_point_iterations": 231,
+      "fixed_point_residual": 9.857274108071579e-09,
+      "fixed_point_elapsed_seconds": 15.236577083007433,
+      "num_gradient_updates": 10,
+      "parameter_type": "neural_network",
+      "architecture": "standard",
+      "num_parameters": 71428,
+      "parameter_norm": 31.98677520097837,
+      "fixed_point_bellman_backups": 8557164,
+      "fitting_target_entries": 37044,
+      "effective_bellman_backups": 8594208
+    },
+    "2": {
+      "elapsed_seconds": 15.284889873990323,
+      "loss_mean_recent": 0.030558598426494017,
+      "target_fit_error_recent": 0.11090545179330635,
+      "fixed_point_iterations": 231,
+      "fixed_point_residual": 9.857274108071579e-09,
+      "fixed_point_elapsed_seconds": 15.236577083007433,
+      "num_gradient_updates": 20,
+      "parameter_type": "neural_network",
+      "architecture": "standard",
+      "num_parameters": 71428,
+      "parameter_norm": 32.004854429719195,
+      "fixed_point_bellman_backups": 8557164,
+      "fitting_target_entries": 74088,
+      "effective_bellman_backups": 8631252
+    }
+  },
+  "amq_stabilization": {
+    "epsilon": 0.05,
+    "final_checkpoint": 1000,
+    "stable_checkpoint": 100,
+    "checkpoints": [
+      {
+        "checkpoint": 1,
+        "attacker_gap": 0.11328125,
+        "defender_gap": 0.11328125,
+        "joint_gap": 0.11328125,
+        "policy_similarity_percent": 88.671875,
+        "attacker_action_agreement_percent": 88.671875,
+        "defender_action_agreement_percent": 88.671875,
+        "joint_action_agreement_percent": 88.671875
+      },
+      {
+        "checkpoint": 2,
+        "attacker_gap": 0.12109375,
+        "defender_gap": 0.12109375,
+        "joint_gap": 0.12109375,
+        "policy_similarity_percent": 87.890625,
+        "attacker_action_agreement_percent": 87.890625,
+        "defender_action_agreement_percent": 87.890625,
+        "joint_action_agreement_percent": 87.890625
+      },
+      {
+        "checkpoint": 5,
+        "attacker_gap": 0.099609375,
+        "defender_gap": 0.099609375,
+        "joint_gap": 0.099609375,
+        "policy_similarity_percent": 90.0390625,
+        "attacker_action_agreement_percent": 90.0390625,
+        "defender_action_agreement_percent": 90.0390625,
+        "joint_action_agreement_percent": 90.0390625
+      },
+      {
+        "checkpoint": 10,
+        "attacker_gap": 0.07421875,
+        "defender_gap": 0.07421875,
+        "joint_gap": 0.07421875,
+        "policy_similarity_percent": 92.578125,
+        "attacker_action_agreement_percent": 92.578125,
+        "defender_action_agreement_percent": 92.578125,
+        "joint_action_agreement_percent": 92.578125
+      },
+      {
+        "checkpoint": 20,
+        "attacker_gap": 0.07421875,
+        "defender_gap": 0.07421875,
+        "joint_gap": 0.07421875,
+        "policy_similarity_percent": 92.578125,
+        "attacker_action_agreement_percent": 92.578125,
+        "defender_action_agreement_percent": 92.578125,
+        "joint_action_agreement_percent": 92.578125
+      },
+      {
+        "checkpoint": 50,
+        "attacker_gap": 0.07421875,
+        "defender_gap": 0.07421875,
+        "joint_gap": 0.07421875,
+        "policy_similarity_percent": 92.578125,
+        "attacker_action_agreement_percent": 92.578125,
+        "defender_action_agreement_percent": 92.578125,
+        "joint_action_agreement_percent": 92.578125
+      },
+      {
+        "checkpoint": 100,
+        "attacker_gap": 0.03515625,
+        "defender_gap": 0.03515625,
+        "joint_gap": 0.03515625,
+        "policy_similarity_percent": 96.484375,
+        "attacker_action_agreement_percent": 96.484375,
+        "defender_action_agreement_percent": 96.484375,
+        "joint_action_agreement_percent": 96.484375
+      },
+      {
+        "checkpoint": 200,
+        "attacker_gap": 0.041015625,
+        "defender_gap": 0.041015625,
+        "joint_gap": 0.041015625,
+        "policy_similarity_percent": 95.8984375,
+        "attacker_action_agreement_percent": 95.8984375,
+        "defender_action_agreement_percent": 95.8984375,
+        "joint_action_agreement_percent": 95.8984375
+      },
+      {
+        "checkpoint": 500,
+        "attacker_gap": 0.009765625,
+        "defender_gap": 0.009765625,
+        "joint_gap": 0.009765625,
+        "policy_similarity_percent": 99.0234375,
+        "attacker_action_agreement_percent": 99.0234375,
+        "defender_action_agreement_percent": 99.0234375,
+        "joint_action_agreement_percent": 99.0234375
+      },
+      {
+        "checkpoint": 1000,
+        "attacker_gap": 0.0,
+        "defender_gap": 0.0,
+        "joint_gap": 0.0,
+        "policy_similarity_percent": 100.0,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 100.0,
+        "joint_action_agreement_percent": 100.0
+      }
+    ]
+  },
+  "dqn_stabilization": {
+    "epsilon": 0.05,
+    "final_checkpoint": 2,
+    "stable_checkpoint": 2,
+    "checkpoints": [
+      {
+        "checkpoint": 1,
+        "attacker_gap": 0.15949193207904971,
+        "defender_gap": 0.1488371349756274,
+        "joint_gap": 0.15416453352733855,
+        "policy_similarity_percent": 84.58354664726615,
+        "attacker_action_agreement_percent": 81.25,
+        "defender_action_agreement_percent": 85.546875,
+        "joint_action_agreement_percent": 68.1640625
+      },
+      {
+        "checkpoint": 2,
+        "attacker_gap": 0.0,
+        "defender_gap": 0.0,
+        "joint_gap": 0.0,
+        "policy_similarity_percent": 100.0,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 100.0,
+        "joint_action_agreement_percent": 100.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,7552 @@
+{
+  "bvi": {
+    "iterations": 205,
+    "residual": 9.652922017266974e-08,
+    "runtime_seconds": 6.192663791007362
+  },
+  "closed_loop_rollout_rows": [
+    {
+      "attacker_agreement": 1.0,
+      "defender_agreement": 1.0,
+      "final_bvi_state": [
+        0,
+        0,
+        0
+      ],
+      "final_learned_state": [
+        0,
+        0,
+        0
+      ],
+      "greedy_joint_agreement": 1.0,
+      "horizon": 75,
+      "initial_state": [
+        0,
+        0,
+        0
+      ],
+      "rows": [
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.7843400545670601,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 0
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.47999502007731676,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 1
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.9525308196979811,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 2
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.7999709569236092,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 3
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.7736758156993246,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 4
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.7363858705588017,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 5
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.5528153163750319,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 6
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.43555113013136715,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 7
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.38595946504913614,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 8
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.42245634137614874,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 9
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.8522752391372695,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 10
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.3334486982850452,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 11
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.42929960297901126,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 12
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.426323143898801,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 13
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.5523232107465023,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 14
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.7818492463571696,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 15
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.41227352902983105,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 16
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.15149597387703984,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 17
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.745153534708989,
+          "bvi_p_defend": 0.6274232326455055,
+          "bvi_state": [
+            1,
+            0,
+            0
+          ],
+          "env_uniform": 0.5857280675320796,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.7626549983861582,
+          "learned_p_defend": 0.6187602367345575,
+          "learned_state": [
+            1,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 18
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.745153534708989,
+          "bvi_p_defend": 0.6274232326455055,
+          "bvi_state": [
+            1,
+            0,
+            0
+          ],
+          "env_uniform": 0.3115135883548923,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.7626549983861582,
+          "learned_p_defend": 0.6187602367345575,
+          "learned_state": [
+            1,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 19
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.05282913875620798,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 20
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.9638087481168447,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 21
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.5541146241694505,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 22
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.23954859055415212,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 23
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.06674263828566229,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 24
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.23918797656937796,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 25
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.8188682183757565,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 26
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.4604525684036699,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 27
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.7409335296573303,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 28
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.5547024042180184,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 29
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.06573526528215512,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 30
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.13625633482770994,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 31
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.745153534708989,
+          "bvi_p_defend": 0.6274232326455055,
+          "bvi_state": [
+            1,
+            0,
+            0
+          ],
+          "env_uniform": 0.23622161904775552,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.7626549983861582,
+          "learned_p_defend": 0.6187602367345575,
+          "learned_state": [
+            1,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 32
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.45146093724767167,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 33
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.4378700336246574,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 34
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.02519731906603917,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 35
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.37537294021595724,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 36
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.4207497506104605,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 37
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.02829986499250503,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 38
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.9220229520646256,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 39
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.3290800758708228,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 40
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.937015193232113,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 41
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.011870003407467467,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 42
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.7201532066358358,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 43
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.22023556464508254,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 44
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.8749489847345688,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 45
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.24918683081232795,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 46
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.687481676767649,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 47
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.2580745220344779,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 48
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.5011735153075715,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 49
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.74941516761433,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 50
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.043022549703934376,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 51
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.030888849355484416,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 52
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.9818865118982875,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 53
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.25619639304843467,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 54
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.6821404742716539,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 55
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.09382043088193026,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 56
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.745153534708989,
+          "bvi_p_defend": 0.6274232326455055,
+          "bvi_state": [
+            1,
+            0,
+            0
+          ],
+          "env_uniform": 0.1852910300366747,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.7626549983861582,
+          "learned_p_defend": 0.6187602367345575,
+          "learned_state": [
+            1,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 57
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.09840612611992217,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 58
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.745153534708989,
+          "bvi_p_defend": 0.6274232326455055,
+          "bvi_state": [
+            1,
+            0,
+            0
+          ],
+          "env_uniform": 0.5374852674161358,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.7626549983861582,
+          "learned_p_defend": 0.6187602367345575,
+          "learned_state": [
+            1,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 59
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.745153534708989,
+          "bvi_p_defend": 0.6274232326455055,
+          "bvi_state": [
+            1,
+            0,
+            0
+          ],
+          "env_uniform": 0.33369456769454,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.7626549983861582,
+          "learned_p_defend": 0.6187602367345575,
+          "learned_state": [
+            1,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 60
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.9241723336468346,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 61
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.0677827180995434,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 62
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.7674738309328796,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 63
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.9621703021779555,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 64
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.7260415143199838,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 65
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.28478216867985273,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 66
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.3537231751558956,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 67
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.3759082345031983,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 68
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.18196408784970075,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 69
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.15860646368743192,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 70
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.745153534708989,
+          "bvi_p_defend": 0.6274232326455055,
+          "bvi_state": [
+            1,
+            0,
+            0
+          ],
+          "env_uniform": 0.3504974900646495,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.7626549983861582,
+          "learned_p_defend": 0.6187602367345575,
+          "learned_state": [
+            1,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 71
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.5916989199175995,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 72
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.666807729107616,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 73
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            0,
+            0,
+            0
+          ],
+          "env_uniform": 0.39643997248801055,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            0,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 74
+        }
+      ],
+      "same_state_fraction": 1.0,
+      "sampled_joint_agreement": 1.0
+    },
+    {
+      "attacker_agreement": 1.0,
+      "defender_agreement": 1.0,
+      "final_bvi_state": [
+        4,
+        6,
+        16
+      ],
+      "final_learned_state": [
+        4,
+        6,
+        16
+      ],
+      "greedy_joint_agreement": 1.0,
+      "horizon": 75,
+      "initial_state": [
+        5,
+        10,
+        15
+      ],
+      "rows": [
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.8562550452831683,
+          "bvi_p_defend": 0.5718724773584158,
+          "bvi_state": [
+            5,
+            10,
+            15
+          ],
+          "env_uniform": 0.8738434898907309,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.8671553187858603,
+          "learned_p_defend": 0.5664492604124596,
+          "learned_state": [
+            5,
+            10,
+            15
+          ],
+          "same_state": true,
+          "step": 0
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.8751466521039214,
+          "bvi_p_defend": 0.5624266739480392,
+          "bvi_state": [
+            5,
+            10,
+            14
+          ],
+          "env_uniform": 0.9828753746662328,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.8789828522605792,
+          "learned_p_defend": 0.5605263299960523,
+          "learned_state": [
+            5,
+            10,
+            14
+          ],
+          "same_state": true,
+          "step": 1
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.9005046405312989,
+          "bvi_p_defend": 0.5497476797343506,
+          "bvi_state": [
+            5,
+            10,
+            13
+          ],
+          "env_uniform": 0.22272476183840673,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.9008305105754799,
+          "learned_p_defend": 0.5496065415792359,
+          "learned_state": [
+            5,
+            10,
+            13
+          ],
+          "same_state": true,
+          "step": 2
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.687687872843955,
+          "bvi_p_defend": 0.6561560635780225,
+          "bvi_state": [
+            4,
+            10,
+            13
+          ],
+          "env_uniform": 0.8692035962837318,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.6876885389516245,
+          "learned_p_defend": 0.6561643956273637,
+          "learned_state": [
+            4,
+            10,
+            13
+          ],
+          "same_state": true,
+          "step": 3
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.7126338640643552,
+          "bvi_p_defend": 0.6436830679678224,
+          "bvi_state": [
+            4,
+            10,
+            12
+          ],
+          "env_uniform": 0.4750021337039745,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.7125341467654696,
+          "learned_p_defend": 0.6437546499697703,
+          "learned_state": [
+            4,
+            10,
+            12
+          ],
+          "same_state": true,
+          "step": 4
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.7053627286259069,
+          "bvi_p_defend": 0.6473186356870466,
+          "bvi_state": [
+            4,
+            9,
+            12
+          ],
+          "env_uniform": 0.5978815392145788,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.704646472020771,
+          "learned_p_defend": 0.6476881283384501,
+          "learned_state": [
+            4,
+            9,
+            12
+          ],
+          "same_state": true,
+          "step": 5
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.6958783475196213,
+          "bvi_p_defend": 0.6520608262401894,
+          "bvi_state": [
+            4,
+            8,
+            12
+          ],
+          "env_uniform": 0.8709753511526627,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.693699325751571,
+          "learned_p_defend": 0.6531572455723194,
+          "learned_state": [
+            4,
+            8,
+            12
+          ],
+          "same_state": true,
+          "step": 6
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.7275457065746391,
+          "bvi_p_defend": 0.6362271467126804,
+          "bvi_state": [
+            4,
+            8,
+            11
+          ],
+          "env_uniform": 0.377908549300496,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.722861934626865,
+          "learned_p_defend": 0.6385811589763524,
+          "learned_state": [
+            4,
+            8,
+            11
+          ],
+          "same_state": true,
+          "step": 7
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.534997794644367,
+          "bvi_p_defend": 0.7325011026778165,
+          "bvi_state": [
+            3,
+            8,
+            11
+          ],
+          "env_uniform": 0.8322943396019659,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.5353170501949391,
+          "learned_p_defend": 0.7323440391341111,
+          "learned_state": [
+            3,
+            8,
+            11
+          ],
+          "same_state": true,
+          "step": 8
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.5620500662950549,
+          "bvi_p_defend": 0.7189749668524725,
+          "bvi_state": [
+            3,
+            8,
+            10
+          ],
+          "env_uniform": 0.8593557353547284,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.5584910320749339,
+          "learned_p_defend": 0.7207497690008606,
+          "learned_state": [
+            3,
+            8,
+            10
+          ],
+          "same_state": true,
+          "step": 9
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.6007631933668556,
+          "bvi_p_defend": 0.6996184033165722,
+          "bvi_state": [
+            3,
+            8,
+            9
+          ],
+          "env_uniform": 0.7269709579856993,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.6007556220463579,
+          "learned_p_defend": 0.6996176249104116,
+          "learned_state": [
+            3,
+            8,
+            9
+          ],
+          "same_state": true,
+          "step": 10
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.5913993039675148,
+          "bvi_p_defend": 0.7043003480162426,
+          "bvi_state": [
+            3,
+            7,
+            9
+          ],
+          "env_uniform": 0.5350210345872526,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.58704675232949,
+          "learned_p_defend": 0.7064680450776277,
+          "learned_state": [
+            3,
+            7,
+            9
+          ],
+          "same_state": true,
+          "step": 11
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.5800055534415566,
+          "bvi_p_defend": 0.7099972232792218,
+          "bvi_state": [
+            3,
+            6,
+            9
+          ],
+          "env_uniform": 0.8695587993417512,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.575210959903955,
+          "learned_p_defend": 0.7123843864574713,
+          "learned_state": [
+            3,
+            6,
+            9
+          ],
+          "same_state": true,
+          "step": 12
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.631347221134447,
+          "bvi_p_defend": 0.6843263894327765,
+          "bvi_state": [
+            3,
+            6,
+            8
+          ],
+          "env_uniform": 0.8413247974709687,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.6300679578084607,
+          "learned_p_defend": 0.6849693549592951,
+          "learned_state": [
+            3,
+            6,
+            8
+          ],
+          "same_state": true,
+          "step": 13
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.7093235983423732,
+          "bvi_p_defend": 0.6453382008288133,
+          "bvi_state": [
+            3,
+            6,
+            7
+          ],
+          "env_uniform": 0.690896541297824,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.7103266470299128,
+          "learned_p_defend": 0.6448687935694078,
+          "learned_state": [
+            3,
+            6,
+            7
+          ],
+          "same_state": true,
+          "step": 14
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.6883834040957615,
+          "bvi_p_defend": 0.6558082979521193,
+          "bvi_state": [
+            3,
+            5,
+            7
+          ],
+          "env_uniform": 0.6402128026262303,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.6926256250347158,
+          "learned_p_defend": 0.6537067481753152,
+          "learned_state": [
+            3,
+            5,
+            7
+          ],
+          "same_state": true,
+          "step": 15
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.660467810715659,
+          "bvi_p_defend": 0.6697660946421705,
+          "bvi_state": [
+            3,
+            4,
+            7
+          ],
+          "env_uniform": 0.14213828988564148,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.658205193762404,
+          "learned_p_defend": 0.670918117007494,
+          "learned_state": [
+            3,
+            4,
+            7
+          ],
+          "same_state": true,
+          "step": 16
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.9451854138994477,
+          "bvi_p_defend": 0.5274072930502762,
+          "bvi_state": [
+            4,
+            4,
+            7
+          ],
+          "env_uniform": 0.45306555114040903,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.9593455448699356,
+          "learned_p_defend": 0.520356007849467,
+          "learned_state": [
+            4,
+            4,
+            7
+          ],
+          "same_state": true,
+          "step": 17
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.660467810715659,
+          "bvi_p_defend": 0.6697660946421705,
+          "bvi_state": [
+            3,
+            4,
+            7
+          ],
+          "env_uniform": 0.8929980650066728,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.658205193762404,
+          "learned_p_defend": 0.670918117007494,
+          "learned_state": [
+            3,
+            4,
+            7
+          ],
+          "same_state": true,
+          "step": 18
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.7761371840803745,
+          "bvi_p_defend": 0.6119314079598128,
+          "bvi_state": [
+            3,
+            4,
+            6
+          ],
+          "env_uniform": 0.4125127721292884,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.7875121163978237,
+          "learned_p_defend": 0.6062942063938555,
+          "learned_state": [
+            3,
+            4,
+            6
+          ],
+          "same_state": true,
+          "step": 19
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.5255112291942885,
+          "bvi_p_defend": 0.7372443854028558,
+          "bvi_state": [
+            2,
+            4,
+            6
+          ],
+          "env_uniform": 0.14307599896641665,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.5277279820929599,
+          "learned_p_defend": 0.7361719711930081,
+          "learned_state": [
+            2,
+            4,
+            6
+          ],
+          "same_state": true,
+          "step": 20
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.7761371840803745,
+          "bvi_p_defend": 0.6119314079598128,
+          "bvi_state": [
+            3,
+            4,
+            6
+          ],
+          "env_uniform": 0.6862854284674347,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.7875121163978237,
+          "learned_p_defend": 0.6062942063938555,
+          "learned_state": [
+            3,
+            4,
+            6
+          ],
+          "same_state": true,
+          "step": 21
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.7338915565355509,
+          "bvi_p_defend": 0.6330542217322246,
+          "bvi_state": [
+            3,
+            3,
+            6
+          ],
+          "env_uniform": 0.9706118045860106,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.7400432833305501,
+          "learned_p_defend": 0.6300202124562992,
+          "learned_state": [
+            3,
+            3,
+            6
+          ],
+          "same_state": true,
+          "step": 22
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.9604863625518227,
+          "bvi_p_defend": 0.5197568187240886,
+          "bvi_state": [
+            3,
+            3,
+            5
+          ],
+          "env_uniform": 0.14033253432129755,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.9873556867770621,
+          "learned_p_defend": 0.5063585359926721,
+          "learned_state": [
+            3,
+            3,
+            5
+          ],
+          "same_state": true,
+          "step": 23
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 1.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            4,
+            3,
+            5
+          ],
+          "env_uniform": 0.7872804666955628,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 1.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            4,
+            3,
+            5
+          ],
+          "same_state": true,
+          "step": 24
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 1.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            4,
+            3,
+            4
+          ],
+          "env_uniform": 0.2702161199598079,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 1.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            4,
+            3,
+            4
+          ],
+          "same_state": true,
+          "step": 25
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 1.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            3,
+            3,
+            4
+          ],
+          "env_uniform": 0.7269386844923775,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 1.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            3,
+            3,
+            4
+          ],
+          "same_state": true,
+          "step": 26
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.7865171804254186,
+          "bvi_p_defend": 0.6067414097872907,
+          "bvi_state": [
+            3,
+            2,
+            4
+          ],
+          "env_uniform": 0.05997553845464976,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.8024794658462134,
+          "learned_p_defend": 0.5987767382216306,
+          "learned_state": [
+            3,
+            2,
+            4
+          ],
+          "same_state": true,
+          "step": 27
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.8562550452831683,
+          "bvi_p_defend": 0.5718724773584158,
+          "bvi_state": [
+            5,
+            10,
+            15
+          ],
+          "env_uniform": 0.1228345219406648,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.8671553187858603,
+          "learned_p_defend": 0.5664492604124596,
+          "learned_state": [
+            5,
+            10,
+            15
+          ],
+          "same_state": true,
+          "step": 28
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.8418859392341826,
+          "bvi_p_defend": 0.5790570303829087,
+          "bvi_state": [
+            5,
+            10,
+            16
+          ],
+          "env_uniform": 0.15051471154263252,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.8358488341195554,
+          "learned_p_defend": 0.5821097064198697,
+          "learned_state": [
+            5,
+            10,
+            16
+          ],
+          "same_state": true,
+          "step": 29
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 1.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            6,
+            10,
+            16
+          ],
+          "env_uniform": 0.8521245186144244,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 1.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            6,
+            10,
+            16
+          ],
+          "same_state": true,
+          "step": 30
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 1.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            6,
+            10,
+            15
+          ],
+          "env_uniform": 0.10352643312975096,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 1.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            6,
+            10,
+            15
+          ],
+          "same_state": true,
+          "step": 31
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 1.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            6,
+            10,
+            16
+          ],
+          "env_uniform": 0.173335856096415,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 1.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            6,
+            10,
+            16
+          ],
+          "same_state": true,
+          "step": 32
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 1.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            6,
+            10,
+            17
+          ],
+          "env_uniform": 0.8642517777755555,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 1.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            6,
+            10,
+            17
+          ],
+          "same_state": true,
+          "step": 33
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 1.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            6,
+            10,
+            16
+          ],
+          "env_uniform": 0.7435650064272971,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 1.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            6,
+            10,
+            16
+          ],
+          "same_state": true,
+          "step": 34
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 1.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            6,
+            10,
+            15
+          ],
+          "env_uniform": 0.6861474742410695,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 1.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            6,
+            10,
+            15
+          ],
+          "same_state": true,
+          "step": 35
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 1.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            6,
+            9,
+            15
+          ],
+          "env_uniform": 0.06249581562631934,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 1.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            6,
+            9,
+            15
+          ],
+          "same_state": true,
+          "step": 36
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.8562550452831683,
+          "bvi_p_defend": 0.5718724773584158,
+          "bvi_state": [
+            5,
+            10,
+            15
+          ],
+          "env_uniform": 0.3185461737941704,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.8671553187858603,
+          "learned_p_defend": 0.5664492604124596,
+          "learned_state": [
+            5,
+            10,
+            15
+          ],
+          "same_state": true,
+          "step": 37
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.6552981072298059,
+          "bvi_p_defend": 0.6723509463850971,
+          "bvi_state": [
+            4,
+            10,
+            15
+          ],
+          "env_uniform": 0.4517527151466554,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.6528157486363353,
+          "learned_p_defend": 0.6736157372930804,
+          "learned_state": [
+            4,
+            10,
+            15
+          ],
+          "same_state": true,
+          "step": 38
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.4873924752573942,
+          "bvi_p_defend": 0.7563037623713029,
+          "bvi_state": [
+            3,
+            10,
+            15
+          ],
+          "env_uniform": 0.45656700318240606,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.4882324190502071,
+          "learned_p_defend": 0.7558973164946674,
+          "learned_state": [
+            3,
+            10,
+            15
+          ],
+          "same_state": true,
+          "step": 39
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.48476922511188025,
+          "bvi_p_defend": 0.7576153874440599,
+          "bvi_state": [
+            3,
+            9,
+            15
+          ],
+          "env_uniform": 0.7107142498114108,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.48582408658928733,
+          "learned_p_defend": 0.7571057035751095,
+          "learned_state": [
+            3,
+            9,
+            15
+          ],
+          "same_state": true,
+          "step": 40
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.480737397504113,
+          "bvi_p_defend": 0.7596313012479435,
+          "bvi_state": [
+            3,
+            8,
+            15
+          ],
+          "env_uniform": 0.6792786365180008,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.4794012451787202,
+          "learned_p_defend": 0.7603195178349034,
+          "learned_state": [
+            3,
+            8,
+            15
+          ],
+          "same_state": true,
+          "step": 41
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.474536866379338,
+          "bvi_p_defend": 0.7627315668103309,
+          "bvi_state": [
+            3,
+            7,
+            15
+          ],
+          "env_uniform": 0.41789845474729825,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.47259738503448734,
+          "learned_p_defend": 0.7637243007711731,
+          "learned_state": [
+            3,
+            7,
+            15
+          ],
+          "same_state": true,
+          "step": 42
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.3524824907992797,
+          "bvi_p_defend": 0.8237587546003602,
+          "bvi_state": [
+            2,
+            7,
+            15
+          ],
+          "env_uniform": 0.25399439242275534,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.3531155587928797,
+          "learned_p_defend": 0.8234651896954389,
+          "learned_state": [
+            2,
+            7,
+            15
+          ],
+          "same_state": true,
+          "step": 43
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.2583975861614362,
+          "bvi_p_defend": 0.8708012069192819,
+          "bvi_state": [
+            1,
+            7,
+            15
+          ],
+          "env_uniform": 0.4993039119849816,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.2594634113141815,
+          "learned_p_defend": 0.8702851473136404,
+          "learned_state": [
+            1,
+            7,
+            15
+          ],
+          "same_state": true,
+          "step": 44
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.257279296952832,
+          "bvi_p_defend": 0.8713603515235839,
+          "bvi_state": [
+            1,
+            6,
+            15
+          ],
+          "env_uniform": 0.9554760104146094,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.2583671646856638,
+          "learned_p_defend": 0.8708308680854997,
+          "learned_state": [
+            1,
+            6,
+            15
+          ],
+          "same_state": true,
+          "step": 45
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.2600446363696715,
+          "bvi_p_defend": 0.8699776818151642,
+          "bvi_state": [
+            1,
+            6,
+            14
+          ],
+          "env_uniform": 0.9196430598590308,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.2600486605736566,
+          "learned_p_defend": 0.8699875066506038,
+          "learned_state": [
+            1,
+            6,
+            14
+          ],
+          "same_state": true,
+          "step": 46
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.26362690597813204,
+          "bvi_p_defend": 0.868186547010934,
+          "bvi_state": [
+            1,
+            6,
+            13
+          ],
+          "env_uniform": 0.13265683734195954,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.26444716278089586,
+          "learned_p_defend": 0.8677843553206153,
+          "learned_state": [
+            1,
+            6,
+            13
+          ],
+          "same_state": true,
+          "step": 47
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.36018523705835315,
+          "bvi_p_defend": 0.8199073814708234,
+          "bvi_state": [
+            2,
+            6,
+            13
+          ],
+          "env_uniform": 0.2974158034421758,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.3591047655144406,
+          "learned_p_defend": 0.8204563902410001,
+          "learned_state": [
+            2,
+            6,
+            13
+          ],
+          "same_state": true,
+          "step": 48
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.26362690597813204,
+          "bvi_p_defend": 0.868186547010934,
+          "bvi_state": [
+            1,
+            6,
+            13
+          ],
+          "env_uniform": 0.09269737698500669,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.26444716278089586,
+          "learned_p_defend": 0.8677843553206153,
+          "learned_state": [
+            1,
+            6,
+            13
+          ],
+          "same_state": true,
+          "step": 49
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.36018523705835315,
+          "bvi_p_defend": 0.8199073814708234,
+          "bvi_state": [
+            2,
+            6,
+            13
+          ],
+          "env_uniform": 0.3634263980584318,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.3591047655144406,
+          "learned_p_defend": 0.8204563902410001,
+          "learned_state": [
+            2,
+            6,
+            13
+          ],
+          "same_state": true,
+          "step": 50
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.26362690597813204,
+          "bvi_p_defend": 0.868186547010934,
+          "bvi_state": [
+            1,
+            6,
+            13
+          ],
+          "env_uniform": 0.40764062022146885,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.26444716278089586,
+          "learned_p_defend": 0.8677843553206153,
+          "learned_state": [
+            1,
+            6,
+            13
+          ],
+          "same_state": true,
+          "step": 51
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.19117455035143843,
+          "bvi_p_defend": 0.9044127248242808,
+          "bvi_state": [
+            0,
+            6,
+            13
+          ],
+          "env_uniform": 0.9501663077645064,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.19151610520266527,
+          "learned_p_defend": 0.9042431091589234,
+          "learned_state": [
+            0,
+            6,
+            13
+          ],
+          "same_state": true,
+          "step": 52
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.1936855844048074,
+          "bvi_p_defend": 0.9031572077975963,
+          "bvi_state": [
+            0,
+            6,
+            12
+          ],
+          "env_uniform": 0.2681426596926979,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.19321165027054776,
+          "learned_p_defend": 0.9033918757007218,
+          "learned_state": [
+            0,
+            6,
+            12
+          ],
+          "same_state": true,
+          "step": 53
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.1936855844048074,
+          "bvi_p_defend": 0.9031572077975963,
+          "bvi_state": [
+            0,
+            6,
+            12
+          ],
+          "env_uniform": 0.6920476756283054,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.19321165027054776,
+          "learned_p_defend": 0.9033918757007218,
+          "learned_state": [
+            0,
+            6,
+            12
+          ],
+          "same_state": true,
+          "step": 54
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.19330535742746854,
+          "bvi_p_defend": 0.9033473212862657,
+          "bvi_state": [
+            0,
+            5,
+            12
+          ],
+          "env_uniform": 0.8169454403179488,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.19305942656615094,
+          "learned_p_defend": 0.9034673733673971,
+          "learned_state": [
+            0,
+            5,
+            12
+          ],
+          "same_state": true,
+          "step": 55
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.19657671058512197,
+          "bvi_p_defend": 0.901711644707439,
+          "bvi_state": [
+            0,
+            5,
+            11
+          ],
+          "env_uniform": 0.1255932906364855,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.1967861393619631,
+          "learned_p_defend": 0.9016012349112259,
+          "learned_state": [
+            0,
+            5,
+            11
+          ],
+          "same_state": true,
+          "step": 56
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.27252038569992876,
+          "bvi_p_defend": 0.8637398071500356,
+          "bvi_state": [
+            1,
+            5,
+            11
+          ],
+          "env_uniform": 0.3825099674167556,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.27300475596538654,
+          "learned_p_defend": 0.863497244880135,
+          "learned_state": [
+            1,
+            5,
+            11
+          ],
+          "same_state": true,
+          "step": 57
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.19657671058512197,
+          "bvi_p_defend": 0.901711644707439,
+          "bvi_state": [
+            0,
+            5,
+            11
+          ],
+          "env_uniform": 0.892837667325703,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.1967861393619631,
+          "learned_p_defend": 0.9016012349112259,
+          "learned_state": [
+            0,
+            5,
+            11
+          ],
+          "same_state": true,
+          "step": 58
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.20088438642242745,
+          "bvi_p_defend": 0.8995578067887863,
+          "bvi_state": [
+            0,
+            5,
+            10
+          ],
+          "env_uniform": 0.06177215690474802,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.20173632752977844,
+          "learned_p_defend": 0.8991298736097455,
+          "learned_state": [
+            0,
+            5,
+            10
+          ],
+          "same_state": true,
+          "step": 59
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.8562550452831683,
+          "bvi_p_defend": 0.5718724773584158,
+          "bvi_state": [
+            5,
+            10,
+            15
+          ],
+          "env_uniform": 0.6419687694980886,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.8671553187858603,
+          "learned_p_defend": 0.5664492604124596,
+          "learned_state": [
+            5,
+            10,
+            15
+          ],
+          "same_state": true,
+          "step": 60
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.846094021816686,
+          "bvi_p_defend": 0.5769529890916569,
+          "bvi_state": [
+            5,
+            9,
+            15
+          ],
+          "env_uniform": 0.6223887697489571,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.8472720340042104,
+          "learned_p_defend": 0.5763920551047277,
+          "learned_state": [
+            5,
+            9,
+            15
+          ],
+          "same_state": true,
+          "step": 61
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.8307665429042779,
+          "bvi_p_defend": 0.5846167285478611,
+          "bvi_state": [
+            5,
+            8,
+            15
+          ],
+          "env_uniform": 0.02112003021349529,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.824258633696471,
+          "learned_p_defend": 0.5879002143802283,
+          "learned_state": [
+            5,
+            8,
+            15
+          ],
+          "same_state": true,
+          "step": 62
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.8562550452831683,
+          "bvi_p_defend": 0.5718724773584158,
+          "bvi_state": [
+            5,
+            10,
+            15
+          ],
+          "env_uniform": 0.007026276417835597,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.8671553187858603,
+          "learned_p_defend": 0.5664492604124596,
+          "learned_state": [
+            5,
+            10,
+            15
+          ],
+          "same_state": true,
+          "step": 63
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.8562550452831683,
+          "bvi_p_defend": 0.5718724773584158,
+          "bvi_state": [
+            5,
+            10,
+            15
+          ],
+          "env_uniform": 0.48160715749298366,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.8671553187858603,
+          "learned_p_defend": 0.5664492604124596,
+          "learned_state": [
+            5,
+            10,
+            15
+          ],
+          "same_state": true,
+          "step": 64
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.846094021816686,
+          "bvi_p_defend": 0.5769529890916569,
+          "bvi_state": [
+            5,
+            9,
+            15
+          ],
+          "env_uniform": 0.6929574313009906,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.8472720340042104,
+          "learned_p_defend": 0.5763920551047277,
+          "learned_state": [
+            5,
+            9,
+            15
+          ],
+          "same_state": true,
+          "step": 65
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.8307665429042779,
+          "bvi_p_defend": 0.5846167285478611,
+          "bvi_state": [
+            5,
+            8,
+            15
+          ],
+          "env_uniform": 0.41140356256958555,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.824258633696471,
+          "learned_p_defend": 0.5879002143802283,
+          "learned_state": [
+            5,
+            8,
+            15
+          ],
+          "same_state": true,
+          "step": 66
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.6403681506296038,
+          "bvi_p_defend": 0.679815924685198,
+          "bvi_state": [
+            4,
+            8,
+            15
+          ],
+          "env_uniform": 0.2302996976480146,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.6338253024269251,
+          "learned_p_defend": 0.6831174855836997,
+          "learned_state": [
+            4,
+            8,
+            15
+          ],
+          "same_state": true,
+          "step": 67
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.480737397504113,
+          "bvi_p_defend": 0.7596313012479435,
+          "bvi_state": [
+            3,
+            8,
+            15
+          ],
+          "env_uniform": 0.027234124734767495,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.4794012451787202,
+          "learned_p_defend": 0.7603195178349034,
+          "learned_state": [
+            3,
+            8,
+            15
+          ],
+          "same_state": true,
+          "step": 68
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.8562550452831683,
+          "bvi_p_defend": 0.5718724773584158,
+          "bvi_state": [
+            5,
+            10,
+            15
+          ],
+          "env_uniform": 0.6348730445444261,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.8671553187858603,
+          "learned_p_defend": 0.5664492604124596,
+          "learned_state": [
+            5,
+            10,
+            15
+          ],
+          "same_state": true,
+          "step": 69
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.846094021816686,
+          "bvi_p_defend": 0.5769529890916569,
+          "bvi_state": [
+            5,
+            9,
+            15
+          ],
+          "env_uniform": 0.5399414218011338,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.8472720340042104,
+          "learned_p_defend": 0.5763920551047277,
+          "learned_state": [
+            5,
+            9,
+            15
+          ],
+          "same_state": true,
+          "step": 70
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.8307665429042779,
+          "bvi_p_defend": 0.5846167285478611,
+          "bvi_state": [
+            5,
+            8,
+            15
+          ],
+          "env_uniform": 0.13199973012747557,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.824258633696471,
+          "learned_p_defend": 0.5879002143802283,
+          "learned_state": [
+            5,
+            8,
+            15
+          ],
+          "same_state": true,
+          "step": 71
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.8159991237385358,
+          "bvi_p_defend": 0.5920004381307321,
+          "bvi_state": [
+            5,
+            8,
+            16
+          ],
+          "env_uniform": 0.7081544342549431,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.7987427103408686,
+          "learned_p_defend": 0.6006674193993259,
+          "learned_state": [
+            5,
+            8,
+            16
+          ],
+          "same_state": true,
+          "step": 72
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.7919791629533647,
+          "bvi_p_defend": 0.6040104185233177,
+          "bvi_state": [
+            5,
+            7,
+            16
+          ],
+          "env_uniform": 0.43259699981969646,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.7758000453216671,
+          "learned_p_defend": 0.6121391716805358,
+          "learned_state": [
+            5,
+            7,
+            16
+          ],
+          "same_state": true,
+          "step": 73
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.6161341384651144,
+          "bvi_p_defend": 0.6919329307674428,
+          "bvi_state": [
+            4,
+            7,
+            16
+          ],
+          "env_uniform": 0.4871956556384629,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.6136741622914094,
+          "learned_p_defend": 0.693204282962867,
+          "learned_state": [
+            4,
+            7,
+            16
+          ],
+          "same_state": true,
+          "step": 74
+        }
+      ],
+      "same_state_fraction": 1.0,
+      "sampled_joint_agreement": 1.0
+    },
+    {
+      "attacker_agreement": 1.0,
+      "defender_agreement": 1.0,
+      "final_bvi_state": [
+        17,
+        5,
+        1
+      ],
+      "final_learned_state": [
+        17,
+        5,
+        1
+      ],
+      "greedy_joint_agreement": 1.0,
+      "horizon": 75,
+      "initial_state": [
+        20,
+        10,
+        0
+      ],
+      "rows": [
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            10,
+            0
+          ],
+          "env_uniform": 0.7647456088915234,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            10,
+            0
+          ],
+          "same_state": true,
+          "step": 0
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            10,
+            0
+          ],
+          "env_uniform": 0.2510982215477835,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            10,
+            0
+          ],
+          "same_state": true,
+          "step": 1
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.1951031222705536,
+          "bvi_p_defend": 0.9024484388647231,
+          "bvi_state": [
+            19,
+            10,
+            0
+          ],
+          "env_uniform": 0.7181380534118987,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.19625733404286705,
+          "learned_p_defend": 0.9018732961357746,
+          "learned_state": [
+            19,
+            10,
+            0
+          ],
+          "same_state": true,
+          "step": 2
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.19504741896513503,
+          "bvi_p_defend": 0.9024762905174325,
+          "bvi_state": [
+            19,
+            9,
+            0
+          ],
+          "env_uniform": 0.8690135647584801,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.19629151282707802,
+          "learned_p_defend": 0.9018561768747626,
+          "learned_state": [
+            19,
+            9,
+            0
+          ],
+          "same_state": true,
+          "step": 3
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.19504741896513503,
+          "bvi_p_defend": 0.9024762905174325,
+          "bvi_state": [
+            19,
+            9,
+            0
+          ],
+          "env_uniform": 0.25343237508301175,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.19629151282707802,
+          "learned_p_defend": 0.9018561768747626,
+          "learned_state": [
+            19,
+            9,
+            0
+          ],
+          "same_state": true,
+          "step": 4
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.1854548098694176,
+          "bvi_p_defend": 0.9072725950652912,
+          "bvi_state": [
+            18,
+            9,
+            0
+          ],
+          "env_uniform": 0.7628027723914516,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.1854894085396045,
+          "learned_p_defend": 0.9072518098304244,
+          "learned_state": [
+            18,
+            9,
+            0
+          ],
+          "same_state": true,
+          "step": 5
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.1854548098694176,
+          "bvi_p_defend": 0.9072725950652912,
+          "bvi_state": [
+            18,
+            9,
+            0
+          ],
+          "env_uniform": 0.6015372068858889,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.1854894085396045,
+          "learned_p_defend": 0.9072518098304244,
+          "learned_state": [
+            18,
+            9,
+            0
+          ],
+          "same_state": true,
+          "step": 6
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.18537133005795217,
+          "bvi_p_defend": 0.9073143349710239,
+          "bvi_state": [
+            18,
+            8,
+            0
+          ],
+          "env_uniform": 0.055553175325794846,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.1851629178840012,
+          "learned_p_defend": 0.9074176756021549,
+          "learned_state": [
+            18,
+            8,
+            0
+          ],
+          "same_state": true,
+          "step": 7
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            10,
+            0
+          ],
+          "env_uniform": 0.01153897335943932,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            10,
+            0
+          ],
+          "same_state": true,
+          "step": 8
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            10,
+            0
+          ],
+          "env_uniform": 0.5724412421221724,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            10,
+            0
+          ],
+          "same_state": true,
+          "step": 9
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            9,
+            0
+          ],
+          "env_uniform": 0.6149760453726032,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            9,
+            0
+          ],
+          "same_state": true,
+          "step": 10
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            8,
+            0
+          ],
+          "env_uniform": 0.9262493178043463,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            8,
+            0
+          ],
+          "same_state": true,
+          "step": 11
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            8,
+            0
+          ],
+          "env_uniform": 0.1257201312791012,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            8,
+            0
+          ],
+          "same_state": true,
+          "step": 12
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            8,
+            1
+          ],
+          "env_uniform": 0.6482084462962551,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            8,
+            1
+          ],
+          "same_state": true,
+          "step": 13
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            7,
+            1
+          ],
+          "env_uniform": 0.22797097988667037,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            7,
+            1
+          ],
+          "same_state": true,
+          "step": 14
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.27107524896345936,
+          "bvi_p_defend": 0.8644623755182703,
+          "bvi_state": [
+            19,
+            7,
+            1
+          ],
+          "env_uniform": 0.5745417534605832,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.27145490849228193,
+          "learned_p_defend": 0.8642851597325141,
+          "learned_state": [
+            19,
+            7,
+            1
+          ],
+          "same_state": true,
+          "step": 15
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.26983503380088497,
+          "bvi_p_defend": 0.8650824830995575,
+          "bvi_state": [
+            19,
+            6,
+            1
+          ],
+          "env_uniform": 0.9426575959599172,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.2699272099789438,
+          "learned_p_defend": 0.8650515195133603,
+          "learned_state": [
+            19,
+            6,
+            1
+          ],
+          "same_state": true,
+          "step": 16
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.19456728589078356,
+          "bvi_p_defend": 0.9027163570546082,
+          "bvi_state": [
+            19,
+            6,
+            0
+          ],
+          "env_uniform": 0.10291586276861364,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.19475684392856418,
+          "learned_p_defend": 0.9026298531422507,
+          "learned_state": [
+            19,
+            6,
+            0
+          ],
+          "same_state": true,
+          "step": 17
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.26983503380088497,
+          "bvi_p_defend": 0.8650824830995575,
+          "bvi_state": [
+            19,
+            6,
+            1
+          ],
+          "env_uniform": 0.6919243305397605,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.2699272099789438,
+          "learned_p_defend": 0.8650515195133603,
+          "learned_state": [
+            19,
+            6,
+            1
+          ],
+          "same_state": true,
+          "step": 18
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.2678569850835727,
+          "bvi_p_defend": 0.8660715074582137,
+          "bvi_state": [
+            19,
+            5,
+            1
+          ],
+          "env_uniform": 0.9323045466643386,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.26813932911596383,
+          "learned_p_defend": 0.8659490064589144,
+          "learned_state": [
+            19,
+            5,
+            1
+          ],
+          "same_state": true,
+          "step": 19
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.19416779870645384,
+          "bvi_p_defend": 0.9029161006467731,
+          "bvi_state": [
+            19,
+            5,
+            0
+          ],
+          "env_uniform": 0.5264893442845751,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.1956199247228002,
+          "learned_p_defend": 0.9022024372422305,
+          "learned_state": [
+            19,
+            5,
+            0
+          ],
+          "same_state": true,
+          "step": 20
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.1935031736879464,
+          "bvi_p_defend": 0.9032484131560268,
+          "bvi_state": [
+            19,
+            4,
+            0
+          ],
+          "env_uniform": 0.954343209456921,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.19438038877372532,
+          "learned_p_defend": 0.902826140235705,
+          "learned_state": [
+            19,
+            4,
+            0
+          ],
+          "same_state": true,
+          "step": 21
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.1935031736879464,
+          "bvi_p_defend": 0.9032484131560268,
+          "bvi_state": [
+            19,
+            4,
+            0
+          ],
+          "env_uniform": 0.42279889556022987,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.19438038877372532,
+          "learned_p_defend": 0.902826140235705,
+          "learned_state": [
+            19,
+            4,
+            0
+          ],
+          "same_state": true,
+          "step": 22
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.1840277531717981,
+          "bvi_p_defend": 0.9079861234141009,
+          "bvi_state": [
+            18,
+            4,
+            0
+          ],
+          "env_uniform": 0.6429924068223721,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.1848745374504196,
+          "learned_p_defend": 0.9075736082628375,
+          "learned_state": [
+            18,
+            4,
+            0
+          ],
+          "same_state": true,
+          "step": 23
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.18299553399173288,
+          "bvi_p_defend": 0.9085022330041336,
+          "bvi_state": [
+            18,
+            3,
+            0
+          ],
+          "env_uniform": 0.6701010851768477,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.18383942436626688,
+          "learned_p_defend": 0.9080943543428438,
+          "learned_state": [
+            18,
+            3,
+            0
+          ],
+          "same_state": true,
+          "step": 24
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.18123561452297798,
+          "bvi_p_defend": 0.9093821927385111,
+          "bvi_state": [
+            18,
+            2,
+            0
+          ],
+          "env_uniform": 0.5745132265160033,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.18218238760699246,
+          "learned_p_defend": 0.9089249100531394,
+          "learned_state": [
+            18,
+            2,
+            0
+          ],
+          "same_state": true,
+          "step": 25
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.17818453690212546,
+          "bvi_p_defend": 0.9109077315489372,
+          "bvi_state": [
+            18,
+            1,
+            0
+          ],
+          "env_uniform": 0.6096768036860843,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.18032715646216135,
+          "learned_p_defend": 0.9098542100539505,
+          "learned_state": [
+            18,
+            1,
+            0
+          ],
+          "same_state": true,
+          "step": 26
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.17280983759821694,
+          "bvi_p_defend": 0.9135950812008915,
+          "bvi_state": [
+            18,
+            0,
+            0
+          ],
+          "env_uniform": 0.9196947485978534,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.1725866651993958,
+          "learned_p_defend": 0.9136846088106306,
+          "learned_state": [
+            18,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 27
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.17280983759821694,
+          "bvi_p_defend": 0.9135950812008915,
+          "bvi_state": [
+            18,
+            0,
+            0
+          ],
+          "env_uniform": 0.9940916332286969,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.1725866651993958,
+          "learned_p_defend": 0.9136846088106306,
+          "learned_state": [
+            18,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 28
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.17280983759821694,
+          "bvi_p_defend": 0.9135950812008915,
+          "bvi_state": [
+            18,
+            0,
+            0
+          ],
+          "env_uniform": 0.057105824813140194,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.1725866651993958,
+          "learned_p_defend": 0.9136846088106306,
+          "learned_state": [
+            18,
+            0,
+            0
+          ],
+          "same_state": true,
+          "step": 29
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            10,
+            0
+          ],
+          "env_uniform": 0.9052824333932455,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            10,
+            0
+          ],
+          "same_state": true,
+          "step": 30
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            10,
+            0
+          ],
+          "env_uniform": 0.951748155492946,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            10,
+            0
+          ],
+          "same_state": true,
+          "step": 31
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            10,
+            0
+          ],
+          "env_uniform": 0.317972933981157,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            10,
+            0
+          ],
+          "same_state": true,
+          "step": 32
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.1951031222705536,
+          "bvi_p_defend": 0.9024484388647231,
+          "bvi_state": [
+            19,
+            10,
+            0
+          ],
+          "env_uniform": 0.6478420237152606,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.19625733404286705,
+          "learned_p_defend": 0.9018732961357746,
+          "learned_state": [
+            19,
+            10,
+            0
+          ],
+          "same_state": true,
+          "step": 33
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.19504741896513503,
+          "bvi_p_defend": 0.9024762905174325,
+          "bvi_state": [
+            19,
+            9,
+            0
+          ],
+          "env_uniform": 0.6786955241097193,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.19629151282707802,
+          "learned_p_defend": 0.9018561768747626,
+          "learned_state": [
+            19,
+            9,
+            0
+          ],
+          "same_state": true,
+          "step": 34
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.19495706015225356,
+          "bvi_p_defend": 0.9025214699238733,
+          "bvi_state": [
+            19,
+            8,
+            0
+          ],
+          "env_uniform": 0.32594301273193726,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.19535653054528423,
+          "learned_p_defend": 0.9023243831027836,
+          "learned_state": [
+            19,
+            8,
+            0
+          ],
+          "same_state": true,
+          "step": 35
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.18537133005795217,
+          "bvi_p_defend": 0.9073143349710239,
+          "bvi_state": [
+            18,
+            8,
+            0
+          ],
+          "env_uniform": 0.8252632239429227,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.1851629178840012,
+          "learned_p_defend": 0.9074176756021549,
+          "learned_state": [
+            18,
+            8,
+            0
+          ],
+          "same_state": true,
+          "step": 36
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.18537133005795217,
+          "bvi_p_defend": 0.9073143349710239,
+          "bvi_state": [
+            18,
+            8,
+            0
+          ],
+          "env_uniform": 0.7325631939215592,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.1851629178840012,
+          "learned_p_defend": 0.9074176756021549,
+          "learned_state": [
+            18,
+            8,
+            0
+          ],
+          "same_state": true,
+          "step": 37
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.18537133005795217,
+          "bvi_p_defend": 0.9073143349710239,
+          "bvi_state": [
+            18,
+            8,
+            0
+          ],
+          "env_uniform": 0.8172855471899642,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.1851629178840012,
+          "learned_p_defend": 0.9074176756021549,
+          "learned_state": [
+            18,
+            8,
+            0
+          ],
+          "same_state": true,
+          "step": 38
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.18537133005795217,
+          "bvi_p_defend": 0.9073143349710239,
+          "bvi_state": [
+            18,
+            8,
+            0
+          ],
+          "env_uniform": 0.09602151622390431,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.1851629178840012,
+          "learned_p_defend": 0.9074176756021549,
+          "learned_state": [
+            18,
+            8,
+            0
+          ],
+          "same_state": true,
+          "step": 39
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.25413218147359024,
+          "bvi_p_defend": 0.8729339092632049,
+          "bvi_state": [
+            18,
+            8,
+            1
+          ],
+          "env_uniform": 0.43120647043616545,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.25386098113736755,
+          "learned_p_defend": 0.8730736511956992,
+          "learned_state": [
+            18,
+            8,
+            1
+          ],
+          "same_state": true,
+          "step": 40
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.2552639702763061,
+          "bvi_p_defend": 0.8723680148618469,
+          "bvi_state": [
+            17,
+            8,
+            1
+          ],
+          "env_uniform": 0.5361550805879166,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.25504970445065944,
+          "learned_p_defend": 0.8724763559254526,
+          "learned_state": [
+            17,
+            8,
+            1
+          ],
+          "same_state": true,
+          "step": 41
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.25457327158313003,
+          "bvi_p_defend": 0.872713364208435,
+          "bvi_state": [
+            17,
+            7,
+            1
+          ],
+          "env_uniform": 0.49945091135801856,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.2540749053336828,
+          "learned_p_defend": 0.8729659064109134,
+          "learned_state": [
+            17,
+            7,
+            1
+          ],
+          "same_state": true,
+          "step": 42
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.2534659405792145,
+          "bvi_p_defend": 0.8732670297103927,
+          "bvi_state": [
+            17,
+            6,
+            1
+          ],
+          "env_uniform": 0.19830842531385373,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.253173594014411,
+          "learned_p_defend": 0.8734192344509955,
+          "learned_state": [
+            17,
+            6,
+            1
+          ],
+          "same_state": true,
+          "step": 43
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.255134269418243,
+          "bvi_p_defend": 0.8724328652908785,
+          "bvi_state": [
+            16,
+            6,
+            1
+          ],
+          "env_uniform": 0.08125727989322362,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.2560931289379079,
+          "learned_p_defend": 0.8719569396512546,
+          "learned_state": [
+            16,
+            6,
+            1
+          ],
+          "same_state": true,
+          "step": 44
+        },
+        {
+          "bvi_action": [
+            1,
+            0
+          ],
+          "bvi_p_attack": 0.34500442915113166,
+          "bvi_p_defend": 0.8274977854244342,
+          "bvi_state": [
+            16,
+            6,
+            2
+          ],
+          "env_uniform": 0.7083775001923358,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            0
+          ],
+          "learned_p_attack": 0.3461373615825539,
+          "learned_p_defend": 0.8269323421995594,
+          "learned_state": [
+            16,
+            6,
+            2
+          ],
+          "same_state": true,
+          "step": 45
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.3394268238314176,
+          "bvi_p_defend": 0.8302865880842912,
+          "bvi_state": [
+            16,
+            5,
+            2
+          ],
+          "env_uniform": 0.5907738307072432,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.34076042291172337,
+          "learned_p_defend": 0.8296265804776946,
+          "learned_state": [
+            16,
+            5,
+            2
+          ],
+          "same_state": true,
+          "step": 46
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.3310212381203922,
+          "bvi_p_defend": 0.834489380939804,
+          "bvi_state": [
+            16,
+            4,
+            2
+          ],
+          "env_uniform": 0.46810607925283165,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.33132071948012265,
+          "learned_p_defend": 0.834349760595013,
+          "learned_state": [
+            16,
+            4,
+            2
+          ],
+          "same_state": true,
+          "step": 47
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.31870714859941845,
+          "bvi_p_defend": 0.8406464257002908,
+          "bvi_state": [
+            16,
+            3,
+            2
+          ],
+          "env_uniform": 0.2648023940818125,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.3224271947772833,
+          "learned_p_defend": 0.8388001544483373,
+          "learned_state": [
+            16,
+            3,
+            2
+          ],
+          "same_state": true,
+          "step": 48
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.32210054181479125,
+          "bvi_p_defend": 0.8389497290926043,
+          "bvi_state": [
+            15,
+            3,
+            2
+          ],
+          "env_uniform": 0.5587942908436018,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.3242229837860111,
+          "learned_p_defend": 0.8378990040974895,
+          "learned_state": [
+            15,
+            3,
+            2
+          ],
+          "same_state": true,
+          "step": 49
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.3044338217555643,
+          "bvi_p_defend": 0.8477830891222178,
+          "bvi_state": [
+            15,
+            2,
+            2
+          ],
+          "env_uniform": 0.315373227033688,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.3057173767653708,
+          "learned_p_defend": 0.8471379318495714,
+          "learned_state": [
+            15,
+            2,
+            2
+          ],
+          "same_state": true,
+          "step": 50
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.3084100499543624,
+          "bvi_p_defend": 0.8457949750228189,
+          "bvi_state": [
+            14,
+            2,
+            2
+          ],
+          "env_uniform": 0.24630188599274838,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.3093240094445474,
+          "learned_p_defend": 0.8453346757504152,
+          "learned_state": [
+            14,
+            2,
+            2
+          ],
+          "same_state": true,
+          "step": 51
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.3135970374588781,
+          "bvi_p_defend": 0.8432014812705609,
+          "bvi_state": [
+            13,
+            2,
+            2
+          ],
+          "env_uniform": 0.8181599847140064,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.31387967322776644,
+          "learned_p_defend": 0.8430579289866664,
+          "learned_state": [
+            13,
+            2,
+            2
+          ],
+          "same_state": true,
+          "step": 52
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.24660516671389568,
+          "bvi_p_defend": 0.8766974166430521,
+          "bvi_state": [
+            13,
+            2,
+            1
+          ],
+          "env_uniform": 0.2674303467483844,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.249837743185792,
+          "learned_p_defend": 0.8750889392257849,
+          "learned_state": [
+            13,
+            2,
+            1
+          ],
+          "same_state": true,
+          "step": 53
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.25082706378583497,
+          "bvi_p_defend": 0.8745864681070825,
+          "bvi_state": [
+            12,
+            2,
+            1
+          ],
+          "env_uniform": 0.3353765138764119,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.25206760980852394,
+          "learned_p_defend": 0.8739710029373052,
+          "learned_state": [
+            12,
+            2,
+            1
+          ],
+          "same_state": true,
+          "step": 54
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.25638561432406737,
+          "bvi_p_defend": 0.8718071928379663,
+          "bvi_state": [
+            11,
+            2,
+            1
+          ],
+          "env_uniform": 0.7573868248314205,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.25755718484909507,
+          "learned_p_defend": 0.87122648293861,
+          "learned_state": [
+            11,
+            2,
+            1
+          ],
+          "same_state": true,
+          "step": 55
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.19284986423876904,
+          "bvi_p_defend": 0.9035750678806155,
+          "bvi_state": [
+            11,
+            2,
+            0
+          ],
+          "env_uniform": 0.12469327735030866,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.1932494183945337,
+          "learned_p_defend": 0.9033754189861487,
+          "learned_state": [
+            11,
+            2,
+            0
+          ],
+          "same_state": true,
+          "step": 56
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.25638561432406737,
+          "bvi_p_defend": 0.8718071928379663,
+          "bvi_state": [
+            11,
+            2,
+            1
+          ],
+          "env_uniform": 0.42011615034891125,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.25755718484909507,
+          "learned_p_defend": 0.87122648293861,
+          "learned_state": [
+            11,
+            2,
+            1
+          ],
+          "same_state": true,
+          "step": 57
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.263785125555933,
+          "bvi_p_defend": 0.8681074372220335,
+          "bvi_state": [
+            10,
+            2,
+            1
+          ],
+          "env_uniform": 0.6267440332993053,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.2653473291907975,
+          "learned_p_defend": 0.8673342788569056,
+          "learned_state": [
+            10,
+            2,
+            1
+          ],
+          "same_state": true,
+          "step": 58
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.25094514725850475,
+          "bvi_p_defend": 0.8745274263707477,
+          "bvi_state": [
+            10,
+            1,
+            1
+          ],
+          "env_uniform": 0.5015713817600302,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.2525857417062093,
+          "learned_p_defend": 0.8737265280868849,
+          "learned_state": [
+            10,
+            1,
+            1
+          ],
+          "same_state": true,
+          "step": 59
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.1934946530607577,
+          "bvi_p_defend": 0.9032526734696211,
+          "bvi_state": [
+            10,
+            0,
+            1
+          ],
+          "env_uniform": 0.4770290661776386,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.19411883129709362,
+          "learned_p_defend": 0.9029424669403348,
+          "learned_state": [
+            10,
+            0,
+            1
+          ],
+          "same_state": true,
+          "step": 60
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.1934946530607577,
+          "bvi_p_defend": 0.9032526734696211,
+          "bvi_state": [
+            10,
+            0,
+            1
+          ],
+          "env_uniform": 0.06007055529254213,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.19411883129709362,
+          "learned_p_defend": 0.9029424669403348,
+          "learned_state": [
+            10,
+            0,
+            1
+          ],
+          "same_state": true,
+          "step": 61
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            10,
+            0
+          ],
+          "env_uniform": 0.848310245420603,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            10,
+            0
+          ],
+          "same_state": true,
+          "step": 62
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            10,
+            0
+          ],
+          "env_uniform": 0.9871336765606706,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            10,
+            0
+          ],
+          "same_state": true,
+          "step": 63
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            10,
+            0
+          ],
+          "env_uniform": 0.13172963198535614,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            10,
+            0
+          ],
+          "same_state": true,
+          "step": 64
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            10,
+            1
+          ],
+          "env_uniform": 0.5563043949100225,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            10,
+            1
+          ],
+          "same_state": true,
+          "step": 65
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            9,
+            1
+          ],
+          "env_uniform": 0.648543247991007,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            9,
+            1
+          ],
+          "same_state": true,
+          "step": 66
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            8,
+            1
+          ],
+          "env_uniform": 0.5096918851734186,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            8,
+            1
+          ],
+          "same_state": true,
+          "step": 67
+        },
+        {
+          "bvi_action": [
+            0,
+            0
+          ],
+          "bvi_p_attack": 0.0,
+          "bvi_p_defend": 0.0,
+          "bvi_state": [
+            20,
+            7,
+            1
+          ],
+          "env_uniform": 0.24380421948124675,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            0
+          ],
+          "learned_p_attack": 0.0,
+          "learned_p_defend": 0.0,
+          "learned_state": [
+            20,
+            7,
+            1
+          ],
+          "same_state": true,
+          "step": 68
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.27107524896345936,
+          "bvi_p_defend": 0.8644623755182703,
+          "bvi_state": [
+            19,
+            7,
+            1
+          ],
+          "env_uniform": 0.2192743000110834,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.27145490849228193,
+          "learned_p_defend": 0.8642851597325141,
+          "learned_state": [
+            19,
+            7,
+            1
+          ],
+          "same_state": true,
+          "step": 69
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.25343965435138,
+          "bvi_p_defend": 0.87328017282431,
+          "bvi_state": [
+            18,
+            7,
+            1
+          ],
+          "env_uniform": 0.32617639032515555,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.2525460510265869,
+          "learned_p_defend": 0.8737304996088757,
+          "learned_state": [
+            18,
+            7,
+            1
+          ],
+          "same_state": true,
+          "step": 70
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.25457327158313003,
+          "bvi_p_defend": 0.872713364208435,
+          "bvi_state": [
+            17,
+            7,
+            1
+          ],
+          "env_uniform": 0.5497891136626895,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.2540749053336828,
+          "learned_p_defend": 0.8729659064109134,
+          "learned_state": [
+            17,
+            7,
+            1
+          ],
+          "same_state": true,
+          "step": 71
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.2534659405792145,
+          "bvi_p_defend": 0.8732670297103927,
+          "bvi_state": [
+            17,
+            6,
+            1
+          ],
+          "env_uniform": 0.6755494130029622,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.253173594014411,
+          "learned_p_defend": 0.8734192344509955,
+          "learned_state": [
+            17,
+            6,
+            1
+          ],
+          "same_state": true,
+          "step": 72
+        },
+        {
+          "bvi_action": [
+            1,
+            1
+          ],
+          "bvi_p_attack": 0.2516945505462119,
+          "bvi_p_defend": 0.8741527247268941,
+          "bvi_state": [
+            17,
+            5,
+            1
+          ],
+          "env_uniform": 0.1243418089665358,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            1,
+            1
+          ],
+          "learned_p_attack": 0.250794150935986,
+          "learned_p_defend": 0.8746119048769277,
+          "learned_state": [
+            17,
+            5,
+            1
+          ],
+          "same_state": true,
+          "step": 73
+        },
+        {
+          "bvi_action": [
+            0,
+            1
+          ],
+          "bvi_p_attack": 0.3365243670484384,
+          "bvi_p_defend": 0.8317378164757808,
+          "bvi_state": [
+            17,
+            5,
+            2
+          ],
+          "env_uniform": 0.8743659779610028,
+          "greedy_joint_match": true,
+          "joint_match": true,
+          "learned_action": [
+            0,
+            1
+          ],
+          "learned_p_attack": 0.33491187513795195,
+          "learned_p_defend": 0.8325509914766035,
+          "learned_state": [
+            17,
+            5,
+            2
+          ],
+          "same_state": true,
+          "step": 74
+        }
+      ],
+      "same_state_fraction": 1.0,
+      "sampled_joint_agreement": 1.0
+    }
+  ],
+  "consistency": {
+    "bvi_rollout_visited_states": {
+      "attacker_agreement": 1.0,
+      "defender_agreement": 0.9333333333333333,
+      "joint_agreement": 0.9333333333333333,
+      "max_probability_gap": 0.26222928493675507,
+      "mean_probability_similarity": 0.9777639391269929,
+      "total": 15
+    },
+    "closed_loop_rollouts": [
+      {
+        "attacker_agreement": 1.0,
+        "defender_agreement": 1.0,
+        "final_bvi_state": [
+          0,
+          0,
+          0
+        ],
+        "final_learned_state": [
+          0,
+          0,
+          0
+        ],
+        "greedy_joint_agreement": 1.0,
+        "horizon": 75,
+        "initial_state": [
+          0,
+          0,
+          0
+        ],
+        "same_state_fraction": 1.0,
+        "sampled_joint_agreement": 1.0
+      },
+      {
+        "attacker_agreement": 1.0,
+        "defender_agreement": 1.0,
+        "final_bvi_state": [
+          4,
+          6,
+          16
+        ],
+        "final_learned_state": [
+          4,
+          6,
+          16
+        ],
+        "greedy_joint_agreement": 1.0,
+        "horizon": 75,
+        "initial_state": [
+          5,
+          10,
+          15
+        ],
+        "same_state_fraction": 1.0,
+        "sampled_joint_agreement": 1.0
+      },
+      {
+        "attacker_agreement": 1.0,
+        "defender_agreement": 1.0,
+        "final_bvi_state": [
+          17,
+          5,
+          1
+        ],
+        "final_learned_state": [
+          17,
+          5,
+          1
+        ],
+        "greedy_joint_agreement": 1.0,
+        "horizon": 75,
+        "initial_state": [
+          20,
+          10,
+          0
+        ],
+        "same_state_fraction": 1.0,
+        "sampled_joint_agreement": 1.0
+      }
+    ],
+    "grid": {
+      "attacker_agreement": 0.9933052586113811,
+      "defender_agreement": 0.9971925278047727,
+      "joint_agreement": 0.9904977864161537,
+      "max_probability_gap": 0.5,
+      "mean_probability_similarity": 0.9960110680584905,
+      "total": 9261
+    }
+  },
+  "dqn": {
+    "architecture": "2 hidden ReLU layers (standard)",
+    "batch_size": 1024,
+    "center_fixed_point_targets": true,
+    "dqn_architecture": "standard",
+    "episode_horizon": 75,
+    "epsilon": 0.2,
+    "epsilon_decay_steps": 0,
+    "epsilon_final": 0.2,
+    "eval_horizon": 75,
+    "fitted_epochs": null,
+    "fitted_iterations": null,
+    "fixed_point_fitting_epochs": 4000,
+    "grad_clip_norm": 20.0,
+    "hidden_size": 256,
+    "huber_delta": 1.0,
+    "initial_state_sampling": "zero",
+    "learner": "neural_fixed_point_q",
+    "learning_rate": 0.0007,
+    "loss_mean_last_100": 1.9177599607657645e-06,
+    "loss_type": "mse",
+    "median_visit_count": null,
+    "min_visit_count": null,
+    "model_based_iterations": 201,
+    "model_based_residual": 9.495670383330435e-08,
+    "n_step": null,
+    "network_feature_set": "structural",
+    "num_updates": 40000,
+    "parameter_file": "experiments/source_faithful_routing_consistency/results/neural_fixed_point_q_structural_b20_seed2_long.dqn_params.npz",
+    "parameter_summary_file": "experiments/source_faithful_routing_consistency/results/neural_fixed_point_q_structural_b20_seed2_long.dqn_params_summary.json",
+    "prioritized_replay_alpha": null,
+    "prioritized_replay_beta": null,
+    "priority_epsilon": null,
+    "replay_capacity": 20000,
+    "reward_scale": "denominator",
+    "runtime_seconds": 92.12867283303058,
+    "samples_per_backup": null,
+    "state_sampling": "rollout",
+    "tabular_learning_rate_decay_power": null,
+    "target_update_interval": 500,
+    "target_update_tau": null,
+    "td_error_mean_last_1000": 0.0017135488865751135,
+    "total_steps": 200000
+  },
+  "params": {
+    "arrival_rate": 0.15,
+    "attack_cost": 0.1,
+    "bound": 20,
+    "defend_cost": 0.2,
+    "discount_rate": 0.1,
+    "num_queues": 3,
+    "service_rate": 0.375
+  },
+  "q_diagnostics": {
+    "bvi_q_range_mean": 0.28386200240192927,
+    "bvi_q_range_p10": 0.14545454545452685,
+    "bvi_q_range_p50": 0.21818181818179028,
+    "by_bvi_regime": {
+      "high_mixed": {
+        "joint_agreement": 0.9928211098176174,
+        "q_mae": 170.34363225007758,
+        "total": 5154
+      },
+      "low_no_attack_no_defend": {
+        "joint_agreement": 0.9923050017488633,
+        "q_mae": 308.99561063535094,
+        "total": 2859
+      },
+      "medium_attack_no_defend": {
+        "joint_agreement": 0.9767628205128205,
+        "q_mae": 233.64491687004784,
+        "total": 1248
+      }
+    },
+    "by_policy_margin": {
+      "margin_0.05_0.10": {
+        "joint_agreement": 1.0,
+        "q_mae": 176.001771137031,
+        "total": 651
+      },
+      "margin_0.10_0.25": {
+        "joint_agreement": 1.0,
+        "q_mae": 171.3618517939475,
+        "total": 2454
+      },
+      "margin_ge_0.25": {
+        "joint_agreement": 0.9903023388476897,
+        "q_mae": 256.26535610973247,
+        "total": 5259
+      },
+      "margin_lt_0.05": {
+        "joint_agreement": 0.9587513935340022,
+        "q_mae": 189.69870968065572,
+        "total": 897
+      }
+    },
+    "near_tie_disagreements": [
+      {
+        "bvi_p_attack": 0.5005205867419051,
+        "bvi_p_defend": 0.7497397066290474,
+        "bvi_q_range": 0.2178792463799084,
+        "joint_match": false,
+        "learned_p_attack": 0.49735932783430625,
+        "learned_p_defend": 0.7513207224951142,
+        "margin": 0.000520586741905138,
+        "q_mae": 161.3309465212186,
+        "q_max_abs_error": 161.33157895397983,
+        "regime": "high_mixed",
+        "state": [
+          8,
+          13,
+          3
+        ]
+      },
+      {
+        "bvi_p_attack": 0.4994179080764722,
+        "bvi_p_defend": 0.7502910459617639,
+        "bvi_q_range": 0.21852088458206254,
+        "joint_match": false,
+        "learned_p_attack": 0.5022508669689871,
+        "learned_p_defend": 0.7488662854607191,
+        "margin": 0.0005820919235278166,
+        "q_mae": 207.7131569620807,
+        "q_max_abs_error": 207.71459386357085,
+        "regime": "high_mixed",
+        "state": [
+          3,
+          12,
+          14
+        ]
+      },
+      {
+        "bvi_p_attack": 0.4994179080764722,
+        "bvi_p_defend": 0.7502910459617639,
+        "bvi_q_range": 0.21852088458206254,
+        "joint_match": false,
+        "learned_p_attack": 0.5007298039199053,
+        "learned_p_defend": 0.7496399365505891,
+        "margin": 0.0005820919235278166,
+        "q_mae": 207.71323573417493,
+        "q_max_abs_error": 207.71367885773182,
+        "regime": "high_mixed",
+        "state": [
+          3,
+          14,
+          12
+        ]
+      },
+      {
+        "bvi_p_attack": 0.49941790807646447,
+        "bvi_p_defend": 0.7502910459617678,
+        "bvi_q_range": 0.21852088458206254,
+        "joint_match": false,
+        "learned_p_attack": 0.5024631697432738,
+        "learned_p_defend": 0.7487944872410945,
+        "margin": 0.0005820919235355326,
+        "q_mae": 207.71304233931147,
+        "q_max_abs_error": 207.71398533336773,
+        "regime": "high_mixed",
+        "state": [
+          12,
+          14,
+          3
+        ]
+      },
+      {
+        "bvi_p_attack": 0.49941790807646447,
+        "bvi_p_defend": 0.7502910459617678,
+        "bvi_q_range": 0.21852088458206254,
+        "joint_match": false,
+        "learned_p_attack": 0.5008197351650991,
+        "learned_p_defend": 0.7495752720991992,
+        "margin": 0.0005820919235355326,
+        "q_mae": 207.7132995174908,
+        "q_max_abs_error": 207.71410463250479,
+        "regime": "high_mixed",
+        "state": [
+          14,
+          12,
+          3
+        ]
+      },
+      {
+        "bvi_p_attack": 0.5007423799234312,
+        "bvi_p_defend": 0.7496288100382844,
+        "bvi_q_range": 0.21775052840629883,
+        "joint_match": false,
+        "learned_p_attack": 0.49560988194220046,
+        "learned_p_defend": 0.7521943479242832,
+        "margin": 0.0007423799234311801,
+        "q_mae": 217.27413055848714,
+        "q_max_abs_error": 217.27492443066,
+        "regime": "high_mixed",
+        "state": [
+          14,
+          3,
+          13
+        ]
+      },
+      {
+        "bvi_p_attack": 0.500742379923439,
+        "bvi_p_defend": 0.7496288100382805,
+        "bvi_q_range": 0.21775052840629883,
+        "joint_match": false,
+        "learned_p_attack": 0.4981278154803852,
+        "learned_p_defend": 0.75091736328241,
+        "margin": 0.0007423799234389516,
+        "q_mae": 217.27431755289612,
+        "q_max_abs_error": 217.27478115871526,
+        "regime": "high_mixed",
+        "state": [
+          14,
+          13,
+          3
+        ]
+      },
+      {
+        "bvi_p_attack": 0.49904928002240156,
+        "bvi_p_defend": 0.7504753599887992,
+        "bvi_q_range": 0.21873601812851007,
+        "joint_match": false,
+        "learned_p_attack": 0.5010046942124033,
+        "learned_p_defend": 0.7494987705545839,
+        "margin": 0.0009507199775984354,
+        "q_mae": 134.96451870451386,
+        "q_max_abs_error": 134.96546527361608,
+        "regime": "high_mixed",
+        "state": [
+          3,
+          6,
+          12
+        ]
+      },
+      {
+        "bvi_p_attack": 0.49904928002240156,
+        "bvi_p_defend": 0.7504753599887992,
+        "bvi_q_range": 0.21873601812851007,
+        "joint_match": false,
+        "learned_p_attack": 0.5019331028334393,
+        "learned_p_defend": 0.7490269536041299,
+        "margin": 0.0009507199775984354,
+        "q_mae": 134.96453744698553,
+        "q_max_abs_error": 134.96607002927738,
+        "regime": "high_mixed",
+        "state": [
+          6,
+          3,
+          12
+        ]
+      },
+      {
+        "bvi_p_attack": 0.5019476971181197,
+        "bvi_p_defend": 0.7490261514409402,
+        "bvi_q_range": 0.21705300973971475,
+        "joint_match": false,
+        "learned_p_attack": 0.49563910614682427,
+        "learned_p_defend": 0.7521751740106067,
+        "margin": 0.0019476971181197067,
+        "q_mae": 203.32561490468305,
+        "q_max_abs_error": 203.32657601569596,
+        "regime": "high_mixed",
+        "state": [
+          3,
+          19,
+          6
+        ]
+      }
+    ],
+    "q_mae": 221.67783043701405,
+    "q_max_abs_error": 501.61796512691535,
+    "q_rmse": 240.03662553402538,
+    "worst_q_states": [
+      {
+        "bvi_p_attack": 0.0,
+        "bvi_p_defend": 0.0,
+        "bvi_q_range": 0.21818181818184712,
+        "joint_match": true,
+        "learned_p_attack": 0.0,
+        "learned_p_defend": 0.0,
+        "margin": 0.5,
+        "q_mae": 501.6176231289925,
+        "q_max_abs_error": 501.61796512691535,
+        "regime": "low_no_attack_no_defend",
+        "state": [
+          20,
+          20,
+          20
+        ]
+      },
+      {
+        "bvi_p_attack": 0.0,
+        "bvi_p_defend": 0.0,
+        "bvi_q_range": 0.21818181818184712,
+        "joint_match": true,
+        "learned_p_attack": 0.0,
+        "learned_p_defend": 0.0,
+        "margin": 0.5,
+        "q_mae": 492.87021894529187,
+        "q_max_abs_error": 493.59814283524076,
+        "regime": "low_no_attack_no_defend",
+        "state": [
+          19,
+          20,
+          20
+        ]
+      },
+      {
+        "bvi_p_attack": 0.0,
+        "bvi_p_defend": 0.0,
+        "bvi_q_range": 0.21818181818184712,
+        "joint_match": true,
+        "learned_p_attack": 0.0,
+        "learned_p_defend": 0.0,
+        "margin": 0.5,
+        "q_mae": 492.8700033430236,
+        "q_max_abs_error": 493.5857050588957,
+        "regime": "low_no_attack_no_defend",
+        "state": [
+          20,
+          20,
+          19
+        ]
+      },
+      {
+        "bvi_p_attack": 0.0,
+        "bvi_p_defend": 0.0,
+        "bvi_q_range": 0.21818181818184712,
+        "joint_match": true,
+        "learned_p_attack": 0.0,
+        "learned_p_defend": 0.0,
+        "margin": 0.5,
+        "q_mae": 492.8682680523616,
+        "q_max_abs_error": 493.58681909597664,
+        "regime": "low_no_attack_no_defend",
+        "state": [
+          20,
+          19,
+          20
+        ]
+      },
+      {
+        "bvi_p_attack": 0.0,
+        "bvi_p_defend": 0.0,
+        "bvi_q_range": 0.21818181818190396,
+        "joint_match": true,
+        "learned_p_attack": 0.0,
+        "learned_p_defend": 0.0,
+        "margin": 0.5,
+        "q_mae": 483.070377460309,
+        "q_max_abs_error": 483.8609659626535,
+        "regime": "low_no_attack_no_defend",
+        "state": [
+          18,
+          20,
+          20
+        ]
+      },
+      {
+        "bvi_p_attack": 0.0,
+        "bvi_p_defend": 0.0,
+        "bvi_q_range": 0.21818181818190396,
+        "joint_match": true,
+        "learned_p_attack": 0.0,
+        "learned_p_defend": 0.0,
+        "margin": 0.5,
+        "q_mae": 483.0699107799895,
+        "q_max_abs_error": 483.865068194682,
+        "regime": "low_no_attack_no_defend",
+        "state": [
+          20,
+          20,
+          18
+        ]
+      },
+      {
+        "bvi_p_attack": 0.0,
+        "bvi_p_defend": 0.0,
+        "bvi_q_range": 0.21818181818190396,
+        "joint_match": true,
+        "learned_p_attack": 0.0,
+        "learned_p_defend": 0.0,
+        "margin": 0.5,
+        "q_mae": 483.06844187117196,
+        "q_max_abs_error": 483.86356852010476,
+        "regime": "low_no_attack_no_defend",
+        "state": [
+          20,
+          18,
+          20
+        ]
+      },
+      {
+        "bvi_p_attack": 0.0,
+        "bvi_p_defend": 0.0,
+        "bvi_q_range": 0.21818181818184712,
+        "joint_match": true,
+        "learned_p_attack": 0.0,
+        "learned_p_defend": 0.0,
+        "margin": 0.5,
+        "q_mae": 483.06383679707466,
+        "q_max_abs_error": 483.87769580096506,
+        "regime": "low_no_attack_no_defend",
+        "state": [
+          19,
+          19,
+          20
+        ]
+      },
+      {
+        "bvi_p_attack": 0.0,
+        "bvi_p_defend": 0.0,
+        "bvi_q_range": 0.21818181818184712,
+        "joint_match": true,
+        "learned_p_attack": 0.0,
+        "learned_p_defend": 0.0,
+        "margin": 0.5,
+        "q_mae": 483.06362448690476,
+        "q_max_abs_error": 483.8625506717797,
+        "regime": "low_no_attack_no_defend",
+        "state": [
+          19,
+          20,
+          19
+        ]
+      },
+      {
+        "bvi_p_attack": 0.0,
+        "bvi_p_defend": 0.0,
+        "bvi_q_range": 0.21818181818184712,
+        "joint_match": true,
+        "learned_p_attack": 0.0,
+        "learned_p_defend": 0.0,
+        "margin": 0.5,
+        "q_mae": 483.06348620267977,
+        "q_max_abs_error": 483.86192143729556,
+        "regime": "low_no_attack_no_defend",
+        "state": [
+          20,
+          19,
+          19
+        ]
+      }
+    ]
+  },
+  "sample_disagreements": {
+    "bvi_rollout_visited_states": [
+      {
+        "attacker_match": true,
+        "bvi_attacker": 1,
+        "bvi_attacker_p_attack": 0.9836942867509932,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.5081528566245034,
+        "defender_match": false,
+        "dqn_attacker": 1,
+        "dqn_attacker_p_attack": 1.0,
+        "dqn_defender": 0,
+        "dqn_defender_p_defend": 0.0,
+        "joint_match": false,
+        "probability_gap": 0.26222928493675507,
+        "state": [
+          2,
+          1,
+          1
+        ]
+      }
+    ],
+    "grid": [
+      {
+        "attacker_match": true,
+        "bvi_attacker": 1,
+        "bvi_attacker_p_attack": 0.9836942867509932,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.5081528566245034,
+        "defender_match": false,
+        "dqn_attacker": 1,
+        "dqn_attacker_p_attack": 1.0,
+        "dqn_defender": 0,
+        "dqn_defender_p_defend": 0.0,
+        "joint_match": false,
+        "probability_gap": 0.26222928493675507,
+        "state": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "attacker_match": true,
+        "bvi_attacker": 1,
+        "bvi_attacker_p_attack": 0.9836942867509932,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.5081528566245034,
+        "defender_match": false,
+        "dqn_attacker": 1,
+        "dqn_attacker_p_attack": 1.0,
+        "dqn_defender": 0,
+        "dqn_defender_p_defend": 0.0,
+        "joint_match": false,
+        "probability_gap": 0.26222928493675507,
+        "state": [
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "attacker_match": true,
+        "bvi_attacker": 1,
+        "bvi_attacker_p_attack": 1.0,
+        "bvi_defender": 0,
+        "bvi_defender_p_defend": 0.0,
+        "defender_match": false,
+        "dqn_attacker": 1,
+        "dqn_attacker_p_attack": 0.9795952564348807,
+        "dqn_defender": 1,
+        "dqn_defender_p_defend": 0.5102588096889387,
+        "joint_match": false,
+        "probability_gap": 0.265331776627029,
+        "state": [
+          3,
+          5,
+          4
+        ]
+      },
+      {
+        "attacker_match": false,
+        "bvi_attacker": 0,
+        "bvi_attacker_p_attack": 0.49904928002240156,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.7504753599887992,
+        "defender_match": true,
+        "dqn_attacker": 1,
+        "dqn_attacker_p_attack": 0.5010046942124033,
+        "dqn_defender": 1,
+        "dqn_defender_p_defend": 0.7494987705545839,
+        "joint_match": false,
+        "probability_gap": 0.0014660018121085139,
+        "state": [
+          3,
+          6,
+          12
+        ]
+      },
+      {
+        "attacker_match": false,
+        "bvi_attacker": 1,
+        "bvi_attacker_p_attack": 0.5050935830696934,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.7474532084651533,
+        "defender_match": true,
+        "dqn_attacker": 0,
+        "dqn_attacker_p_attack": 0.4994271520188488,
+        "dqn_defender": 1,
+        "dqn_defender_p_defend": 0.7502814357463998,
+        "joint_match": false,
+        "probability_gap": 0.004247329166045588,
+        "state": [
+          3,
+          10,
+          4
+        ]
+      },
+      {
+        "attacker_match": false,
+        "bvi_attacker": 1,
+        "bvi_attacker_p_attack": 0.5030931160160103,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.7484534419919948,
+        "defender_match": true,
+        "dqn_attacker": 0,
+        "dqn_attacker_p_attack": 0.4997350639335083,
+        "dqn_defender": 1,
+        "dqn_defender_p_defend": 0.7501349209126652,
+        "joint_match": false,
+        "probability_gap": 0.0025197655015861686,
+        "state": [
+          3,
+          11,
+          5
+        ]
+      },
+      {
+        "attacker_match": false,
+        "bvi_attacker": 0,
+        "bvi_attacker_p_attack": 0.49795425836598384,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.7510228708170081,
+        "defender_match": true,
+        "dqn_attacker": 1,
+        "dqn_attacker_p_attack": 0.5000317898065245,
+        "dqn_defender": 1,
+        "dqn_defender_p_defend": 0.749982633660528,
+        "joint_match": false,
+        "probability_gap": 0.001558884298510435,
+        "state": [
+          3,
+          11,
+          14
+        ]
+      },
+      {
+        "attacker_match": false,
+        "bvi_attacker": 0,
+        "bvi_attacker_p_attack": 0.4994179080764722,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.7502910459617639,
+        "defender_match": true,
+        "dqn_attacker": 1,
+        "dqn_attacker_p_attack": 0.5022508669689871,
+        "dqn_defender": 1,
+        "dqn_defender_p_defend": 0.7488662854607191,
+        "joint_match": false,
+        "probability_gap": 0.0021288596967798668,
+        "state": [
+          3,
+          12,
+          14
+        ]
+      },
+      {
+        "attacker_match": false,
+        "bvi_attacker": 0,
+        "bvi_attacker_p_attack": 0.49795425836598384,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.7510228708170081,
+        "defender_match": true,
+        "dqn_attacker": 1,
+        "dqn_attacker_p_attack": 0.5007159497539984,
+        "dqn_defender": 1,
+        "dqn_defender_p_defend": 0.7496479249746673,
+        "joint_match": false,
+        "probability_gap": 0.0020683186151777277,
+        "state": [
+          3,
+          14,
+          11
+        ]
+      },
+      {
+        "attacker_match": false,
+        "bvi_attacker": 0,
+        "bvi_attacker_p_attack": 0.4994179080764722,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.7502910459617639,
+        "defender_match": true,
+        "dqn_attacker": 1,
+        "dqn_attacker_p_attack": 0.5007298039199053,
+        "dqn_defender": 1,
+        "dqn_defender_p_defend": 0.7496399365505891,
+        "joint_match": false,
+        "probability_gap": 0.0009815026273039262,
+        "state": [
+          3,
+          14,
+          12
+        ]
+      },
+      {
+        "attacker_match": false,
+        "bvi_attacker": 1,
+        "bvi_attacker_p_attack": 0.5019476971181197,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.7490261514409402,
+        "defender_match": true,
+        "dqn_attacker": 0,
+        "dqn_attacker_p_attack": 0.49563910614682427,
+        "dqn_defender": 1,
+        "dqn_defender_p_defend": 0.7521751740106067,
+        "joint_match": false,
+        "probability_gap": 0.004728806770480994,
+        "state": [
+          3,
+          19,
+          6
+        ]
+      },
+      {
+        "attacker_match": true,
+        "bvi_attacker": 1,
+        "bvi_attacker_p_attack": 0.9875356350867416,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.5062321824566292,
+        "defender_match": false,
+        "dqn_attacker": 1,
+        "dqn_attacker_p_attack": 1.0,
+        "dqn_defender": 0,
+        "dqn_defender_p_defend": 0.0,
+        "joint_match": false,
+        "probability_gap": 0.2593482736849438,
+        "state": [
+          4,
+          7,
+          5
+        ]
+      },
+      {
+        "attacker_match": false,
+        "bvi_attacker": 1,
+        "bvi_attacker_p_attack": 0.5030931160160143,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.7484534419919928,
+        "defender_match": true,
+        "dqn_attacker": 0,
+        "dqn_attacker_p_attack": 0.49947848677390017,
+        "dqn_defender": 1,
+        "dqn_defender_p_defend": 0.7502585577388792,
+        "joint_match": false,
+        "probability_gap": 0.0027098724945002206,
+        "state": [
+          5,
+          3,
+          11
+        ]
+      },
+      {
+        "attacker_match": true,
+        "bvi_attacker": 1,
+        "bvi_attacker_p_attack": 0.9875356350867416,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.5062321824566292,
+        "defender_match": false,
+        "dqn_attacker": 1,
+        "dqn_attacker_p_attack": 1.0,
+        "dqn_defender": 0,
+        "dqn_defender_p_defend": 0.0,
+        "joint_match": false,
+        "probability_gap": 0.2593482736849438,
+        "state": [
+          5,
+          7,
+          4
+        ]
+      },
+      {
+        "attacker_match": true,
+        "bvi_attacker": 1,
+        "bvi_attacker_p_attack": 0.9955194923133928,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.5022402538433036,
+        "defender_match": false,
+        "dqn_attacker": 1,
+        "dqn_attacker_p_attack": 1.0,
+        "dqn_defender": 0,
+        "dqn_defender_p_defend": 0.0,
+        "joint_match": false,
+        "probability_gap": 0.25336038076495543,
+        "state": [
+          5,
+          10,
+          7
+        ]
+      },
+      {
+        "attacker_match": true,
+        "bvi_attacker": 1,
+        "bvi_attacker_p_attack": 0.9773077184484611,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.5113461407757695,
+        "defender_match": false,
+        "dqn_attacker": 1,
+        "dqn_attacker_p_attack": 1.0,
+        "dqn_defender": 0,
+        "dqn_defender_p_defend": 0.0,
+        "joint_match": false,
+        "probability_gap": 0.2670192111636542,
+        "state": [
+          5,
+          18,
+          19
+        ]
+      },
+      {
+        "attacker_match": false,
+        "bvi_attacker": 0,
+        "bvi_attacker_p_attack": 0.49904928002240156,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.7504753599887992,
+        "defender_match": true,
+        "dqn_attacker": 1,
+        "dqn_attacker_p_attack": 0.5019331028334393,
+        "dqn_defender": 1,
+        "dqn_defender_p_defend": 0.7490269536041299,
+        "joint_match": false,
+        "probability_gap": 0.002166114597853569,
+        "state": [
+          6,
+          3,
+          12
+        ]
+      },
+      {
+        "attacker_match": false,
+        "bvi_attacker": 1,
+        "bvi_attacker_p_attack": 0.5019476971181197,
+        "bvi_defender": 1,
+        "bvi_defender_p_defend": 0.7490261514409402,
+        "defender_match": true,
+        "dqn_attacker": 0,
+        "dqn_attacker_p_attack": 0.49888689390343066,
+        "dqn_defender": 1,
+        "dqn_defender_p_defend": 0.7505196348484879,
+        "joint_match": false,
+        "probability_gap": 0.0022771433111183903,
+        "state": [
+          6,
+          3,
+          19
+        ]
+      },
+      {
+        "attacker_match": false,
+        "bvi_attacker": 1,
+        "bvi_attacker_p_attack": 1.0,
+        "bvi_defender": 0,
+        "bvi_defender_p_defend": 0.0,
+        "defender_match": true,
+        "dqn_attacker": 0,
+        "dqn_attacker_p_attack": 0.0,
+        "dqn_defender": 0,
+        "dqn_defender_p_defend": 0.0,
+        "joint_match": false,
+        "probability_gap": 0.5,
+        "state": [
+          6,
+          6,
+          8
+        ]
+      },
+      {
+        "attacker_match": false,
+        "bvi_attacker": 1,
+        "bvi_attacker_p_attack": 1.0,
+        "bvi_defender": 0,
+        "bvi_defender_p_defend": 0.0,
+        "defender_match": true,
+        "dqn_attacker": 0,
+        "dqn_attacker_p_attack": 0.0,
+        "dqn_defender": 0,
+        "dqn_defender_p_defend": 0.0,
+        "joint_match": false,
+        "probability_gap": 0.5,
+        "state": [
+          6,
+          8,
+          6
+        ]
+      }
+    ]
+  },
+  "source": {
+    "github_reference": "https://github.com/jiayiWang3/ParallelServer/blob/master/Fig6.ipynb",
+    "note": "DQN training uses sampled TD targets only; BVI policies are used only for evaluation.",
+    "paper": "paper source/BVI source.pdf, Appendix A.5 Algorithm 2"
+  }
+}

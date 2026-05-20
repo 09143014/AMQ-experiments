@@ -1,0 +1,446 @@
+{
+  "benchmark": "polling",
+  "status": "smoke",
+  "num_eval_states": 512,
+  "env_config": {
+    "lambda_arrivals": [
+      1.0,
+      1.25,
+      1.5
+    ],
+    "mu_service": 2.0,
+    "gamma": 0.95,
+    "attack_cost": 0.5,
+    "defend_cost": 0.2,
+    "switch_cost": 0.3,
+    "queue_cost": "sum",
+    "initial_queues": [
+      0,
+      0,
+      0
+    ],
+    "initial_position": 0,
+    "uniformization_rate": 6.0,
+    "bvi_max_queue_length": 30,
+    "boundary_mode": "clip"
+  },
+  "amq_config": {
+    "seed": 0,
+    "feature_set": "amq2",
+    "eta0": 1e-07,
+    "decay_power": 0.6,
+    "initial_state_sampling": "random_grid",
+    "exploring_starts_max_queue_length": 30
+  },
+  "dqn_config": {
+    "hidden_size": 64,
+    "learning_rate": 0.001,
+    "total_steps": 10000,
+    "batch_size": 32,
+    "replay_capacity": 4096,
+    "target_update_interval": 200,
+    "epsilon": 0.15,
+    "seed": 0,
+    "log_interval": 10000,
+    "state_scale": 30.0,
+    "state_feature_set": "polling_augmented",
+    "forced_defender_action_probability": 0.0,
+    "forced_defender_action": null,
+    "exploring_starts_probability": 0.5,
+    "exploring_starts_max_queue_length": 30,
+    "backup_mode": "full_action"
+  },
+  "note": "Polling DQN follows the policy-consistency artifact: NNQTrainer, backup_mode=full_action, polling_augmented features, 50k max steps.",
+  "amq_snapshots": {
+    "1": {
+      "elapsed_seconds": 0.00017387501429766417,
+      "mean_abs_td_error_recent": 9.531666666666666,
+      "weight_norm": 0.0008052475883635106,
+      "parameter_type": "linear_weights",
+      "num_parameters": 18,
+      "effective_target_updates": 1
+    },
+    "2": {
+      "elapsed_seconds": 0.0002600839943625033,
+      "mean_abs_td_error_recent": 9.600041246724999,
+      "weight_norm": 0.001349547359906093,
+      "parameter_type": "linear_weights",
+      "num_parameters": 18,
+      "effective_target_updates": 2
+    },
+    "5": {
+      "elapsed_seconds": 0.0004414590075612068,
+      "mean_abs_td_error_recent": 9.684349645992285,
+      "weight_norm": 0.0024806697838288066,
+      "parameter_type": "linear_weights",
+      "num_parameters": 18,
+      "effective_target_updates": 5
+    },
+    "10": {
+      "elapsed_seconds": 0.0007060420466586947,
+      "mean_abs_td_error_recent": 9.568892898467087,
+      "weight_norm": 0.003564655593989718,
+      "parameter_type": "linear_weights",
+      "num_parameters": 18,
+      "effective_target_updates": 10
+    },
+    "20": {
+      "elapsed_seconds": 0.0011889170273207128,
+      "mean_abs_td_error_recent": 9.388218944047319,
+      "weight_norm": 0.004821188209725817,
+      "parameter_type": "linear_weights",
+      "num_parameters": 18,
+      "effective_target_updates": 20
+    },
+    "50": {
+      "elapsed_seconds": 0.0025995420292019844,
+      "mean_abs_td_error_recent": 9.807318403715685,
+      "weight_norm": 0.007760917836726913,
+      "parameter_type": "linear_weights",
+      "num_parameters": 18,
+      "effective_target_updates": 50
+    },
+    "100": {
+      "elapsed_seconds": 0.00508050003554672,
+      "mean_abs_td_error_recent": 10.783048142447951,
+      "weight_norm": 0.01309002369914573,
+      "parameter_type": "linear_weights",
+      "num_parameters": 18,
+      "effective_target_updates": 100
+    },
+    "200": {
+      "elapsed_seconds": 0.01023670902941376,
+      "mean_abs_td_error_recent": 12.200831878210392,
+      "weight_norm": 0.02170499115940809,
+      "parameter_type": "linear_weights",
+      "num_parameters": 18,
+      "effective_target_updates": 200
+    },
+    "500": {
+      "elapsed_seconds": 0.024363875039853156,
+      "mean_abs_td_error_recent": 11.18053931254387,
+      "weight_norm": 0.038427183507037756,
+      "parameter_type": "linear_weights",
+      "num_parameters": 18,
+      "effective_target_updates": 500
+    },
+    "1000": {
+      "elapsed_seconds": 0.04818075004732236,
+      "mean_abs_td_error_recent": 9.873442660106429,
+      "weight_norm": 0.053924359899768126,
+      "parameter_type": "linear_weights",
+      "num_parameters": 18,
+      "effective_target_updates": 1000
+    },
+    "2000": {
+      "elapsed_seconds": 0.09550808399217203,
+      "mean_abs_td_error_recent": 8.370007825101279,
+      "weight_norm": 0.07120124138034674,
+      "parameter_type": "linear_weights",
+      "num_parameters": 18,
+      "effective_target_updates": 2000
+    },
+    "5000": {
+      "elapsed_seconds": 0.23669024999253452,
+      "mean_abs_td_error_recent": 6.3689300036644525,
+      "weight_norm": 0.0976473078798702,
+      "parameter_type": "linear_weights",
+      "num_parameters": 18,
+      "effective_target_updates": 5000
+    },
+    "10000": {
+      "elapsed_seconds": 0.47382637503324077,
+      "mean_abs_td_error_recent": 5.987513600210353,
+      "weight_norm": 0.1181708265913552,
+      "parameter_type": "linear_weights",
+      "num_parameters": 18,
+      "effective_target_updates": 10000
+    }
+  },
+  "dqn_snapshots": {
+    "100": {
+      "elapsed_seconds": 0.14433870802167803,
+      "loss_mean_recent": 40.797693849531946,
+      "replay_size": 100,
+      "num_gradient_updates": 69,
+      "parameter_type": "neural_network",
+      "num_parameters": 1412,
+      "parameter_norm": 4.201620019915807,
+      "effective_target_updates": 8832
+    },
+    "200": {
+      "elapsed_seconds": 0.33709895802894607,
+      "loss_mean_recent": 7.484529468911129,
+      "replay_size": 200,
+      "num_gradient_updates": 169,
+      "parameter_type": "neural_network",
+      "num_parameters": 1412,
+      "parameter_norm": 5.669026615149149,
+      "effective_target_updates": 21632
+    },
+    "500": {
+      "elapsed_seconds": 1.1474381660227664,
+      "loss_mean_recent": 6.303926740522522,
+      "replay_size": 500,
+      "num_gradient_updates": 469,
+      "parameter_type": "neural_network",
+      "num_parameters": 1412,
+      "parameter_norm": 8.541116960384263,
+      "effective_target_updates": 60032
+    },
+    "1000": {
+      "elapsed_seconds": 2.6406327500008047,
+      "loss_mean_recent": 0.8906374403518998,
+      "replay_size": 1000,
+      "num_gradient_updates": 969,
+      "parameter_type": "neural_network",
+      "num_parameters": 1412,
+      "parameter_norm": 10.45453608407633,
+      "effective_target_updates": 124032
+    },
+    "2000": {
+      "elapsed_seconds": 7.171578458044678,
+      "loss_mean_recent": 0.2801206620155938,
+      "replay_size": 2000,
+      "num_gradient_updates": 1969,
+      "parameter_type": "neural_network",
+      "num_parameters": 1412,
+      "parameter_norm": 13.985879294524054,
+      "effective_target_updates": 252032
+    },
+    "5000": {
+      "elapsed_seconds": 28.307398541015573,
+      "loss_mean_recent": 0.07796901443870395,
+      "replay_size": 4096,
+      "num_gradient_updates": 4969,
+      "parameter_type": "neural_network",
+      "num_parameters": 1412,
+      "parameter_norm": 18.399663728448044,
+      "effective_target_updates": 636032
+    },
+    "10000": {
+      "elapsed_seconds": 67.81890541600296,
+      "loss_mean_recent": 0.07005199688959786,
+      "replay_size": 4096,
+      "num_gradient_updates": 9969,
+      "parameter_type": "neural_network",
+      "num_parameters": 1412,
+      "parameter_norm": 21.334760660449444,
+      "effective_target_updates": 1276032
+    }
+  },
+  "amq_stabilization": {
+    "epsilon": 0.05,
+    "final_checkpoint": 10000,
+    "stable_checkpoint": 50,
+    "checkpoints": [
+      {
+        "checkpoint": 1,
+        "attacker_gap": 0.0673828125,
+        "defender_gap": 0.134765625,
+        "joint_gap": 0.10107421875,
+        "policy_similarity_percent": 89.892578125,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 86.5234375,
+        "joint_action_agreement_percent": 86.5234375
+      },
+      {
+        "checkpoint": 2,
+        "attacker_gap": 0.064453125,
+        "defender_gap": 0.12890625,
+        "joint_gap": 0.0966796875,
+        "policy_similarity_percent": 90.33203125,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 87.109375,
+        "joint_action_agreement_percent": 87.109375
+      },
+      {
+        "checkpoint": 5,
+        "attacker_gap": 0.05859375,
+        "defender_gap": 0.1171875,
+        "joint_gap": 0.087890625,
+        "policy_similarity_percent": 91.2109375,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 88.28125,
+        "joint_action_agreement_percent": 88.28125
+      },
+      {
+        "checkpoint": 10,
+        "attacker_gap": 0.0546875,
+        "defender_gap": 0.109375,
+        "joint_gap": 0.08203125,
+        "policy_similarity_percent": 91.796875,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 89.0625,
+        "joint_action_agreement_percent": 89.0625
+      },
+      {
+        "checkpoint": 20,
+        "attacker_gap": 0.044921875,
+        "defender_gap": 0.08984375,
+        "joint_gap": 0.0673828125,
+        "policy_similarity_percent": 93.26171875,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 91.015625,
+        "joint_action_agreement_percent": 91.015625
+      },
+      {
+        "checkpoint": 50,
+        "attacker_gap": 0.0146484375,
+        "defender_gap": 0.029296875,
+        "joint_gap": 0.02197265625,
+        "policy_similarity_percent": 97.802734375,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 97.0703125,
+        "joint_action_agreement_percent": 97.0703125
+      },
+      {
+        "checkpoint": 100,
+        "attacker_gap": 0.00390625,
+        "defender_gap": 0.0078125,
+        "joint_gap": 0.005859375,
+        "policy_similarity_percent": 99.4140625,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 99.21875,
+        "joint_action_agreement_percent": 99.21875
+      },
+      {
+        "checkpoint": 200,
+        "attacker_gap": 0.0,
+        "defender_gap": 0.0,
+        "joint_gap": 0.0,
+        "policy_similarity_percent": 100.0,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 100.0,
+        "joint_action_agreement_percent": 100.0
+      },
+      {
+        "checkpoint": 500,
+        "attacker_gap": 0.0,
+        "defender_gap": 0.0,
+        "joint_gap": 0.0,
+        "policy_similarity_percent": 100.0,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 100.0,
+        "joint_action_agreement_percent": 100.0
+      },
+      {
+        "checkpoint": 1000,
+        "attacker_gap": 0.0,
+        "defender_gap": 0.0,
+        "joint_gap": 0.0,
+        "policy_similarity_percent": 100.0,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 100.0,
+        "joint_action_agreement_percent": 100.0
+      },
+      {
+        "checkpoint": 2000,
+        "attacker_gap": 0.0,
+        "defender_gap": 0.0,
+        "joint_gap": 0.0,
+        "policy_similarity_percent": 100.0,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 100.0,
+        "joint_action_agreement_percent": 100.0
+      },
+      {
+        "checkpoint": 5000,
+        "attacker_gap": 0.0,
+        "defender_gap": 0.0,
+        "joint_gap": 0.0,
+        "policy_similarity_percent": 100.0,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 100.0,
+        "joint_action_agreement_percent": 100.0
+      },
+      {
+        "checkpoint": 10000,
+        "attacker_gap": 0.0,
+        "defender_gap": 0.0,
+        "joint_gap": 0.0,
+        "policy_similarity_percent": 100.0,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 100.0,
+        "joint_action_agreement_percent": 100.0
+      }
+    ]
+  },
+  "dqn_stabilization": {
+    "epsilon": 0.05,
+    "final_checkpoint": 10000,
+    "stable_checkpoint": 10000,
+    "checkpoints": [
+      {
+        "checkpoint": 100,
+        "attacker_gap": 0.7578125,
+        "defender_gap": 0.7619209465486605,
+        "joint_gap": 0.7598667232743302,
+        "policy_similarity_percent": 24.013327672566977,
+        "attacker_action_agreement_percent": 0.0,
+        "defender_action_agreement_percent": 26.7578125,
+        "joint_action_agreement_percent": 0.0
+      },
+      {
+        "checkpoint": 200,
+        "attacker_gap": 0.7578125,
+        "defender_gap": 0.7627367995498575,
+        "joint_gap": 0.7602746497749288,
+        "policy_similarity_percent": 23.972535022507124,
+        "attacker_action_agreement_percent": 0.0,
+        "defender_action_agreement_percent": 26.5625,
+        "joint_action_agreement_percent": 0.0
+      },
+      {
+        "checkpoint": 500,
+        "attacker_gap": 0.2470703125,
+        "defender_gap": 0.5441474962029366,
+        "joint_gap": 0.3956089043514683,
+        "policy_similarity_percent": 60.43910956485317,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 42.3828125,
+        "joint_action_agreement_percent": 42.3828125
+      },
+      {
+        "checkpoint": 1000,
+        "attacker_gap": 0.251953125,
+        "defender_gap": 0.5636851585343551,
+        "joint_gap": 0.40781914176717754,
+        "policy_similarity_percent": 59.21808582328225,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 40.625,
+        "joint_action_agreement_percent": 40.625
+      },
+      {
+        "checkpoint": 2000,
+        "attacker_gap": 0.181640625,
+        "defender_gap": 0.22275142073797655,
+        "joint_gap": 0.20219602286898827,
+        "policy_similarity_percent": 79.78039771310117,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 82.6171875,
+        "joint_action_agreement_percent": 82.6171875
+      },
+      {
+        "checkpoint": 5000,
+        "attacker_gap": 0.1630859375,
+        "defender_gap": 0.17207383801444232,
+        "joint_gap": 0.16757988775722116,
+        "policy_similarity_percent": 83.24201122427787,
+        "attacker_action_agreement_percent": 99.0234375,
+        "defender_action_agreement_percent": 83.203125,
+        "joint_action_agreement_percent": 82.421875
+      },
+      {
+        "checkpoint": 10000,
+        "attacker_gap": 0.0,
+        "defender_gap": 0.0,
+        "joint_gap": 0.0,
+        "policy_similarity_percent": 100.0,
+        "attacker_action_agreement_percent": 100.0,
+        "defender_action_agreement_percent": 100.0,
+        "joint_action_agreement_percent": 100.0
+      }
+    ]
+  }
+}

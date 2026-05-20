@@ -1,0 +1,294 @@
+{
+  "benchmark": "routing",
+  "num_seeds": 3,
+  "seed_rows": [
+    {
+      "seed": 0,
+      "amq_stable_checkpoint": 100,
+      "amq_accounting_checkpoint": 100,
+      "amq_final_checkpoint": 5000,
+      "amq_stable_before_horizon": true,
+      "amq_censored_at_horizon": false,
+      "amq_not_stabilized_within_horizon": false,
+      "amq_stable_elapsed_seconds": 0.0031608749995939434,
+      "amq_stable_work_to_stable": 100,
+      "amq_stable_secondary_fitting_target_entries": 0,
+      "dqn_stable_checkpoint": 500,
+      "dqn_accounting_checkpoint": 500,
+      "dqn_final_checkpoint": 1500,
+      "dqn_stable_before_horizon": true,
+      "dqn_censored_at_horizon": false,
+      "dqn_not_stabilized_within_horizon": false,
+      "dqn_stable_elapsed_seconds": 36.79455454193521,
+      "dqn_stable_work_to_stable": 8557164,
+      "dqn_stable_secondary_fitting_target_entries": 18522000
+    },
+    {
+      "seed": 1,
+      "amq_stable_checkpoint": 50,
+      "amq_accounting_checkpoint": 50,
+      "amq_final_checkpoint": 5000,
+      "amq_stable_before_horizon": true,
+      "amq_censored_at_horizon": false,
+      "amq_not_stabilized_within_horizon": false,
+      "amq_stable_elapsed_seconds": 0.0018971660174429417,
+      "amq_stable_work_to_stable": 50,
+      "amq_stable_secondary_fitting_target_entries": 0,
+      "dqn_stable_checkpoint": 200,
+      "dqn_accounting_checkpoint": 200,
+      "dqn_final_checkpoint": 1500,
+      "dqn_stable_before_horizon": true,
+      "dqn_censored_at_horizon": false,
+      "dqn_not_stabilized_within_horizon": false,
+      "dqn_stable_elapsed_seconds": 25.026617542025633,
+      "dqn_stable_work_to_stable": 8557164,
+      "dqn_stable_secondary_fitting_target_entries": 7408800
+    },
+    {
+      "seed": 2,
+      "amq_stable_checkpoint": 500,
+      "amq_accounting_checkpoint": 500,
+      "amq_final_checkpoint": 5000,
+      "amq_stable_before_horizon": true,
+      "amq_censored_at_horizon": false,
+      "amq_not_stabilized_within_horizon": false,
+      "amq_stable_elapsed_seconds": 0.01312604098347947,
+      "amq_stable_work_to_stable": 500,
+      "amq_stable_secondary_fitting_target_entries": 0,
+      "dqn_stable_checkpoint": 100,
+      "dqn_accounting_checkpoint": 100,
+      "dqn_final_checkpoint": 1500,
+      "dqn_stable_before_horizon": true,
+      "dqn_censored_at_horizon": false,
+      "dqn_not_stabilized_within_horizon": false,
+      "dqn_stable_elapsed_seconds": 21.334603500028607,
+      "dqn_stable_work_to_stable": 8557164,
+      "dqn_stable_secondary_fitting_target_entries": 3704400
+    }
+  ],
+  "aggregate": {
+    "amq": {
+      "mean_stable_checkpoint": 216.66666666666666,
+      "median_stable_checkpoint": 100,
+      "auxiliary_mean_stable_elapsed_seconds": 0.006061360666838785,
+      "auxiliary_median_stable_elapsed_seconds": 0.0031608749995939434,
+      "mean_work_to_stable": 216.66666666666666,
+      "median_work_to_stable": 100,
+      "mean_secondary_fitting_target_entries_at_stable": 0,
+      "median_secondary_fitting_target_entries_at_stable": 0,
+      "stable_before_horizon_count": 3,
+      "censored_at_horizon_count": 0,
+      "not_stabilized_within_horizon_count": 0,
+      "mean_stable_elapsed_seconds": 0.006061360666838785,
+      "median_stable_elapsed_seconds": 0.0031608749995939434,
+      "mean_stable_effective_bellman_backups": 216.66666666666666,
+      "median_stable_effective_bellman_backups": 100
+    },
+    "dqn": {
+      "mean_stable_checkpoint": 266.6666666666667,
+      "median_stable_checkpoint": 200,
+      "auxiliary_mean_stable_elapsed_seconds": 27.718591861329816,
+      "auxiliary_median_stable_elapsed_seconds": 25.026617542025633,
+      "mean_work_to_stable": 8557164,
+      "median_work_to_stable": 8557164,
+      "mean_secondary_fitting_target_entries_at_stable": 9878400,
+      "median_secondary_fitting_target_entries_at_stable": 7408800,
+      "stable_before_horizon_count": 3,
+      "censored_at_horizon_count": 0,
+      "not_stabilized_within_horizon_count": 0,
+      "mean_stable_elapsed_seconds": 27.718591861329816,
+      "median_stable_elapsed_seconds": 25.026617542025633,
+      "mean_stable_effective_bellman_backups": 8557164,
+      "median_stable_effective_bellman_backups": 8557164
+    }
+  },
+  "work_ratio_dqn_over_amq": 39494.60307692308,
+  "median_work_ratio_dqn_over_amq": 85571.64,
+  "per_seed_work_ratios_dqn_over_amq": [
+    {
+      "seed": 0,
+      "dqn_over_amq": 85571.64
+    },
+    {
+      "seed": 1,
+      "dqn_over_amq": 171143.28
+    },
+    {
+      "seed": 2,
+      "dqn_over_amq": 17114.328
+    }
+  ],
+  "seed_win_counts_by_work": {
+    "amq_less_work": 3,
+    "dqn_less_work": 0,
+    "tie": 0
+  },
+  "curves": {
+    "amq": [
+      {
+        "checkpoint": 1,
+        "mean_joint_gap": 0.18768671489759925,
+        "mean_policy_similarity_percent": 81.23132851024008,
+        "mean_elapsed_seconds": 0.0006643750239163637,
+        "mean_work_to_checkpoint": 1.0
+      },
+      {
+        "checkpoint": 2,
+        "mean_joint_gap": 0.19114206529172517,
+        "mean_policy_similarity_percent": 80.88579347082748,
+        "mean_elapsed_seconds": 0.0007240140112116933,
+        "mean_work_to_checkpoint": 2.0
+      },
+      {
+        "checkpoint": 5,
+        "mean_joint_gap": 0.1553647914192132,
+        "mean_policy_similarity_percent": 84.46352085807868,
+        "mean_elapsed_seconds": 0.0008128190141481658,
+        "mean_work_to_checkpoint": 5.0
+      },
+      {
+        "checkpoint": 10,
+        "mean_joint_gap": 0.12797394089911096,
+        "mean_policy_similarity_percent": 87.2026059100889,
+        "mean_elapsed_seconds": 0.0009403330041095614,
+        "mean_work_to_checkpoint": 10.0
+      },
+      {
+        "checkpoint": 20,
+        "mean_joint_gap": 0.12127919951049203,
+        "mean_policy_similarity_percent": 87.87208004895079,
+        "mean_elapsed_seconds": 0.0011735966545529664,
+        "mean_work_to_checkpoint": 20.0
+      },
+      {
+        "checkpoint": 50,
+        "mean_joint_gap": 0.055411582622466975,
+        "mean_policy_similarity_percent": 94.4588417377533,
+        "mean_elapsed_seconds": 0.001895318991349389,
+        "mean_work_to_checkpoint": 50.0
+      },
+      {
+        "checkpoint": 100,
+        "mean_joint_gap": 0.045315480689630344,
+        "mean_policy_similarity_percent": 95.46845193103697,
+        "mean_elapsed_seconds": 0.0031568330014124513,
+        "mean_work_to_checkpoint": 100.0
+      },
+      {
+        "checkpoint": 200,
+        "mean_joint_gap": 0.040456394197890794,
+        "mean_policy_similarity_percent": 95.95436058021092,
+        "mean_elapsed_seconds": 0.005604874691925943,
+        "mean_work_to_checkpoint": 200.0
+      },
+      {
+        "checkpoint": 500,
+        "mean_joint_gap": 0.01279559442824749,
+        "mean_policy_similarity_percent": 98.72044055717525,
+        "mean_elapsed_seconds": 0.012629680354924252,
+        "mean_work_to_checkpoint": 500.0
+      },
+      {
+        "checkpoint": 1000,
+        "mean_joint_gap": 0.004139221826296656,
+        "mean_policy_similarity_percent": 99.58607781737034,
+        "mean_elapsed_seconds": 0.023865444333447765,
+        "mean_work_to_checkpoint": 1000.0
+      },
+      {
+        "checkpoint": 2000,
+        "mean_joint_gap": 0.00334737069430947,
+        "mean_policy_similarity_percent": 99.66526293056906,
+        "mean_elapsed_seconds": 0.04720575001556426,
+        "mean_work_to_checkpoint": 2000.0
+      },
+      {
+        "checkpoint": 5000,
+        "mean_joint_gap": 0.0,
+        "mean_policy_similarity_percent": 100.0,
+        "mean_elapsed_seconds": 0.10745009700379644,
+        "mean_work_to_checkpoint": 5000.0
+      }
+    ],
+    "dqn": [
+      {
+        "checkpoint": 1,
+        "mean_joint_gap": 0.22007890950031872,
+        "mean_policy_similarity_percent": 77.99210904996814,
+        "mean_elapsed_seconds": 17.359813083331876,
+        "mean_work_to_checkpoint": 8557164.0
+      },
+      {
+        "checkpoint": 2,
+        "mean_joint_gap": 0.2115491103604472,
+        "mean_policy_similarity_percent": 78.84508896395528,
+        "mean_elapsed_seconds": 17.39071663899813,
+        "mean_work_to_checkpoint": 8557164.0
+      },
+      {
+        "checkpoint": 5,
+        "mean_joint_gap": 0.18881550593521895,
+        "mean_policy_similarity_percent": 81.1184494064781,
+        "mean_elapsed_seconds": 17.4867822919817,
+        "mean_work_to_checkpoint": 8557164.0
+      },
+      {
+        "checkpoint": 10,
+        "mean_joint_gap": 0.19351291305695317,
+        "mean_policy_similarity_percent": 80.64870869430469,
+        "mean_elapsed_seconds": 17.674391652670845,
+        "mean_work_to_checkpoint": 8557164.0
+      },
+      {
+        "checkpoint": 20,
+        "mean_joint_gap": 0.14408416192221907,
+        "mean_policy_similarity_percent": 85.5915838077781,
+        "mean_elapsed_seconds": 18.055020777663838,
+        "mean_work_to_checkpoint": 8557164.0
+      },
+      {
+        "checkpoint": 50,
+        "mean_joint_gap": 0.10004767180727905,
+        "mean_policy_similarity_percent": 89.9952328192721,
+        "mean_elapsed_seconds": 19.221729263682693,
+        "mean_work_to_checkpoint": 8557164.0
+      },
+      {
+        "checkpoint": 100,
+        "mean_joint_gap": 0.050273415322228045,
+        "mean_policy_similarity_percent": 94.9726584677772,
+        "mean_elapsed_seconds": 21.174055180337746,
+        "mean_work_to_checkpoint": 8557164.0
+      },
+      {
+        "checkpoint": 200,
+        "mean_joint_gap": 0.038868587048620715,
+        "mean_policy_similarity_percent": 96.11314129513792,
+        "mean_elapsed_seconds": 25.060954513998393,
+        "mean_work_to_checkpoint": 8557164.0
+      },
+      {
+        "checkpoint": 500,
+        "mean_joint_gap": 0.029119792445590313,
+        "mean_policy_similarity_percent": 97.08802075544097,
+        "mean_elapsed_seconds": 36.981562374994006,
+        "mean_work_to_checkpoint": 8557164.0
+      },
+      {
+        "checkpoint": 1000,
+        "mean_joint_gap": 0.02191060371378826,
+        "mean_policy_similarity_percent": 97.80893962862118,
+        "mean_elapsed_seconds": 57.77001598632584,
+        "mean_work_to_checkpoint": 8557164.0
+      },
+      {
+        "checkpoint": 1500,
+        "mean_joint_gap": 0.0,
+        "mean_policy_similarity_percent": 100.0,
+        "mean_elapsed_seconds": 78.54175012498551,
+        "mean_work_to_checkpoint": 8557164.0
+      }
+    ]
+  },
+  "note": "Main speed metric is work_to_stable: cumulative effective Bellman/target evaluations at the first sustained self-stabilizing checkpoint. Runtime is recorded only as auxiliary implementation metadata."
+}

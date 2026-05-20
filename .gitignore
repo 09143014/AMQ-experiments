@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+venv/
+*.log
+
+# Large intermediate outputs that can be regenerated.
+*_policy_rows.jsonl
+results/**/polling_*_policy_rows.jsonl
+results/**/routing_*_policy_rows.jsonl
+

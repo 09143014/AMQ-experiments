@@ -1,0 +1,36 @@
+experiment:
+  name: polling3_bvi_policy_probe_max30
+  output_dir: results
+
+env:
+  name: polling
+  lambda_arrivals: [1.0, 1.25, 1.5]
+  mu_service: 2.0
+  gamma: 0.95
+  attack_cost: 0.5
+  defend_cost: 0.2
+  switch_cost: 0.3
+  queue_cost: sum
+  initial_queues: [0, 0, 0]
+  initial_position: 0
+  uniformization_rate: 6.0
+
+algorithm:
+  name: bvi
+
+bvi:
+  max_queue_length: 30
+  tolerance: 0.000001
+  max_iterations: 1000
+  boundary_mode: clip
+
+evaluation:
+  num_episodes: 10
+  horizon: 50
+  seed: 400
+  tail_threshold: 30
+  boundary_state: 30
+
+policy_grid:
+  max_state: 30
+  high_probability_threshold: 0.5
