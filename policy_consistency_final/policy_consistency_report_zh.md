@@ -375,27 +375,64 @@ $$
 
 ![Polling P3](figures/polling3_bvi_vs_nnq_initial_1_2_1_0_h75.svg)
 
-## 6. 文件与复现线索
+## 6. 文件、代码结构与复现线索
 
-本报告目录结构：
+本报告目录分为三层：报告资产、可复现实验代码、以及最终模型/策略产物。
 
 ```text
 policy_consistency_final/
   policy_consistency_report_zh.md
   figures/
   data/
+  code/
 ```
 
-每张 SVG 图都有对应的 JSONL rollout data，保存在 `data/` 目录下。核心实现文件包括：
+其中 `figures/` 保存 9 张正式 rollout 图；`data/` 保存每张图对应的逐步 JSONL rollout data。`code/` 是本模块的可复现代码包，结构如下：
 
 ```text
-src/adversarial_queueing/algorithms/bvi.py
-src/adversarial_queueing/algorithms/nnq.py
-src/adversarial_queueing/algorithms/minimax_solver.py
-scripts/build_routing_policy_path_figure.py
-scripts/build_service_rate_policy_path_figure.py
-scripts/build_polling_policy_path_figure.py
+code/
+  README.md
+  src/adversarial_queueing/
+    algorithms/
+    envs/
+    features/
+    evaluation/
+    utils/
+  experiments/source_faithful_routing_consistency/
+  scripts/
+  configs/
+  artifacts/
 ```
+
+各部分作用如下。
+
+| Path | Role |
+|---|---|
+| `code/src/adversarial_queueing/algorithms/bvi.py` | BVI 主实现：在 bounded grid 上做 value iteration / matrix-game Bellman backup，并导出 attacker / defender policy。 |
+| `code/src/adversarial_queueing/algorithms/nnq.py` | NNQ / fitted minimax-DQN 相关实现：神经网络 Q 近似、target network、replay update、Bellman target 回归。 |
+| `code/src/adversarial_queueing/algorithms/minimax_solver.py` | 统一的 zero-sum matrix game solver；BVI 与 DQN policy extraction 都通过它把 Q/payoff matrix 转成 attacker / defender mixed policy。 |
+| `code/src/adversarial_queueing/envs/` | 三个 benchmark 的环境动力学：routing、polling、service-rate-control。 |
+| `code/src/adversarial_queueing/features/` | DQN 输入特征构造，包括 routing / polling / service-rate 的 state feature encoding。 |
+| `code/src/adversarial_queueing/evaluation/` | policy grid、rollout、policy inspection 与图生成脚本共用的读取/评估逻辑。 |
+| `code/experiments/source_faithful_routing_consistency/routing_bvi_dqn_consistency.py` | Routing 的 source-faithful BVI 与 neural fixed-point minimax-Q / fitted minimax-DQN 实现。 |
+| `code/experiments/source_faithful_routing_consistency/plot_neural_fixed_point_rollout.py` | 生成 routing 三张 75-step BVI vs DQN 决策链路图。 |
+| `code/scripts/build_service_rate_policy_path_figure.py` | 读取 service-rate 的 BVI / NNQ artifact，生成 service-rate 三张 75-step 决策链路图。 |
+| `code/scripts/build_polling_policy_path_figure.py` | 读取 polling 三队列 BVI / NNQ artifact，生成 polling 三张 75-step 决策链路图。 |
+| `code/configs/` | Polling 与 service-rate-control 的正式 BVI/NNQ 配置文件。 |
+| `code/artifacts/` | 最终报告所需的模型参数、policy grid、policy inspection、Q diagnostic 等输入产物。 |
+
+更具体地说，本报告的三组图由以下入口生成：
+
+- Routing：`code/experiments/source_faithful_routing_consistency/plot_neural_fixed_point_rollout.py`
+- Service-rate-control：`code/scripts/build_service_rate_policy_path_figure.py`
+- Polling：`code/scripts/build_polling_policy_path_figure.py`
+
+这些脚本读取 `code/artifacts/` 中的最终模型或策略产物，在相同 initial state、相同 environment randomness、相同 policy sampling random stream 下展开 75 步真实环境 rollout，然后同时写出：
+
+- `figures/*.svg`：用于报告展示的决策链路图；
+- `data/*.jsonl`：逐 step 的 state、arrival/service event、BVI action、DQN action 与 agreement 记录。
+
+复现 9 张正式图的完整命令保存在 `code/README.md`。运行时建议从 `policy_consistency_final/code/` 作为工作目录执行，并确保 Python 能导入本目录下的 `src/adversarial_queueing` 包。
 
 ## 7. 结论
 
