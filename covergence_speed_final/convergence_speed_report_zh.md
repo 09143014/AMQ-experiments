@@ -15,6 +15,7 @@
 主要结论：
 
 - Routing 和 polling 已完成 full-grid 10-seed evaluation；service-rate-control 是 3-seed extension benchmark。
+- Service-rate-control convergence-speed 结果对应旧 LMH 语义，即 defender 直接选择服务率档位。`policy_consistency_final` 已切换到 service-rate-control v2 defend game；两者不能直接混用或并列解读。
 - 在三个 benchmark 上，按预注册 `work_to_stable` 口径，AMQ 的 work 显著少于 fitted minimax-DQN。
 - Polling 与 service-rate-control 的 DQN 都是在 final checkpoint 才满足稳定判据，因此应解释为 budget ceiling / horizon-censored，而不是 DQN 已经提前稳定。
 - Routing DQN 的 primary work 是 model-based fixed-point 预付成本；后续 neural fitting 的工作量单独报告为 secondary fitting work。
@@ -153,7 +154,7 @@ Polling 使用：
 
 ## 6. Service-Rate-Control
 
-Service-rate-control 不是 AMQ 论文原始 benchmark，因此这里是 extension benchmark。
+Service-rate-control 不是 AMQ 论文原始 benchmark，因此这里是 extension benchmark。该组结果对应旧 LMH 语义：defender 直接选择 low / medium / high 服务率。新版 policy consistency 已将 service-rate-control 改为 v2 defend game，因此本节只作为 legacy extension evidence 保留。
 
 图：
 
@@ -171,7 +172,7 @@ Service-rate-control 不是 AMQ 论文原始 benchmark，因此这里是 extensi
 - AMQ 在 seed0/1 上 100 step 稳定，但 seed2 到 10000 才稳定。
 - 所以 service-rate-control 的 AMQ native-step 优势不是每个 seed 都全胜。
 - 但按预注册 work 账本，AMQ 达到稳定所需 work 仍显著低于 DQN。mean ratio 为 187.0x；若看 median work，典型差距为 6,359.7x。逐 seed ratio 为 6,359.7x / 6,359.7x / 63.6x。
-- 该 benchmark 应保守表述为 extension evidence。
+- 该 benchmark 应保守表述为旧语义下的 legacy extension evidence，不应与新版 service-rate-control v2 policy consistency 结果直接合并解读。
 
 ## 7. Final Conclusion
 
@@ -213,7 +214,7 @@ Policy consistency 与 convergence speed 是两个不同模块：
 
 - Polling 和 service-rate 的 DQN 结果存在 horizon censoring：DQN 都是在 final checkpoint 才满足稳定判据。因此这些结果应解释为本次 budget 下的 ceiling，而不是 DQN 已提前稳定。
 - Routing DQN 的 primary `work_to_stable` 是 fixed-point 预付成本，与 native fitting epoch 的早晚解耦；报告中已用 secondary fitting target entries 解释 gap 下降阶段。
-- Routing 和 polling 已扩展为 10 seeds；service-rate-control 仍是 3-seed extension evidence，后续若要更强的论文级结论，可继续扩展 service-rate seeds。
+- Routing 和 polling 已扩展为 10 seeds；service-rate-control 仍是旧 LMH 语义下的 3-seed legacy extension evidence。后续若要与新版 service-rate-control v2 对齐，需要重新设计并重跑 convergence-speed service-rate 实验。
 - AMQ learning rate 是为本次 B=20 / max-queue setting 选择的数值稳定配置，不等同于原论文所有图表的 hyperparameter。
 - 本报告只比较 convergence speed，不比较最终 performance，也不替代 policy consistency 结论。
 

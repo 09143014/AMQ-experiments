@@ -1,0 +1,11 @@
+{"attacker_action": 0, "cost": 0.0, "defender_action": 0, "loss": 0.0, "next_state": 0, "q_norm": 0.009662601472350329, "replay_size": 1, "state": 0, "step": 1}
+{"attacker_action": 1, "cost": 0.7735714285714286, "defender_action": 0, "loss": 0.09592819262980767, "next_state": 3, "q_norm": 3.497765488380629, "replay_size": 1000, "state": 4, "step": 1000}
+{"attacker_action": 0, "cost": 0.43428571428571433, "defender_action": 0, "loss": 0.6287146189354349, "next_state": 3, "q_norm": 6.4593600807228695, "replay_size": 2000, "state": 4, "step": 2000}
+{"attacker_action": 0, "cost": 1.3571428571428572, "defender_action": 0, "loss": 1.5013241608357966, "next_state": 6, "q_norm": 20.431879334391006, "replay_size": 3000, "state": 7, "step": 3000}
+{"attacker_action": 0, "cost": 1.7642857142857142, "defender_action": 0, "loss": 2.006016136170598, "next_state": 9, "q_norm": 29.635885134574462, "replay_size": 4000, "state": 8, "step": 4000}
+{"attacker_action": 0, "cost": 0.2442857142857143, "defender_action": 0, "loss": 1.8682420284260934, "next_state": 3, "q_norm": 9.425302359001293, "replay_size": 5000, "state": 3, "step": 5000}
+{"attacker_action": 0, "cost": 0.2714285714285714, "defender_action": 1, "loss": 2.5646051104309873, "next_state": 3, "q_norm": 10.67624940370164, "replay_size": 6000, "state": 3, "step": 6000}
+{"attacker_action": 0, "cost": 0.2442857142857143, "defender_action": 0, "loss": 3.248306505342376, "next_state": 3, "q_norm": 11.921274310585572, "replay_size": 7000, "state": 3, "step": 7000}
+{"attacker_action": 0, "cost": 1.3842857142857141, "defender_action": 1, "loss": 3.328839569708029, "next_state": 6, "q_norm": 33.94555567292517, "replay_size": 8000, "state": 7, "step": 8000}
+{"attacker_action": 0, "cost": 0.7057142857142857, "defender_action": 0, "loss": 2.15194712284367, "next_state": 6, "q_norm": 22.59628889454841, "replay_size": 9000, "state": 5, "step": 9000}
+{"attacker_action": 0, "cost": 0.7328571428571429, "defender_action": 1, "loss": 4.211771576084287, "next_state": 6, "q_norm": 23.45473394661684, "replay_size": 10000, "state": 5, "step": 10000}

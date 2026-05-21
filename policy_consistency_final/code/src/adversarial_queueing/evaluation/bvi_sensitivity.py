@@ -41,9 +41,11 @@ def run_bvi_sensitivity(
             gamma=env_config.gamma,
             q_congestion=env_config.q_congestion,
             attack_cost=env_config.attack_cost,
+            defend_cost=env_config.defend_cost,
             initial_state=env_config.initial_state,
             uniformization_rate=env_config.uniformization_rate,
-            robust_defender_actions=env_config.robust_defender_actions,
+            low_threshold=env_config.low_threshold,
+            high_threshold=env_config.high_threshold,
             bvi_max_queue_length=bound,
             boundary_mode=sensitivity_config.boundary_mode,
         )
@@ -71,8 +73,8 @@ def run_bvi_sensitivity(
                 "boundary_hit_fraction_mean": evaluation.summary[
                     "boundary_hit_fraction_mean"
                 ],
-                "first_state_p_high_at_least_threshold": policy_summary[
-                    "first_state_p_high_at_least_threshold"
+                "first_state_p_defend_at_least_threshold": policy_summary[
+                    "first_state_p_defend_at_least_threshold"
                 ],
             }
         )
@@ -92,7 +94,7 @@ def _summarize_sensitivity(rows: list[dict[str, Any]]) -> dict[str, Any]:
     if not rows:
         raise ValueError("BVI sensitivity requires at least one bound")
     values = [float(row["value_at_eval_state"]) for row in rows]
-    thresholds = [row["first_state_p_high_at_least_threshold"] for row in rows]
+    thresholds = [row["first_state_p_defend_at_least_threshold"] for row in rows]
     residuals = [float(row["residual"]) for row in rows]
     boundary_hits = [float(row["boundary_hit_fraction_mean"]) for row in rows]
     return {
@@ -100,6 +102,6 @@ def _summarize_sensitivity(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "last_value_at_eval_state": values[-1],
         "max_residual": max(residuals),
         "max_boundary_hit_fraction_mean": max(boundary_hits),
-        "policy_high_thresholds": thresholds,
-        "policy_high_threshold_stable": len(set(thresholds)) == 1,
+        "policy_defend_thresholds": thresholds,
+        "policy_defend_threshold_stable": len(set(thresholds)) == 1,
     }

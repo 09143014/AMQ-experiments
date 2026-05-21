@@ -1,0 +1,169 @@
+{
+  "env_semantics": {
+    "attack_success_effect": "attack=1 and defend=0 forces high service for one step",
+    "attacker_actions": {
+      "0": "not_attack",
+      "1": "attack"
+    },
+    "defend_cost": 0.2,
+    "defender_actions": {
+      "0": "not_defend",
+      "1": "defend"
+    },
+    "threshold_policy": {
+      "high_otherwise": true,
+      "low_if_q_lt": 5,
+      "medium_if_q_lt": 15
+    },
+    "version": "service_rate_control_v2"
+  },
+  "final_state": 6,
+  "method": "nnq",
+  "num_metrics": 11,
+  "policy_grid": {
+    "first_state_p_attack_at_least_threshold": 12,
+    "first_state_p_defend_at_least_threshold": 0,
+    "high_probability_threshold": 0.5,
+    "policy_grid_max_state": 20
+  },
+  "q_diagnostic": {
+    "by_state": [
+      {
+        "nnq_bellman_abs_residual_mean": 0.12188937132724431,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 2.5665702298441215,
+        "state": 0
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 0.13770068657259782,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 2.7657083375107785,
+        "state": 1
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 0.07991249567075198,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 2.921071452427628,
+        "state": 2
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 0.16033417971544117,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 3.323030178015738,
+        "state": 3
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 0.23754573036680915,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 3.419107899649019,
+        "state": 4
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 0.03903505740203661,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 3.1420358681767904,
+        "state": 5
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 0.013043046243514045,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 3.013313707827353,
+        "state": 6
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 0.07870155745795326,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 3.472400808039982,
+        "state": 7
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 0.1961649920307238,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 4.501724488528664,
+        "state": 8
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 0.33470947014196284,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 6.070902982892363,
+        "state": 9
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 0.5385456967742996,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 8.15718039072414,
+        "state": 10
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 0.7309864393567267,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 10.592728457978456,
+        "state": 11
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 0.9707051291144388,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 13.216985677895439,
+        "state": 12
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 1.2413547890229868,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 15.665914650618063,
+        "state": 13
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 1.543484045897392,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 17.251972248856582,
+        "state": 14
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 0.6425003854021849,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 17.038506498151413,
+        "state": 15
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 0.9058160637581558,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 16.8980479742357,
+        "state": 16
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 1.1999734893673661,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 17.220479243477286,
+        "state": 17
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 1.524970332435629,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 17.751002474919385,
+        "state": 18
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 1.88080372769182,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 17.78189074637668,
+        "state": 19
+      },
+      {
+        "nnq_bellman_abs_residual_mean": 1.1195361129250152,
+        "num_q_entries": 4,
+        "q_reference_abs_gap_mean": 15.342718380551407,
+        "state": 20
+      }
+    ],
+    "mean_abs_bvi_reference_q": 50.335243302629664,
+    "mean_abs_nnq_q": 40.71080079326315,
+    "mean_abs_q_state_mean": 40.71080079326315,
+    "nnq_bellman_abs_residual_max": 3.4138341763885194,
+    "nnq_bellman_abs_residual_mean": 0.6522720380321452,
+    "num_q_entries": 84,
+    "q_action_spread_max": 2.6037405496729065,
+    "q_action_spread_mean": 1.0873118034360372,
+    "q_reference_abs_gap_max": 19.31492119507338,
+    "q_reference_abs_gap_mean": 9.624442509366522
+  }
+}

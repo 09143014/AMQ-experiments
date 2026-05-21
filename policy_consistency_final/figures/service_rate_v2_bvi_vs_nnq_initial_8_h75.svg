@@ -1,0 +1,1476 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1490" height="3276" viewBox="0 0 1490 3276" role="img">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<rect x="22" y="22" width="1446" height="3232" rx="14" fill="#fbfcfe" stroke="#d7dde7"/>
+<text x="48.0" y="66.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" fill="#26364f">Service-Rate v2 Policy Path: BVI vs NNQ Bellman Target</text>
+<text x="48.0" y="96.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#596579">initial=8, env_seed=3302, attacker=learned_split, attacker_seed=1930, horizon=75</text>
+<rect x="990" y="53" width="24" height="24" rx="5" fill="#c2410c"/>
+<text x="1024.0" y="71.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#26364f">A = attack</text>
+<rect x="1126" y="53" width="24" height="24" rx="5" fill="#2d7d46"/>
+<text x="1160.0" y="71.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#26364f">D = defend</text>
+<rect x="1260" y="53" width="24" height="24" rx="5" fill="#d3d9e3" stroke="#9aa5b5"/>
+<text x="1294.0" y="71.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#26364f">N = not defend</text>
+<text x="48.0" y="122.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">steps 0-11</text>
+<text x="48.0" y="161.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">state</text>
+<line x1="138" y1="156" x2="1326" y2="156" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="203.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">mu</text>
+<line x1="138" y1="198" x2="1326" y2="198" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="255.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">BVI A</text>
+<line x1="138" y1="250" x2="1326" y2="250" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="311.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">NNQ A</text>
+<line x1="138" y1="306" x2="1326" y2="306" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="367.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">BVI D</text>
+<line x1="138" y1="362" x2="1326" y2="362" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="423.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">NNQ D</text>
+<line x1="138" y1="418" x2="1326" y2="418" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="493.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">event</text>
+<text x="48.0" y="525.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">step</text>
+<line x1="138" y1="520" x2="1326" y2="520" stroke="#e4e9f1" stroke-width="1.1"/>
+<circle cx="138" cy="156" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="138.0" y="161.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">8</text>
+<text x="138.0" y="196.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="138.0" y="213.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="123" y="236" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="138.0" y="255.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="138.0" y="275.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="292" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="138.0" y="311.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="138.0" y="331.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="347" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="138.0" y="367.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="138.0" y="387.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="403" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="138.0" y="423.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="138.0" y="443.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="138.0" y="493.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="138.0" y="525.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">0</text>
+<circle cx="246" cy="156" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="246.0" y="161.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">7</text>
+<text x="246.0" y="196.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="246.0" y="213.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="231" y="236" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="246.0" y="255.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="246.0" y="275.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="292" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="246.0" y="311.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="246.0" y="331.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="347" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="246.0" y="367.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="246.0" y="387.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="403" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="246.0" y="423.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="246.0" y="443.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="246.0" y="493.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="246.0" y="525.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">1</text>
+<circle cx="354" cy="156" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="354.0" y="161.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">6</text>
+<text x="354.0" y="196.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="354.0" y="213.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="339" y="236" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="354.0" y="255.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="354.0" y="275.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="292" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="354.0" y="311.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="354.0" y="331.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="347" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="354.0" y="367.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="354.0" y="387.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="403" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="354.0" y="423.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="354.0" y="443.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="354.0" y="493.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="354.0" y="525.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">2</text>
+<circle cx="462" cy="156" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="462.0" y="161.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">6</text>
+<text x="462.0" y="196.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="462.0" y="213.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="447" y="236" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="462.0" y="255.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="462.0" y="275.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="292" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="462.0" y="311.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="462.0" y="331.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="347" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="462.0" y="367.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="462.0" y="387.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="403" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="462.0" y="423.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="462.0" y="443.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="462.0" y="493.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="462.0" y="525.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">3</text>
+<circle cx="570" cy="156" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="570.0" y="161.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">7</text>
+<text x="570.0" y="196.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="570.0" y="213.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="555" y="236" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="570.0" y="255.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="570.0" y="275.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="292" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="570.0" y="311.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="570.0" y="331.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="347" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="570.0" y="367.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="570.0" y="387.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="403" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="570.0" y="423.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="570.0" y="443.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="570.0" y="493.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="570.0" y="525.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">4</text>
+<circle cx="678" cy="156" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="678.0" y="161.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">6</text>
+<text x="678.0" y="196.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="678.0" y="213.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="663" y="236" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="678.0" y="255.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="678.0" y="275.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="292" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="678.0" y="311.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="678.0" y="331.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="347" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="678.0" y="367.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="678.0" y="387.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="403" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="678.0" y="423.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="678.0" y="443.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="678.0" y="493.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="678.0" y="525.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">5</text>
+<circle cx="786" cy="156" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="786.0" y="161.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">7</text>
+<text x="786.0" y="196.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="786.0" y="213.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="771" y="236" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="786.0" y="255.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="786.0" y="275.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="292" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="786.0" y="311.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="786.0" y="331.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="347" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="786.0" y="367.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="786.0" y="387.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="403" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="786.0" y="423.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="786.0" y="443.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="786.0" y="493.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="786.0" y="525.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">6</text>
+<circle cx="894" cy="156" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="894.0" y="161.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">8</text>
+<text x="894.0" y="196.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="894.0" y="213.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="879" y="236" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="894.0" y="255.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="894.0" y="275.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="292" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="894.0" y="311.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="894.0" y="331.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="347" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="894.0" y="367.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="894.0" y="387.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="403" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="894.0" y="423.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="894.0" y="443.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="894.0" y="493.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="894.0" y="525.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">7</text>
+<circle cx="1002" cy="156" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1002.0" y="161.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">9</text>
+<text x="1002.0" y="196.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="1002.0" y="213.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="987" y="236" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1002.0" y="255.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1002.0" y="275.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="292" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1002.0" y="311.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1002.0" y="331.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="347" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1002.0" y="367.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1002.0" y="387.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="403" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1002.0" y="423.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1002.0" y="443.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1002.0" y="493.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="1002.0" y="525.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">8</text>
+<circle cx="1110" cy="156" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1110.0" y="161.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">10</text>
+<text x="1110.0" y="196.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="1110.0" y="213.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="1095" y="236" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1110.0" y="255.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1110.0" y="275.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="292" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1110.0" y="311.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1110.0" y="331.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="347" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1110.0" y="367.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1110.0" y="387.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="403" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1110.0" y="423.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1110.0" y="443.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1110.0" y="493.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="1110.0" y="525.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">9</text>
+<circle cx="1218" cy="156" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1218.0" y="161.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">9</text>
+<text x="1218.0" y="196.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="1218.0" y="213.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="1203" y="236" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1218.0" y="255.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1218.0" y="275.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="292" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1218.0" y="311.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1218.0" y="331.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="347" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1218.0" y="367.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1218.0" y="387.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="403" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1218.0" y="423.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1218.0" y="443.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1218.0" y="493.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="1218.0" y="525.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">10</text>
+<circle cx="1326" cy="156" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1326.0" y="161.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">9</text>
+<text x="1326.0" y="196.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="1326.0" y="213.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="1311" y="236" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1326.0" y="255.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1326.0" y="275.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="292" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1326.0" y="311.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1326.0" y="331.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="347" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1326.0" y="367.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1326.0" y="387.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="403" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1326.0" y="423.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1326.0" y="443.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1326.0" y="493.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="1326.0" y="525.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">11</text>
+<text x="48.0" y="554.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">steps 12-23</text>
+<text x="48.0" y="593.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">state</text>
+<line x1="138" y1="588" x2="1326" y2="588" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="635.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">mu</text>
+<line x1="138" y1="630" x2="1326" y2="630" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="687.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">BVI A</text>
+<line x1="138" y1="682" x2="1326" y2="682" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="743.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">NNQ A</text>
+<line x1="138" y1="738" x2="1326" y2="738" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="799.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">BVI D</text>
+<line x1="138" y1="794" x2="1326" y2="794" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="855.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">NNQ D</text>
+<line x1="138" y1="850" x2="1326" y2="850" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="925.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">event</text>
+<text x="48.0" y="957.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">step</text>
+<line x1="138" y1="952" x2="1326" y2="952" stroke="#e4e9f1" stroke-width="1.1"/>
+<circle cx="138" cy="588" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="138.0" y="593.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">9</text>
+<text x="138.0" y="628.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="138.0" y="645.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="123" y="668" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="138.0" y="687.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="138.0" y="707.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="724" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="138.0" y="743.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="138.0" y="763.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="779" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="138.0" y="799.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="138.0" y="819.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="835" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="138.0" y="855.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="138.0" y="875.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="138.0" y="925.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="138.0" y="957.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">12</text>
+<circle cx="246" cy="588" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="246.0" y="593.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">8</text>
+<text x="246.0" y="628.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="246.0" y="645.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="231" y="668" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="246.0" y="687.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="246.0" y="707.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="724" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="246.0" y="743.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="246.0" y="763.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="779" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="246.0" y="799.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="246.0" y="819.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="835" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="246.0" y="855.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="246.0" y="875.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="246.0" y="925.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="246.0" y="957.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">13</text>
+<circle cx="354" cy="588" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="354.0" y="593.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">7</text>
+<text x="354.0" y="628.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="354.0" y="645.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="339" y="668" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="354.0" y="687.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="354.0" y="707.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="724" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="354.0" y="743.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="354.0" y="763.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="779" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="354.0" y="799.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="354.0" y="819.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="835" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="354.0" y="855.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="354.0" y="875.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="354.0" y="925.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="354.0" y="957.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">14</text>
+<circle cx="462" cy="588" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="462.0" y="593.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">8</text>
+<text x="462.0" y="628.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="462.0" y="645.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="447" y="668" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="462.0" y="687.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="462.0" y="707.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="724" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="462.0" y="743.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="462.0" y="763.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="779" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="462.0" y="799.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="462.0" y="819.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="835" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="462.0" y="855.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="462.0" y="875.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="462.0" y="925.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="462.0" y="957.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">15</text>
+<circle cx="570" cy="588" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="570.0" y="593.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">7</text>
+<text x="570.0" y="628.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="570.0" y="645.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="555" y="668" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="570.0" y="687.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="570.0" y="707.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="724" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="570.0" y="743.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="570.0" y="763.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="779" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="570.0" y="799.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="570.0" y="819.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="835" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="570.0" y="855.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="570.0" y="875.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="570.0" y="925.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="570.0" y="957.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">16</text>
+<circle cx="678" cy="588" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="678.0" y="593.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">7</text>
+<text x="678.0" y="628.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="678.0" y="645.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="663" y="668" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="678.0" y="687.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="678.0" y="707.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="724" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="678.0" y="743.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="678.0" y="763.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="779" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="678.0" y="799.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="678.0" y="819.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="835" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="678.0" y="855.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="678.0" y="875.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="678.0" y="925.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="678.0" y="957.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">17</text>
+<circle cx="786" cy="588" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="786.0" y="593.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">7</text>
+<text x="786.0" y="628.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="786.0" y="645.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="771" y="668" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="786.0" y="687.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="786.0" y="707.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="724" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="786.0" y="743.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="786.0" y="763.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="779" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="786.0" y="799.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="786.0" y="819.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="835" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="786.0" y="855.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="786.0" y="875.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="786.0" y="925.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="786.0" y="957.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">18</text>
+<circle cx="894" cy="588" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="894.0" y="593.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">6</text>
+<text x="894.0" y="628.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="894.0" y="645.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="879" y="668" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="894.0" y="687.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="894.0" y="707.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="724" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="894.0" y="743.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="894.0" y="763.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="779" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="894.0" y="799.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="894.0" y="819.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="835" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="894.0" y="855.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="894.0" y="875.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="894.0" y="925.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="894.0" y="957.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">19</text>
+<circle cx="1002" cy="588" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1002.0" y="593.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">7</text>
+<text x="1002.0" y="628.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="1002.0" y="645.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="987" y="668" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1002.0" y="687.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1002.0" y="707.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="724" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1002.0" y="743.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1002.0" y="763.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="779" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1002.0" y="799.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1002.0" y="819.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="835" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1002.0" y="855.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1002.0" y="875.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1002.0" y="925.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="1002.0" y="957.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">20</text>
+<circle cx="1110" cy="588" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1110.0" y="593.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">8</text>
+<text x="1110.0" y="628.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="1110.0" y="645.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="1095" y="668" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1110.0" y="687.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1110.0" y="707.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="724" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1110.0" y="743.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1110.0" y="763.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="779" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1110.0" y="799.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1110.0" y="819.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="835" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1110.0" y="855.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1110.0" y="875.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1110.0" y="925.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="1110.0" y="957.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">21</text>
+<circle cx="1218" cy="588" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1218.0" y="593.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">7</text>
+<text x="1218.0" y="628.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="1218.0" y="645.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="1203" y="668" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1218.0" y="687.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1218.0" y="707.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="724" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1218.0" y="743.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1218.0" y="763.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="779" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1218.0" y="799.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1218.0" y="819.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="835" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1218.0" y="855.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1218.0" y="875.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1218.0" y="925.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="1218.0" y="957.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">22</text>
+<circle cx="1326" cy="588" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1326.0" y="593.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">6</text>
+<text x="1326.0" y="628.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="1326.0" y="645.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="1311" y="668" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1326.0" y="687.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1326.0" y="707.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="724" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1326.0" y="743.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1326.0" y="763.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="779" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1326.0" y="799.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1326.0" y="819.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="835" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1326.0" y="855.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1326.0" y="875.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1326.0" y="925.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="1326.0" y="957.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">23</text>
+<text x="48.0" y="986.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">steps 24-35</text>
+<text x="48.0" y="1025.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">state</text>
+<line x1="138" y1="1020" x2="1326" y2="1020" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="1067.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">mu</text>
+<line x1="138" y1="1062" x2="1326" y2="1062" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="1119.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">BVI A</text>
+<line x1="138" y1="1114" x2="1326" y2="1114" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="1175.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">NNQ A</text>
+<line x1="138" y1="1170" x2="1326" y2="1170" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="1231.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">BVI D</text>
+<line x1="138" y1="1226" x2="1326" y2="1226" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="1287.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">NNQ D</text>
+<line x1="138" y1="1282" x2="1326" y2="1282" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="1357.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">event</text>
+<text x="48.0" y="1389.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">step</text>
+<line x1="138" y1="1384" x2="1326" y2="1384" stroke="#e4e9f1" stroke-width="1.1"/>
+<circle cx="138" cy="1020" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="138.0" y="1025.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">6</text>
+<text x="138.0" y="1060.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="138.0" y="1077.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="123" y="1100" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="138.0" y="1119.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="138.0" y="1139.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="1156" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="138.0" y="1175.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="138.0" y="1195.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="1211" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="138.0" y="1231.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="138.0" y="1251.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="1267" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="138.0" y="1287.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="138.0" y="1307.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="138.0" y="1357.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="138.0" y="1389.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">24</text>
+<circle cx="246" cy="1020" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="246.0" y="1025.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">6</text>
+<text x="246.0" y="1060.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="246.0" y="1077.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="231" y="1100" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="246.0" y="1119.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="246.0" y="1139.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="1156" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="246.0" y="1175.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="246.0" y="1195.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="1211" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="246.0" y="1231.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="246.0" y="1251.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="1267" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="246.0" y="1287.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="246.0" y="1307.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="246.0" y="1357.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="246.0" y="1389.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">25</text>
+<circle cx="354" cy="1020" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="354.0" y="1025.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">5</text>
+<text x="354.0" y="1060.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="354.0" y="1077.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="339" y="1100" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="354.0" y="1119.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="354.0" y="1139.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="1156" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="354.0" y="1175.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="354.0" y="1195.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="1211" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="354.0" y="1231.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="354.0" y="1251.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="1267" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="354.0" y="1287.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="354.0" y="1307.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="354.0" y="1357.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="354.0" y="1389.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">26</text>
+<circle cx="462" cy="1020" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="462.0" y="1025.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">6</text>
+<text x="462.0" y="1060.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="462.0" y="1077.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="447" y="1100" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="462.0" y="1119.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="462.0" y="1139.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="1156" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="462.0" y="1175.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="462.0" y="1195.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="1211" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="462.0" y="1231.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="462.0" y="1251.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="1267" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="462.0" y="1287.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="462.0" y="1307.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="462.0" y="1357.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="462.0" y="1389.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">27</text>
+<circle cx="570" cy="1020" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="570.0" y="1025.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">7</text>
+<text x="570.0" y="1060.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="570.0" y="1077.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="555" y="1100" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="570.0" y="1119.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="570.0" y="1139.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="1156" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="570.0" y="1175.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="570.0" y="1195.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="1211" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="570.0" y="1231.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="570.0" y="1251.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="1267" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="570.0" y="1287.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="570.0" y="1307.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="570.0" y="1357.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="570.0" y="1389.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">28</text>
+<circle cx="678" cy="1020" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="678.0" y="1025.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">6</text>
+<text x="678.0" y="1060.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="678.0" y="1077.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="663" y="1100" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="678.0" y="1119.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="678.0" y="1139.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="1156" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="678.0" y="1175.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="678.0" y="1195.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="1211" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="678.0" y="1231.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="678.0" y="1251.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="1267" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="678.0" y="1287.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="678.0" y="1307.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="678.0" y="1357.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="678.0" y="1389.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">29</text>
+<circle cx="786" cy="1020" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="786.0" y="1025.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">5</text>
+<text x="786.0" y="1060.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="786.0" y="1077.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="771" y="1100" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="786.0" y="1119.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="786.0" y="1139.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="1156" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="786.0" y="1175.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="786.0" y="1195.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="1211" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="786.0" y="1231.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="786.0" y="1251.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="1267" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="786.0" y="1287.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="786.0" y="1307.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="786.0" y="1357.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="786.0" y="1389.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">30</text>
+<circle cx="894" cy="1020" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="894.0" y="1025.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="894.0" y="1060.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="894.0" y="1077.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="879" y="1100" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="894.0" y="1119.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="894.0" y="1139.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="1156" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="894.0" y="1175.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="894.0" y="1195.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="1211" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="894.0" y="1231.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="894.0" y="1251.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="1267" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="894.0" y="1287.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="894.0" y="1307.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="894.0" y="1357.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="894.0" y="1389.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">31</text>
+<circle cx="1002" cy="1020" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1002.0" y="1025.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="1002.0" y="1060.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="1002.0" y="1077.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="987" y="1100" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1002.0" y="1119.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1002.0" y="1139.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="1156" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1002.0" y="1175.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1002.0" y="1195.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="1211" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1002.0" y="1231.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1002.0" y="1251.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="1267" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1002.0" y="1287.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1002.0" y="1307.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1002.0" y="1357.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="1002.0" y="1389.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">32</text>
+<circle cx="1110" cy="1020" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1110.0" y="1025.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="1110.0" y="1060.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="1110.0" y="1077.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="1095" y="1100" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1110.0" y="1119.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1110.0" y="1139.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="1156" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1110.0" y="1175.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1110.0" y="1195.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="1211" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1110.0" y="1231.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1110.0" y="1251.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="1267" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1110.0" y="1287.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1110.0" y="1307.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1110.0" y="1357.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="1110.0" y="1389.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">33</text>
+<circle cx="1218" cy="1020" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1218.0" y="1025.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="1218.0" y="1060.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="1218.0" y="1077.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="1203" y="1100" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1218.0" y="1119.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1218.0" y="1139.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="1156" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1218.0" y="1175.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1218.0" y="1195.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="1211" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1218.0" y="1231.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1218.0" y="1251.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="1267" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1218.0" y="1287.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1218.0" y="1307.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1218.0" y="1357.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="1218.0" y="1389.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">34</text>
+<circle cx="1326" cy="1020" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1326.0" y="1025.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="1326.0" y="1060.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="1326.0" y="1077.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="1311" y="1100" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1326.0" y="1119.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1326.0" y="1139.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="1156" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1326.0" y="1175.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1326.0" y="1195.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="1211" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1326.0" y="1231.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1326.0" y="1251.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="1267" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1326.0" y="1287.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1326.0" y="1307.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1326.0" y="1357.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="1326.0" y="1389.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">35</text>
+<text x="48.0" y="1418.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">steps 36-47</text>
+<text x="48.0" y="1457.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">state</text>
+<line x1="138" y1="1452" x2="1326" y2="1452" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="1499.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">mu</text>
+<line x1="138" y1="1494" x2="1326" y2="1494" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="1551.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">BVI A</text>
+<line x1="138" y1="1546" x2="1326" y2="1546" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="1607.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">NNQ A</text>
+<line x1="138" y1="1602" x2="1326" y2="1602" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="1663.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">BVI D</text>
+<line x1="138" y1="1658" x2="1326" y2="1658" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="1719.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">NNQ D</text>
+<line x1="138" y1="1714" x2="1326" y2="1714" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="1789.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">event</text>
+<text x="48.0" y="1821.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">step</text>
+<line x1="138" y1="1816" x2="1326" y2="1816" stroke="#e4e9f1" stroke-width="1.1"/>
+<circle cx="138" cy="1452" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="138.0" y="1457.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="138.0" y="1492.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="138.0" y="1509.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="123" y="1532" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="138.0" y="1551.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="138.0" y="1571.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="1588" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="138.0" y="1607.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="138.0" y="1627.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="1643" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="138.0" y="1663.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="138.0" y="1683.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="1699" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="138.0" y="1719.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="138.0" y="1739.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="138.0" y="1789.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="138.0" y="1821.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">36</text>
+<circle cx="246" cy="1452" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="246.0" y="1457.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="246.0" y="1492.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="246.0" y="1509.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="231" y="1532" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="246.0" y="1551.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="246.0" y="1571.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="1588" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="246.0" y="1607.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="246.0" y="1627.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="1643" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="246.0" y="1663.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="246.0" y="1683.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="1699" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="246.0" y="1719.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="246.0" y="1739.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="246.0" y="1789.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="246.0" y="1821.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">37</text>
+<circle cx="354" cy="1452" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="354.0" y="1457.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="354.0" y="1492.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="354.0" y="1509.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="339" y="1532" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="354.0" y="1551.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="354.0" y="1571.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="1588" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="354.0" y="1607.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="354.0" y="1627.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="1643" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="354.0" y="1663.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="354.0" y="1683.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="1699" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="354.0" y="1719.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="354.0" y="1739.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="354.0" y="1789.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="354.0" y="1821.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">38</text>
+<circle cx="462" cy="1452" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="462.0" y="1457.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="462.0" y="1492.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="462.0" y="1509.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="447" y="1532" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="462.0" y="1551.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="462.0" y="1571.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="1588" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="462.0" y="1607.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="462.0" y="1627.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="1643" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="462.0" y="1663.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="462.0" y="1683.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="1699" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="462.0" y="1719.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="462.0" y="1739.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="462.0" y="1789.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="462.0" y="1821.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">39</text>
+<circle cx="570" cy="1452" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="570.0" y="1457.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">3</text>
+<text x="570.0" y="1492.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="570.0" y="1509.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="555" y="1532" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="570.0" y="1551.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="570.0" y="1571.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="1588" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="570.0" y="1607.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="570.0" y="1627.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="1643" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="570.0" y="1663.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="570.0" y="1683.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="1699" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="570.0" y="1719.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="570.0" y="1739.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="570.0" y="1789.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="570.0" y="1821.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">40</text>
+<circle cx="678" cy="1452" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="678.0" y="1457.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">3</text>
+<text x="678.0" y="1492.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="678.0" y="1509.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="663" y="1532" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="678.0" y="1551.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="678.0" y="1571.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="1588" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="678.0" y="1607.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="678.0" y="1627.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="1643" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="678.0" y="1663.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="678.0" y="1683.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="1699" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="678.0" y="1719.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="678.0" y="1739.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="678.0" y="1789.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="678.0" y="1821.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">41</text>
+<circle cx="786" cy="1452" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="786.0" y="1457.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">2</text>
+<text x="786.0" y="1492.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="786.0" y="1509.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="771" y="1532" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="786.0" y="1551.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="786.0" y="1571.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="1588" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="786.0" y="1607.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="786.0" y="1627.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="1643" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="786.0" y="1663.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="786.0" y="1683.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="1699" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="786.0" y="1719.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="786.0" y="1739.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="786.0" y="1789.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="786.0" y="1821.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">42</text>
+<circle cx="894" cy="1452" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="894.0" y="1457.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">2</text>
+<text x="894.0" y="1492.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="894.0" y="1509.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="879" y="1532" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="894.0" y="1551.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="894.0" y="1571.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="1588" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="894.0" y="1607.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="894.0" y="1627.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="1643" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="894.0" y="1663.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="894.0" y="1683.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="1699" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="894.0" y="1719.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="894.0" y="1739.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="894.0" y="1789.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="894.0" y="1821.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">43</text>
+<circle cx="1002" cy="1452" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1002.0" y="1457.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">2</text>
+<text x="1002.0" y="1492.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="1002.0" y="1509.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="987" y="1532" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1002.0" y="1551.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1002.0" y="1571.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="1588" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1002.0" y="1607.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1002.0" y="1627.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="1643" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1002.0" y="1663.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1002.0" y="1683.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="1699" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1002.0" y="1719.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1002.0" y="1739.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1002.0" y="1789.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="1002.0" y="1821.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">44</text>
+<circle cx="1110" cy="1452" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1110.0" y="1457.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">3</text>
+<text x="1110.0" y="1492.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="1110.0" y="1509.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="1095" y="1532" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1110.0" y="1551.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1110.0" y="1571.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="1588" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1110.0" y="1607.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1110.0" y="1627.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="1643" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1110.0" y="1663.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1110.0" y="1683.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="1699" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1110.0" y="1719.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1110.0" y="1739.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1110.0" y="1789.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="1110.0" y="1821.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">45</text>
+<circle cx="1218" cy="1452" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1218.0" y="1457.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="1218.0" y="1492.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="1218.0" y="1509.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="1203" y="1532" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1218.0" y="1551.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1218.0" y="1571.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="1588" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1218.0" y="1607.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1218.0" y="1627.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="1643" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1218.0" y="1663.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1218.0" y="1683.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="1699" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1218.0" y="1719.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1218.0" y="1739.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1218.0" y="1789.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="1218.0" y="1821.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">46</text>
+<circle cx="1326" cy="1452" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1326.0" y="1457.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="1326.0" y="1492.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="1326.0" y="1509.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="1311" y="1532" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1326.0" y="1551.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1326.0" y="1571.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="1588" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1326.0" y="1607.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1326.0" y="1627.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="1643" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1326.0" y="1663.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1326.0" y="1683.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="1699" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1326.0" y="1719.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1326.0" y="1739.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1326.0" y="1789.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="1326.0" y="1821.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">47</text>
+<text x="48.0" y="1850.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">steps 48-59</text>
+<text x="48.0" y="1889.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">state</text>
+<line x1="138" y1="1884" x2="1326" y2="1884" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="1931.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">mu</text>
+<line x1="138" y1="1926" x2="1326" y2="1926" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="1983.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">BVI A</text>
+<line x1="138" y1="1978" x2="1326" y2="1978" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="2039.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">NNQ A</text>
+<line x1="138" y1="2034" x2="1326" y2="2034" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="2095.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">BVI D</text>
+<line x1="138" y1="2090" x2="1326" y2="2090" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="2151.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">NNQ D</text>
+<line x1="138" y1="2146" x2="1326" y2="2146" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="2221.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">event</text>
+<text x="48.0" y="2253.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">step</text>
+<line x1="138" y1="2248" x2="1326" y2="2248" stroke="#e4e9f1" stroke-width="1.1"/>
+<circle cx="138" cy="1884" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="138.0" y="1889.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">3</text>
+<text x="138.0" y="1924.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="138.0" y="1941.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="123" y="1964" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="138.0" y="1983.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="138.0" y="2003.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="2020" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="138.0" y="2039.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="138.0" y="2059.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="2075" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="138.0" y="2095.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="138.0" y="2115.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="2131" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="138.0" y="2151.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="138.0" y="2171.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="138.0" y="2221.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="138.0" y="2253.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">48</text>
+<circle cx="246" cy="1884" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="246.0" y="1889.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">3</text>
+<text x="246.0" y="1924.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="246.0" y="1941.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="231" y="1964" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="246.0" y="1983.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="246.0" y="2003.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="2020" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="246.0" y="2039.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="246.0" y="2059.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="2075" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="246.0" y="2095.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="246.0" y="2115.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="2131" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="246.0" y="2151.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="246.0" y="2171.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="246.0" y="2221.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="246.0" y="2253.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">49</text>
+<circle cx="354" cy="1884" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="354.0" y="1889.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">3</text>
+<text x="354.0" y="1924.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="354.0" y="1941.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="339" y="1964" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="354.0" y="1983.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="354.0" y="2003.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="2020" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="354.0" y="2039.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="354.0" y="2059.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="2075" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="354.0" y="2095.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="354.0" y="2115.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="2131" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="354.0" y="2151.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="354.0" y="2171.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="354.0" y="2221.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="354.0" y="2253.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">50</text>
+<circle cx="462" cy="1884" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="462.0" y="1889.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="462.0" y="1924.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="462.0" y="1941.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="447" y="1964" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="462.0" y="1983.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="462.0" y="2003.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="2020" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="462.0" y="2039.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="462.0" y="2059.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="2075" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="462.0" y="2095.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="462.0" y="2115.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="2131" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="462.0" y="2151.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="462.0" y="2171.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="462.0" y="2221.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="462.0" y="2253.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">51</text>
+<circle cx="570" cy="1884" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="570.0" y="1889.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="570.0" y="1924.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="570.0" y="1941.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="555" y="1964" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="570.0" y="1983.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="570.0" y="2003.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="2020" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="570.0" y="2039.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="570.0" y="2059.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="2075" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="570.0" y="2095.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="570.0" y="2115.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="2131" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="570.0" y="2151.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="570.0" y="2171.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="570.0" y="2221.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="570.0" y="2253.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">52</text>
+<circle cx="678" cy="1884" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="678.0" y="1889.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="678.0" y="1924.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="678.0" y="1941.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="663" y="1964" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="678.0" y="1983.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="678.0" y="2003.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="2020" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="678.0" y="2039.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="678.0" y="2059.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="2075" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="678.0" y="2095.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="678.0" y="2115.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="2131" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="678.0" y="2151.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="678.0" y="2171.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="678.0" y="2221.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="678.0" y="2253.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">53</text>
+<circle cx="786" cy="1884" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="786.0" y="1889.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="786.0" y="1924.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="786.0" y="1941.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="771" y="1964" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="786.0" y="1983.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="786.0" y="2003.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="2020" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="786.0" y="2039.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="786.0" y="2059.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="2075" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="786.0" y="2095.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="786.0" y="2115.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="2131" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="786.0" y="2151.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="786.0" y="2171.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="786.0" y="2221.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="786.0" y="2253.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">54</text>
+<circle cx="894" cy="1884" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="894.0" y="1889.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="894.0" y="1924.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="894.0" y="1941.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="879" y="1964" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="894.0" y="1983.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="894.0" y="2003.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="2020" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="894.0" y="2039.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="894.0" y="2059.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="2075" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="894.0" y="2095.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="894.0" y="2115.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="2131" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="894.0" y="2151.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="894.0" y="2171.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="894.0" y="2221.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="894.0" y="2253.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">55</text>
+<circle cx="1002" cy="1884" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1002.0" y="1889.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">5</text>
+<text x="1002.0" y="1924.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="1002.0" y="1941.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="987" y="1964" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1002.0" y="1983.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1002.0" y="2003.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="2020" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1002.0" y="2039.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1002.0" y="2059.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="2075" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1002.0" y="2095.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1002.0" y="2115.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="2131" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1002.0" y="2151.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1002.0" y="2171.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1002.0" y="2221.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="1002.0" y="2253.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">56</text>
+<circle cx="1110" cy="1884" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1110.0" y="1889.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="1110.0" y="1924.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="1110.0" y="1941.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="1095" y="1964" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1110.0" y="1983.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1110.0" y="2003.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="2020" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1110.0" y="2039.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1110.0" y="2059.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="2075" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1110.0" y="2095.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1110.0" y="2115.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="2131" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1110.0" y="2151.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1110.0" y="2171.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1110.0" y="2221.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="1110.0" y="2253.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">57</text>
+<circle cx="1218" cy="1884" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1218.0" y="1889.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">3</text>
+<text x="1218.0" y="1924.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="1218.0" y="1941.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="1203" y="1964" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1218.0" y="1983.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1218.0" y="2003.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="2020" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1218.0" y="2039.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1218.0" y="2059.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="2075" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1218.0" y="2095.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1218.0" y="2115.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="2131" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1218.0" y="2151.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1218.0" y="2171.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1218.0" y="2221.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="1218.0" y="2253.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">58</text>
+<circle cx="1326" cy="1884" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1326.0" y="1889.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">3</text>
+<text x="1326.0" y="1924.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="1326.0" y="1941.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="1311" y="1964" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1326.0" y="1983.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1326.0" y="2003.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="2020" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1326.0" y="2039.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1326.0" y="2059.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="2075" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1326.0" y="2095.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1326.0" y="2115.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="2131" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1326.0" y="2151.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1326.0" y="2171.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1326.0" y="2221.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="1326.0" y="2253.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">59</text>
+<text x="48.0" y="2282.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">steps 60-71</text>
+<text x="48.0" y="2321.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">state</text>
+<line x1="138" y1="2316" x2="1326" y2="2316" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="2363.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">mu</text>
+<line x1="138" y1="2358" x2="1326" y2="2358" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="2415.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">BVI A</text>
+<line x1="138" y1="2410" x2="1326" y2="2410" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="2471.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">NNQ A</text>
+<line x1="138" y1="2466" x2="1326" y2="2466" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="2527.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">BVI D</text>
+<line x1="138" y1="2522" x2="1326" y2="2522" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="2583.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">NNQ D</text>
+<line x1="138" y1="2578" x2="1326" y2="2578" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="2653.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">event</text>
+<text x="48.0" y="2685.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">step</text>
+<line x1="138" y1="2680" x2="1326" y2="2680" stroke="#e4e9f1" stroke-width="1.1"/>
+<circle cx="138" cy="2316" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="138.0" y="2321.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">2</text>
+<text x="138.0" y="2356.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="138.0" y="2373.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="123" y="2396" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="138.0" y="2415.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="138.0" y="2435.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="2452" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="138.0" y="2471.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="138.0" y="2491.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="2507" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="138.0" y="2527.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="138.0" y="2547.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="2563" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="138.0" y="2583.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="138.0" y="2603.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="138.0" y="2653.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="138.0" y="2685.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">60</text>
+<circle cx="246" cy="2316" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="246.0" y="2321.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">2</text>
+<text x="246.0" y="2356.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="246.0" y="2373.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="231" y="2396" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="246.0" y="2415.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="246.0" y="2435.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="2452" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="246.0" y="2471.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="246.0" y="2491.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="2507" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="246.0" y="2527.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="246.0" y="2547.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="2563" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="246.0" y="2583.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="246.0" y="2603.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="246.0" y="2653.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="246.0" y="2685.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">61</text>
+<circle cx="354" cy="2316" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="354.0" y="2321.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">2</text>
+<text x="354.0" y="2356.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="354.0" y="2373.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="339" y="2396" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="354.0" y="2415.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="354.0" y="2435.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="2452" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="354.0" y="2471.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="354.0" y="2491.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="2507" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="354.0" y="2527.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="354.0" y="2547.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="2563" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="354.0" y="2583.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="354.0" y="2603.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="354.0" y="2653.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="354.0" y="2685.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">62</text>
+<circle cx="462" cy="2316" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="462.0" y="2321.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">2</text>
+<text x="462.0" y="2356.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="462.0" y="2373.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="447" y="2396" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="462.0" y="2415.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="462.0" y="2435.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="2452" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="462.0" y="2471.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="462.0" y="2491.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="2507" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="462.0" y="2527.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="462.0" y="2547.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="447" y="2563" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="462.0" y="2583.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="462.0" y="2603.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="462.0" y="2653.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="462.0" y="2685.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">63</text>
+<circle cx="570" cy="2316" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="570.0" y="2321.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">3</text>
+<text x="570.0" y="2356.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="570.0" y="2373.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="555" y="2396" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="570.0" y="2415.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="570.0" y="2435.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="2452" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="570.0" y="2471.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="570.0" y="2491.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="2507" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="570.0" y="2527.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="570.0" y="2547.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="555" y="2563" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="570.0" y="2583.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="570.0" y="2603.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="570.0" y="2653.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="570.0" y="2685.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">64</text>
+<circle cx="678" cy="2316" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="678.0" y="2321.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="678.0" y="2356.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="678.0" y="2373.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="663" y="2396" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="678.0" y="2415.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="678.0" y="2435.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="2452" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="678.0" y="2471.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="678.0" y="2491.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="2507" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="678.0" y="2527.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="678.0" y="2547.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="663" y="2563" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="678.0" y="2583.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="678.0" y="2603.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="678.0" y="2653.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="678.0" y="2685.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">65</text>
+<circle cx="786" cy="2316" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="786.0" y="2321.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">5</text>
+<text x="786.0" y="2356.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="786.0" y="2373.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="771" y="2396" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="786.0" y="2415.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="786.0" y="2435.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="2452" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="786.0" y="2471.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="786.0" y="2491.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="2507" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="786.0" y="2527.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="786.0" y="2547.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="771" y="2563" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="786.0" y="2583.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="786.0" y="2603.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="786.0" y="2653.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="786.0" y="2685.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">66</text>
+<circle cx="894" cy="2316" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="894.0" y="2321.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">6</text>
+<text x="894.0" y="2356.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="894.0" y="2373.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="879" y="2396" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="894.0" y="2415.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="894.0" y="2435.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="2452" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="894.0" y="2471.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="894.0" y="2491.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="2507" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="894.0" y="2527.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="894.0" y="2547.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="879" y="2563" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="894.0" y="2583.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="894.0" y="2603.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="894.0" y="2653.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="894.0" y="2685.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">67</text>
+<circle cx="1002" cy="2316" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1002.0" y="2321.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">5</text>
+<text x="1002.0" y="2356.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="1002.0" y="2373.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="987" y="2396" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1002.0" y="2415.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1002.0" y="2435.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="2452" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1002.0" y="2471.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1002.0" y="2491.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="2507" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1002.0" y="2527.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1002.0" y="2547.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="987" y="2563" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1002.0" y="2583.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1002.0" y="2603.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1002.0" y="2653.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="1002.0" y="2685.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">68</text>
+<circle cx="1110" cy="2316" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1110.0" y="2321.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="1110.0" y="2356.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="1110.0" y="2373.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="1095" y="2396" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1110.0" y="2415.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1110.0" y="2435.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="2452" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1110.0" y="2471.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1110.0" y="2491.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="2507" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1110.0" y="2527.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1110.0" y="2547.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1095" y="2563" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1110.0" y="2583.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1110.0" y="2603.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1110.0" y="2653.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="1110.0" y="2685.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">69</text>
+<circle cx="1218" cy="2316" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1218.0" y="2321.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="1218.0" y="2356.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="1218.0" y="2373.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="1203" y="2396" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1218.0" y="2415.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1218.0" y="2435.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="2452" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1218.0" y="2471.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1218.0" y="2491.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="2507" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1218.0" y="2527.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1218.0" y="2547.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1203" y="2563" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1218.0" y="2583.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1218.0" y="2603.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1218.0" y="2653.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#8a94a6">stay</text>
+<text x="1218.0" y="2685.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">70</text>
+<circle cx="1326" cy="2316" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="1326.0" y="2321.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="1326.0" y="2356.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="1326.0" y="2373.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="1311" y="2396" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1326.0" y="2415.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1326.0" y="2435.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="2452" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1326.0" y="2471.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="1326.0" y="2491.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="2507" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1326.0" y="2527.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1326.0" y="2547.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="1311" y="2563" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="1326.0" y="2583.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="1326.0" y="2603.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="1326.0" y="2653.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="1326.0" y="2685.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">71</text>
+<text x="48.0" y="2714.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">steps 72-74</text>
+<text x="48.0" y="2753.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">state</text>
+<line x1="138" y1="2748" x2="354" y2="2748" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="2795.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">mu</text>
+<line x1="138" y1="2790" x2="354" y2="2790" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="2847.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">BVI A</text>
+<line x1="138" y1="2842" x2="354" y2="2842" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="2903.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">NNQ A</text>
+<line x1="138" y1="2898" x2="354" y2="2898" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="2959.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">BVI D</text>
+<line x1="138" y1="2954" x2="354" y2="2954" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="3015.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">NNQ D</text>
+<line x1="138" y1="3010" x2="354" y2="3010" stroke="#e4e9f1" stroke-width="1.1"/>
+<text x="48.0" y="3085.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">event</text>
+<text x="48.0" y="3117.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#26364f">step</text>
+<line x1="138" y1="3112" x2="354" y2="3112" stroke="#e4e9f1" stroke-width="1.1"/>
+<circle cx="138" cy="2748" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="138.0" y="2753.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">5</text>
+<text x="138.0" y="2788.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base M</text>
+<text x="138.0" y="2805.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N M/M</text>
+<rect x="123" y="2828" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="138.0" y="2847.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="138.0" y="2867.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="2884" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="138.0" y="2903.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="138.0" y="2923.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="2939" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="138.0" y="2959.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="138.0" y="2979.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="123" y="2995" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="138.0" y="3015.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="138.0" y="3035.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="138.0" y="3085.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="138.0" y="3117.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">72</text>
+<circle cx="246" cy="2748" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="246.0" y="2753.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">4</text>
+<text x="246.0" y="2788.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="246.0" y="2805.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="231" y="2828" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="246.0" y="2847.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="246.0" y="2867.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="2884" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="246.0" y="2903.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="246.0" y="2923.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="2939" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="246.0" y="2959.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="246.0" y="2979.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="231" y="2995" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="246.0" y="3015.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="246.0" y="3035.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="246.0" y="3085.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#6c4ab6">-1</text>
+<text x="246.0" y="3117.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">73</text>
+<circle cx="354" cy="2748" r="14" fill="#eef3f9" stroke="#cfd8e6"/>
+<text x="354.0" y="2753.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#26364f">3</text>
+<text x="354.0" y="2788.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">base L</text>
+<text x="354.0" y="2805.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1769aa">B/N L/L</text>
+<rect x="339" y="2828" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="354.0" y="2847.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="354.0" y="2867.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="2884" width="30" height="28" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="354.0" y="2903.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="#26364f">-</text>
+<text x="354.0" y="2923.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="2939" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="354.0" y="2959.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="354.0" y="2979.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<rect x="339" y="2995" width="30" height="30" rx="6" fill="#d3d9e3" stroke="#9aa5b5" stroke-width="1.2"/>
+<text x="354.0" y="3015.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#26364f">N</text>
+<text x="354.0" y="3035.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#596579">p=0.00</text>
+<text x="354.0" y="3085.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="800" fill="#1769aa">+1</text>
+<text x="354.0" y="3117.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8a94a6">74</text>
+<rect x="48" y="3200" width="1394" height="42" rx="10" fill="#f2f6fb" stroke="#dce4ef"/>
+<text x="70.0" y="3226.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#26364f">Path check: joint 75/75, attacker 75/75, defender 75/75; BVI defends/not = 0/75; BVI/NNQ attacks = 0/0.</text>
+</svg>

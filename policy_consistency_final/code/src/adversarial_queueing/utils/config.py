@@ -35,13 +35,15 @@ def build_service_rate_config(data: dict[str, Any]) -> ServiceRateControlConfig:
         gamma=float(env.get("gamma", 0.95)),
         q_congestion=float(env.get("q_congestion", 1.0)),
         attack_cost=float(env.get("attack_cost", 0.5)),
+        defend_cost=float(env.get("defend_cost", 0.2)),
         initial_state=int(env.get("initial_state", 0)),
         uniformization_rate=(
             None
             if env.get("uniformization_rate") is None
             else float(env["uniformization_rate"])
         ),
-        robust_defender_actions=tuple(int(x) for x in env.get("robust_defender_actions", [2])),
+        low_threshold=int(env.get("low_threshold", 5)),
+        high_threshold=int(env.get("high_threshold", 15)),
         bvi_max_queue_length=int(bvi.get("max_queue_length", 20)),
         boundary_mode=str(bvi.get("boundary_mode", "clip")),
     )

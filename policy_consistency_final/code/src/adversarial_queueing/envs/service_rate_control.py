@@ -12,7 +12,7 @@ from adversarial_queueing.envs.base import BaseAdversarialQueueEnv
 
 @dataclass(frozen=True)
 class ServiceRateControlConfig:
-    """Configuration for the initial service-rate-control benchmark."""
+    """Configuration for the service-rate-control defend game."""
 
     lambda_arrival: float
     mu_levels: tuple[float, float, float]
@@ -20,9 +20,11 @@ class ServiceRateControlConfig:
     gamma: float = 0.95
     q_congestion: float = 1.0
     attack_cost: float = 0.5
+    defend_cost: float = 0.2
     initial_state: int = 0
     uniformization_rate: float | None = None
-    robust_defender_actions: tuple[int, ...] = (2,)
+    low_threshold: int = 5
+    high_threshold: int = 15
     bvi_max_queue_length: int = 20
     boundary_mode: str = "clip"
 
@@ -30,11 +32,15 @@ class ServiceRateControlConfig:
         if self.lambda_arrival <= 0:
             raise ValueError("lambda_arrival must be positive")
         if len(self.mu_levels) != 3:
-            raise ValueError("initial service-rate-control benchmark requires exactly three mu_levels")
+            raise ValueError("service-rate-control benchmark requires exactly three mu_levels")
         if len(self.service_costs) != len(self.mu_levels):
             raise ValueError("service_costs must match mu_levels")
         if not 0 < self.gamma < 1:
             raise ValueError("gamma must be in (0, 1)")
+        if self.low_threshold < 0:
+            raise ValueError("low_threshold must be nonnegative")
+        if self.high_threshold <= self.low_threshold:
+            raise ValueError("high_threshold must be larger than low_threshold")
         if self.boundary_mode != "clip":
             raise ValueError("only boundary_mode='clip' is implemented in the baseline")
 
@@ -76,20 +82,57 @@ class ServiceRateControlEnv(BaseAdversarialQueueEnv):
         return (0, 1)
 
     def defender_actions(self, state) -> tuple[int, ...]:
-        return tuple(range(len(self.config.mu_levels)))
+        del state
+        return (0, 1)
 
     def encode_state(self, state) -> list[float]:
         return [float(state)]
 
-    def realized_mu(self, attacker_action: int, defender_action: int) -> float:
-        if attacker_action == 1 and defender_action not in self.config.robust_defender_actions:
-            return self.config.mu_levels[0]
-        return self.config.mu_levels[defender_action]
+    def baseline_service_level(self, state: int) -> int:
+        """Return the threshold-policy service level for ``state``.
+
+        Levels are encoded as 0=low, 1=medium, 2=high.
+        """
+
+        x = int(state)
+        if x < self.config.low_threshold:
+            return 0
+        if x < self.config.high_threshold:
+            return 1
+        return 2
+
+    def realized_service_level(
+        self,
+        state: int,
+        attacker_action: int,
+        defender_action: int,
+    ) -> int:
+        """Return the service level applied for one transition.
+
+        A successful attack, i.e. attack without defense, forces high service
+        for this step only. Otherwise the server follows the fixed threshold
+        baseline policy.
+        """
+
+        if attacker_action == 1 and defender_action == 0:
+            return 2
+        return self.baseline_service_level(state)
+
+    def realized_mu(self, state: int, attacker_action: int, defender_action: int) -> float:
+        return self.config.mu_levels[
+            self.realized_service_level(state, attacker_action, defender_action)
+        ]
 
     def instantaneous_cost(self, state: int, attacker_action: int, defender_action: int) -> float:
-        service_cost = self.config.service_costs[defender_action]
+        realized_level = self.realized_service_level(state, attacker_action, defender_action)
+        service_cost = self.config.service_costs[realized_level]
         congestion = self.config.q_congestion * float(state * state)
-        return congestion + service_cost - self.config.attack_cost * attacker_action
+        return (
+            congestion
+            + service_cost
+            + self.config.defend_cost * defender_action
+            - self.config.attack_cost * attacker_action
+        )
 
     def cost(self, state, attacker_action: int, defender_action: int, next_state=None) -> float:
         # Exact uniformized conversion for discounted continuous-time cost.
@@ -103,7 +146,9 @@ class ServiceRateControlEnv(BaseAdversarialQueueEnv):
         x = int(state)
         rate = self.uniformization_rate
         arrival_prob = self.config.lambda_arrival / rate
-        service_prob = self.realized_mu(attacker_action, defender_action) / rate if x > 0 else 0.0
+        service_prob = (
+            self.realized_mu(x, attacker_action, defender_action) / rate if x > 0 else 0.0
+        )
 
         probs: dict[int, float] = {}
         next_up = x + 1
@@ -128,11 +173,14 @@ class ServiceRateControlEnv(BaseAdversarialQueueEnv):
         next_state = int(self._rng.choice(states, p=weights))
         one_step_cost = self.cost(self._state, attacker_action, defender_action, next_state)
         info = {
-            "realized_mu": self.realized_mu(attacker_action, defender_action),
+            "baseline_service_level": self.baseline_service_level(self._state),
+            "realized_service_level": self.realized_service_level(
+                self._state, attacker_action, defender_action
+            ),
+            "realized_mu": self.realized_mu(self._state, attacker_action, defender_action),
             "instantaneous_cost": self.instantaneous_cost(
                 self._state, attacker_action, defender_action
             ),
         }
         self._state = next_state
         return next_state, one_step_cost, info
-

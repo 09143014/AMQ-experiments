@@ -62,10 +62,12 @@ def default_env_config(max_queue_length: int = 20) -> ServiceRateControlConfig:
         mu_levels=(1.0, 3.0, 5.0),
         service_costs=(0.0, 0.2, 3.0),
         attack_cost=0.5,
+        defend_cost=0.2,
         q_congestion=0.2,
         initial_state=0,
         uniformization_rate=7.0,
-        robust_defender_actions=(2,),
+        low_threshold=5,
+        high_threshold=15,
         bvi_max_queue_length=max_queue_length,
     )
 

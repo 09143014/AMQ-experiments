@@ -160,7 +160,7 @@ $$
 本报告实际实验中的 BVI 设置如下：
 
 - Routing：使用论文 security setting 的 source-faithful BVI，三队列 `x=(q1,q2,q3)`，`B=20`，每个 state 解上述 2 x 2 auxiliary matrix game。
-- Service-rate-control：使用同一类 bounded value iteration 思路，bounded queue length 为 `0..20`；attacker 为 binary action，defender 为服务率档位 action，policy 由对应 state 的 matrix game solution 给出。
+- Service-rate-control v2：使用同一类 bounded value iteration 思路，bounded queue length 为 `0..20`；attacker 为 binary action，defender 为 `defend / not defend` 二元动作，policy 由对应 state 的 2 x 2 matrix game solution 给出。
 - Polling：使用三队列 bounded value iteration，state 为 `(q1,q2,q3,p)`，`max_queue_length=30`，其中 `p` 是 server position；BVI 只截断 queue components，不截断 server position。
 
 当 rollout 中真实转移产生超过 bound 的 queue length 时，BVI 查表时会将 queue length clip 到 bound。这个 clip 只用于 bounded value lookup；真实环境 rollout 本身仍按环境转移继续走。
@@ -269,7 +269,7 @@ $$
 - 不直接把 BVI policy table 当作神经网络的答案；
 - 不跳过 matrix game solver 直接做 greedy argmax。
 
-三个 benchmark 的状态特征、动作维度和训练配置略有不同：routing 的 defender action 是二元的，service-rate-control 的 defender action 是三档服务率，polling 的 state 还包含 server position。但它们在本报告中的共同算法口径是一致的：
+三个 benchmark 的状态特征、动作维度和训练配置略有不同：routing、service-rate-control v2 与 polling 的 defender action 都是二元 defend decision；service-rate-control 额外有一个由 threshold policy 派生的服务器服务率；polling 的 state 还包含 server position。但它们在本报告中的共同算法口径是一致的：
 
 $$
 \text{features}(s)
@@ -311,13 +311,17 @@ $$
 \text{state}=q.
 $$
 
-Defender 选择服务率档位：
+本报告采用 service-rate-control v2 benchmark。这是一个 breaking change：旧版本把 defender action 解释为三档服务率选择 `L/M/H`；新版中 defender 只选择是否防御，服务器服务率由固定 threshold policy 决定：
 
 ```text
-L = low, M = medium, H = high / robust
+q < 5       -> low service
+5 <= q < 15 -> medium service
+q >= 15    -> high service
 ```
 
-本报告采用 LMH action-diversity setting，因此图中能同时看到 L/M/H 三类服务率选择。Attacker 与 defender policy 均来自各自 matrix game solution。
+如果 attacker attack 且 defender not defend，则当前 step 的 realized service 被强制为 high；否则服务器按 threshold baseline service 运行。Defender 选择 defend 会产生额外防御成本 `0.2`。因此 service-rate-control v2 与 routing/polling 一样，都是 attacker-defender 2 x 2 matrix game。
+
+旧 LMH setting 下的 service-rate 图和 artifact 已移动到 `_legacy/`，不再进入本报告主结论。
 
 ### 3.3 Polling
 
@@ -337,23 +341,25 @@ BVI A, NNQ A, BVI D, NNQ D
 
 ## 4. 总体结果
 
-9 条正式 rollout 全部达到 100% joint-action agreement：
+9 条正式 rollout 的总体 sampled joint-action agreement 为：
 
 $$
-\frac{675}{675}=100.00\%.
+\frac{654}{675}=96.89\%.
 $$
+
+其中 routing 与 service-rate-control v2 三条轨迹均为 100%；polling 在新版图中也按 mixed defender policy 采样，而不是沿用旧图的 greedy defender action，因此 P2 暴露出较明显的概率差距，joint sampled agreement 降为 `59/75`。这不是环境错误，而是更严格的 probability-aware rollout 口径带来的结果。
 
 | Benchmark | Case | Initial state | Horizon | Joint agreement | Attacker agreement | Defender agreement | Activity summary |
 |---|---|---:|---:|---:|---:|---:|---|
-| Routing | R1 | `(5,5,5)` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | attacks `32/32`, defends `30/30` |
-| Routing | R2 | `(2,6,10)` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | attacks `23/23`, defends `59/59` |
-| Routing | R3 | `(2,5,12)` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | attacks `20/20`, defends `66/66` |
-| Service-rate | S1 | `0` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | attacks `19/19`, L/M/H `9/16/50` |
-| Service-rate | S2 | `4` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | attacks `23/23`, L/M/H `29/26/20` |
-| Service-rate | S3 | `8` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | attacks `20/20`, L/M/H `24/28/23` |
-| Polling | P1 | `(0,17,18,p=1)` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | attacks `12/12`, defends `21/21` |
-| Polling | P2 | `(1,1,4,p=2)` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | attacks `13/13`, defends `16/16` |
-| Polling | P3 | `(1,2,1,p=1)` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | attacks `11/11`, defends `17/17` |
+| Routing | R1 | `(5,5,5)` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `0.002`, attacks `32/32`, defends `30/30` |
+| Routing | R2 | `(2,6,10)` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `0.001`, attacks `23/23`, defends `59/59` |
+| Routing | R3 | `(2,5,12)` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `0.001`, attacks `20/20`, defends `66/66` |
+| Service-rate v2 | S1 | `0` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `0.000`, attacks `3/3`, defends `4/4` |
+| Service-rate v2 | S2 | `8` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `0.000`, attacks `0/0`, defends `0/0` |
+| Service-rate v2 | S3 | `16` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `0.000`, attacks `0/0`, defends `0/0` |
+| Polling | P1 | `(0,17,18,p=0)` | 75 | `73/75 = 97.33%` | `74/75` | `73/75` | mean p-gap `0.020`, attacks `11/12`, defends `9/9` |
+| Polling | P2 | `(1,1,4,p=1)` | 75 | `59/75 = 78.67%` | `63/75` | `63/75` | mean p-gap `0.138`, attacks `3/13`, defends `3/11` |
+| Polling | P3 | `(1,2,1,p=0)` | 75 | `72/75 = 96.00%` | `73/75` | `74/75` | mean p-gap `0.022`, attacks `8/8`, defends `10/11` |
 
 ## 5. 结果图
 
@@ -367,11 +373,11 @@ $$
 
 ### 5.2 Service-rate-control
 
-![Service-rate S1](figures/service_rate_lmh_bvi_vs_nnq_initial_0_h75.svg)
+![Service-rate S1](figures/service_rate_v2_bvi_vs_nnq_initial_0_h75.svg)
 
-![Service-rate S2](figures/service_rate_lmh_bvi_vs_nnq_initial_4_h75.svg)
+![Service-rate S2](figures/service_rate_v2_bvi_vs_nnq_initial_8_h75.svg)
 
-![Service-rate S3](figures/service_rate_lmh_bvi_vs_nnq_initial_8_h75.svg)
+![Service-rate S3](figures/service_rate_v2_bvi_vs_nnq_initial_16_h75.svg)
 
 ### 5.3 Polling
 
@@ -422,7 +428,8 @@ code/
 | `code/src/adversarial_queueing/evaluation/` | policy grid、rollout、policy inspection 与图生成脚本共用的读取/评估逻辑。 |
 | `code/experiments/source_faithful_routing_consistency/routing_bvi_dqn_consistency.py` | Routing 的 source-faithful BVI 与 neural fixed-point minimax-Q / fitted minimax-DQN 实现。 |
 | `code/experiments/source_faithful_routing_consistency/plot_neural_fixed_point_rollout.py` | 生成 routing 三张 75-step BVI vs DQN 决策链路图。 |
-| `code/scripts/build_service_rate_policy_path_figure.py` | 读取 service-rate 的 BVI / NNQ artifact，生成 service-rate 三张 75-step 决策链路图。 |
+| `code/scripts/build_service_rate_v2_artifacts.py` | 生成 service-rate-control v2 的 BVI policy grid 与 NNQ q diagnostic artifact。 |
+| `code/scripts/build_service_rate_policy_path_figure.py` | 读取 service-rate v2 的 BVI / NNQ artifact，生成 service-rate 三张 75-step 决策链路图。 |
 | `code/scripts/build_polling_policy_path_figure.py` | 读取 polling 三队列 BVI / NNQ artifact，生成 polling 三张 75-step 决策链路图。 |
 | `code/configs/` | Polling 与 service-rate-control 的正式 BVI/NNQ 配置文件。 |
 | `code/artifacts/` | 最终报告所需的模型参数、policy grid、policy inspection、Q diagnostic 等输入产物。 |
@@ -442,10 +449,11 @@ code/
 
 ## 7. 结论
 
-在本报告选定的 9 条真实环境 rollout 上，BVI 与 fitted minimax-DQN 的 attacker-defender joint decisions 完全一致。结果支持以下结论：
+在本报告选定的 9 条真实环境 rollout 上，BVI 与 fitted minimax-DQN 在 routing 和 service-rate-control v2 上达到完全 sampled joint-action agreement；polling 在更严格的 mixed-policy sampled rollout 下暴露出一条明显较弱轨迹。结果支持以下更精确的结论：
 
 ```text
-BVI and fitted minimax-DQN produce highly consistent policies on the three queueing benchmarks.
+BVI and fitted minimax-DQN produce highly consistent policies on routing and service-rate-control v2;
+polling remains mostly consistent but contains one probability-gap-heavy rollout under sampled mixed policies.
 ```
 
-需要注意的是，本报告的结论是 rollout-level policy consistency：它证明在这些 representative initial states 和 shared randomness 下，两类方法在真实环境链路中的 joint decisions 高度一致；它不声称整个 bounded grid 上每一个 state 的 policy distribution 都完全相同。
+需要注意的是，本报告的结论是 rollout-level policy consistency：它证明在这些 representative initial states 和 shared randomness 下，两类方法在真实环境链路中的 joint decisions 接近或一致；它不声称整个 bounded grid 上每一个 state 的 policy distribution 都完全相同。新版图中显示的 `pA` 与 `pD` 正是为了让读者检查 sampled action 背后的策略概率是否真正接近。

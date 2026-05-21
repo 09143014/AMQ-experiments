@@ -191,6 +191,10 @@ def _rollout_rows(
                 "nnq_attacker": nnq_attacker,
                 "bvi_defender": bvi_defender,
                 "nnq_defender": nnq_defender,
+                "bvi_attacker_action": bvi_attacker,
+                "nnq_attacker_action": nnq_attacker,
+                "bvi_defender_action": bvi_defender,
+                "nnq_defender_action": nnq_defender,
                 "attacker_match": bvi_attacker == nnq_attacker,
                 "defender_match": bvi_defender == nnq_defender,
                 "joint_match": bvi_attacker == nnq_attacker and bvi_defender == nnq_defender,
@@ -211,12 +215,12 @@ def _rollout_rows(
 
 
 def _render_svg(rows: list[dict[str, Any]], *, title: str, subtitle: str) -> str:
-    columns = 15
+    columns = 12
     left = 128
-    col_w = 72
+    col_w = 106
     right = 48
     top = 170
-    panel_h = 292
+    panel_h = 344
     panels = (len(rows) + columns - 1) // columns
     width = left + col_w * columns + right
     height = top + panel_h * panels + 88
@@ -258,11 +262,11 @@ def _render_svg(rows: list[dict[str, Any]], *, title: str, subtitle: str) -> str
 def _render_panel(parts: list[str], rows: list[dict[str, Any]], left: int, col_w: int, y0: int) -> None:
     labels = [
         ("state", 0),
-        ("BVI A", 44),
-        ("NNQ A", 86),
-        ("BVI D", 128),
-        ("NNQ D", 170),
-        ("event", 213),
+        ("BVI A", 52),
+        ("NNQ A", 104),
+        ("BVI D", 156),
+        ("NNQ D", 208),
+        ("event", 266),
     ]
     for label, offset in labels:
         parts.append(_txt(48, y0 + offset + 5, label, 12, weight=800, fill="#26364f"))
@@ -279,21 +283,21 @@ def _render_panel(parts: list[str], rows: list[dict[str, Any]], left: int, col_w
         parts.append(f'<circle cx="{x}" cy="{y0}" r="15" fill="{state_fill}" stroke="#cbd7e6"/>')
         parts.append(_txt(x, y0 - 1, str(sum(state)), 10, anchor="middle", weight=800))
         parts.append(_txt(x, y0 + 24, _fmt_state(state), 8, anchor="middle", fill="#596579"))
-        _action_cell(parts, x, y0 + 44, "A", int(row["bvi_attacker"]))
-        _action_cell(parts, x, y0 + 86, "A", int(row["nnq_attacker"]))
-        _action_cell(parts, x, y0 + 128, "D", int(row["bvi_defender"]))
-        _action_cell(parts, x, y0 + 170, "D", int(row["nnq_defender"]))
+        _action_cell(parts, x, y0 + 52, "A", int(row["bvi_attacker"]), float(row["bvi_p_attack"]))
+        _action_cell(parts, x, y0 + 104, "A", int(row["nnq_attacker"]), float(row["nnq_p_attack"]))
+        _action_cell(parts, x, y0 + 156, "D", int(row["bvi_defender"]), float(row["bvi_p_defend"]))
+        _action_cell(parts, x, y0 + 208, "D", int(row["nnq_defender"]), float(row["nnq_p_defend"]))
         if not row["joint_match"]:
             parts.append(
-                f'<rect x="{x - 20}" y="{y0 + 30}" width="40" height="158" rx="8" '
+                f'<rect x="{x - 26}" y="{y0 + 34}" width="52" height="194" rx="8" '
                 'fill="none" stroke="#d92d20" stroke-width="2" stroke-dasharray="4 4"/>'
             )
         event = row["bvi_event"]
-        parts.append(_txt(x, y0 + 218, event, 9, anchor="middle", weight=800, fill=_event_color(event)))
-        parts.append(_txt(x, y0 + 239, str(row["step"]), 9, anchor="middle", fill="#8a94a6"))
+        parts.append(_txt(x, y0 + 271, event, 9, anchor="middle", weight=800, fill=_event_color(event)))
+        parts.append(_txt(x, y0 + 296, str(row["step"]), 9, anchor="middle", fill="#8a94a6"))
 
 
-def _action_cell(parts: list[str], x: int, y: int, action_type: str, action: int) -> None:
+def _action_cell(parts: list[str], x: int, y: int, action_type: str, action: int, probability: float) -> None:
     if action_type == "A":
         active_fill = "#c2410c"
         active_stroke = "#9a3412"
@@ -317,6 +321,17 @@ def _action_cell(parts: list[str], x: int, y: int, action_type: str, action: int
         f'fill="{fill}" stroke="{stroke}" stroke-width="1.2"/>'
     )
     parts.append(_txt(x, y + 5, label, 13, anchor="middle", weight=800, fill=label_fill))
+    parts.append(
+        _txt(
+            x,
+            y + 24,
+            f"p={probability:.2f}",
+            9,
+            anchor="middle",
+            weight=700,
+            fill="#596579",
+        )
+    )
 
 
 def _legend(x: int, y: int) -> str:

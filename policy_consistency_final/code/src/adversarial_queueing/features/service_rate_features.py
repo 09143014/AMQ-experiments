@@ -11,7 +11,7 @@ def service_rate_features(
     defender_action: int,
     feature_set: str = "basic_quadratic",
     num_attacker_actions: int = 2,
-    num_defender_actions: int = 3,
+    num_defender_actions: int = 2,
 ) -> np.ndarray:
     """Return ``phi(x, a, b)`` for service-rate-control AMQ.
 
@@ -45,7 +45,7 @@ def service_rate_features(
 def service_rate_feature_dim(
     feature_set: str = "basic_quadratic",
     num_attacker_actions: int = 2,
-    num_defender_actions: int = 3,
+    num_defender_actions: int = 2,
 ) -> int:
     return int(
         service_rate_features(
@@ -65,4 +65,3 @@ def _one_hot(index: int, size: int) -> np.ndarray:
     out = np.zeros(size, dtype=float)
     out[index] = 1.0
     return out
-

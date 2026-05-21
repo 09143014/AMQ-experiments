@@ -33,7 +33,7 @@ def main() -> int:
     parser.add_argument("--horizon", type=int, default=75)
     parser.add_argument("--env-seed", type=int, default=301)
     parser.add_argument("--attacker-seed", type=int, default=1729)
-    parser.add_argument("--columns", type=int, default=15)
+    parser.add_argument("--columns", type=int, default=12)
     parser.add_argument(
         "--svg-output",
         default="results/figures/polling_policy_path_bvi_vs_nnq_h75.svg",
@@ -119,10 +119,11 @@ def _simulate_same_state_path(
         bvi_attacker_probs = _policy_probs(bvi_attacker, bvi_state)
         nnq_attacker_probs = _policy_probs(nnq_attacker, nnq_state)
         attacker_u = float(attacker_rng.random())
+        defender_u = float(attacker_rng.random())
         bvi_attacker_action = int(attacker_u < bvi_attacker_probs[1])
         nnq_attacker_action = int(attacker_u < nnq_attacker_probs[1])
-        bvi_action = _greedy(bvi_probs)
-        nnq_action = _greedy(nnq_probs)
+        bvi_action = int(defender_u < bvi_probs[1])
+        nnq_action = int(defender_u < nnq_probs[1])
         bvi_targets = env.polling_targets(bvi_state, bvi_attacker_action, bvi_action)
         nnq_targets = env.polling_targets(nnq_state, nnq_attacker_action, nnq_action)
         random_u = float(rng.random())
@@ -146,6 +147,10 @@ def _simulate_same_state_path(
                 "nnq_attacker_action": nnq_attacker_action,
                 "bvi_action": bvi_action,
                 "nnq_action": nnq_action,
+                "bvi_defender_action": bvi_action,
+                "nnq_defender_action": nnq_action,
+                "bvi_p_attack": float(bvi_attacker_probs[1]),
+                "nnq_p_attack": float(nnq_attacker_probs[1]),
                 "bvi_p_defend": float(bvi_probs[1]),
                 "nnq_p_defend": float(nnq_probs[1]),
                 "bvi_attacker_p_attack": float(bvi_attacker_probs[1]),
@@ -176,10 +181,10 @@ def _render_svg(
     columns: int,
 ) -> str:
     left = 138
-    col_w = 96
+    col_w = 108
     right = 56
     top = 162
-    panel_h = 374
+    panel_h = 432
     width = left + col_w * columns + right
     height = top + panel_h * ((len(rows) + columns - 1) // columns) + 96
     text = [
@@ -243,12 +248,12 @@ def _render_panel(text: list[str], rows: list[dict[str, Any]], left: int, col_w:
     labels = [
         ("state", 0),
         ("target", 40),
-        ("BVI A", 84),
-        ("NNQ A", 128),
-        ("BVI D", 172),
-        ("NNQ D", 216),
-        ("event", 260),
-        ("step", 294),
+        ("BVI A", 92),
+        ("NNQ A", 148),
+        ("BVI D", 204),
+        ("NNQ D", 260),
+        ("event", 330),
+        ("step", 362),
     ]
     for label, offset in labels:
         text.append(_txt(48, y0 + offset + 5, label, 13, weight=800, fill="#26364f"))
@@ -267,21 +272,21 @@ def _render_panel(text: list[str], rows: list[dict[str, Any]], left: int, col_w:
         text.append(_txt(x, y0 + 28, _fmt_state(state), 8, anchor="middle", fill="#596579"))
         targets = ",".join(f"q{int(target) + 1}" for target in row["bvi_polling_targets"])
         text.append(_txt(x, y0 + 45, targets, 10, anchor="middle", weight=800, fill="#1769aa"))
-        _render_attacker_action(text, x, y0 + 84, int(row["bvi_attacker_action"]))
-        _render_attacker_action(text, x, y0 + 128, int(row["nnq_attacker_action"]))
-        _render_action(text, x, y0 + 172, int(row["bvi_action"]))
-        _render_action(text, x, y0 + 216, int(row["nnq_action"]))
+        _render_attacker_action(text, x, y0 + 92, int(row["bvi_attacker_action"]), float(row["bvi_p_attack"]))
+        _render_attacker_action(text, x, y0 + 148, int(row["nnq_attacker_action"]), float(row["nnq_p_attack"]))
+        _render_action(text, x, y0 + 204, int(row["bvi_action"]), float(row["bvi_p_defend"]))
+        _render_action(text, x, y0 + 260, int(row["nnq_action"]), float(row["nnq_p_defend"]))
         if not row["actions_agree"]:
             text.append(
-                f'<rect x="{x - 20}" y="{y0 + 68}" width="40" height="166" rx="8" '
+                f'<rect x="{x - 26}" y="{y0 + 70}" width="52" height="214" rx="8" '
                 'fill="none" stroke="#d92d20" stroke-width="2" stroke-dasharray="4 4"/>'
             )
         event = str(row["bvi_event_label"])
-        text.append(_txt(x, y0 + 265, event, 10, anchor="middle", weight=800, fill=_event_color(event)))
-        text.append(_txt(x, y0 + 299, str(row["step"]), 10, anchor="middle", weight=800, fill="#8a94a6"))
+        text.append(_txt(x, y0 + 335, event, 10, anchor="middle", weight=800, fill=_event_color(event)))
+        text.append(_txt(x, y0 + 367, str(row["step"]), 10, anchor="middle", weight=800, fill="#8a94a6"))
 
 
-def _render_action(text: list[str], x: int, y: int, action: int) -> None:
+def _render_action(text: list[str], x: int, y: int, action: int, probability: float) -> None:
     fill = "#2d7d46" if action else "#d3d9e3"
     stroke = "#1f5e35" if action else "#9aa5b5"
     label = "D" if action else "N"
@@ -291,9 +296,10 @@ def _render_action(text: list[str], x: int, y: int, action: int) -> None:
         f'fill="{fill}" stroke="{stroke}" stroke-width="1.2"/>'
     )
     text.append(_txt(x, y + 5, label, 15, anchor="middle", weight=800, fill=label_fill))
+    text.append(_txt(x, y + 25, f"p={probability:.2f}", 9, anchor="middle", weight=700, fill="#596579"))
 
 
-def _render_attacker_action(text: list[str], x: int, y: int, action: int) -> None:
+def _render_attacker_action(text: list[str], x: int, y: int, action: int, probability: float) -> None:
     fill = "#c2410c" if action else "#f1f5f9"
     stroke = "#9a3412" if action else "#cbd5e1"
     label = "A" if action else "-"
@@ -303,6 +309,7 @@ def _render_attacker_action(text: list[str], x: int, y: int, action: int) -> Non
         f'fill="{fill}" stroke="{stroke}" stroke-width="1.2"/>'
     )
     text.append(_txt(x, y + 5, label, 14, anchor="middle", weight=800, fill=label_fill))
+    text.append(_txt(x, y + 25, f"p={probability:.2f}", 9, anchor="middle", weight=700, fill="#596579"))
 
 
 def _legend(x: float, y: float) -> str:

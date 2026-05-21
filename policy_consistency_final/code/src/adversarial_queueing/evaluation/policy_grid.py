@@ -77,14 +77,13 @@ def _policy_row(
     defender_strategy: np.ndarray,
     attacker_strategy: np.ndarray | None = None,
 ) -> dict[str, float | int | str]:
-    if defender_strategy.shape[0] != 3:
-        raise ValueError("service-rate policy grid currently expects three defender actions")
+    if defender_strategy.shape[0] != 2:
+        raise ValueError("service-rate v2 policy grid expects two defender actions")
     row = {
         "method": method,
         "state": state,
-        "p_low": float(defender_strategy[0]),
-        "p_medium": float(defender_strategy[1]),
-        "p_high": float(defender_strategy[2]),
+        "p_no_defend": float(defender_strategy[0]),
+        "p_defend": float(defender_strategy[1]),
     }
     if attacker_strategy is not None:
         if attacker_strategy.shape[0] != 2:
@@ -98,20 +97,21 @@ def _threshold_summary(
     rows: list[dict[str, float | int | str]],
     config: PolicyGridConfig,
 ) -> dict[str, float | int | None]:
-    high_threshold_state = None
-    medium_threshold_state = None
+    defend_threshold_state = None
+    attack_threshold_state = None
     for row in rows:
         state = int(row["state"])
-        if high_threshold_state is None and row["p_high"] >= config.high_probability_threshold:
-            high_threshold_state = state
+        if defend_threshold_state is None and row["p_defend"] >= config.high_probability_threshold:
+            defend_threshold_state = state
         if (
-            medium_threshold_state is None
-            and row["p_medium"] >= config.high_probability_threshold
+            attack_threshold_state is None
+            and "p_attack" in row
+            and row["p_attack"] >= config.high_probability_threshold
         ):
-            medium_threshold_state = state
+            attack_threshold_state = state
     return {
         "policy_grid_max_state": config.max_state,
         "high_probability_threshold": config.high_probability_threshold,
-        "first_state_p_high_at_least_threshold": high_threshold_state,
-        "first_state_p_medium_at_least_threshold": medium_threshold_state,
+        "first_state_p_defend_at_least_threshold": defend_threshold_state,
+        "first_state_p_attack_at_least_threshold": attack_threshold_state,
     }

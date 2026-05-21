@@ -1,0 +1,30 @@
+{
+  "env_semantics": {
+    "attack_success_effect": "attack=1 and defend=0 forces high service for one step",
+    "attacker_actions": {
+      "0": "not_attack",
+      "1": "attack"
+    },
+    "defend_cost": 0.2,
+    "defender_actions": {
+      "0": "not_defend",
+      "1": "defend"
+    },
+    "threshold_policy": {
+      "high_otherwise": true,
+      "low_if_q_lt": 5,
+      "medium_if_q_lt": 15
+    },
+    "version": "service_rate_control_v2"
+  },
+  "iterations": 268,
+  "max_queue_length": 20,
+  "method": "bvi",
+  "policy_grid": {
+    "first_state_p_attack_at_least_threshold": 0,
+    "first_state_p_defend_at_least_threshold": 0,
+    "high_probability_threshold": 0.5,
+    "policy_grid_max_state": 20
+  },
+  "residual": 9.829702634078785e-07
+}

@@ -1,0 +1,37 @@
+experiment:
+  name: service_rate_control_v2_bvi_probe
+  output_dir: results
+
+env:
+  name: service_rate_control_v2
+  gamma: 0.95
+  lambda_arrival: 2.0
+  mu_levels: [1.0, 3.0, 5.0]
+  service_costs: [0.0, 0.2, 3.0]
+  attack_cost: 0.5
+  defend_cost: 0.2
+  q_congestion: 0.2
+  initial_state: 0
+  uniformization_rate: 7.0
+  low_threshold: 5
+  high_threshold: 15
+
+algorithm:
+  name: bvi
+
+bvi:
+  max_queue_length: 20
+  tolerance: 0.000001
+  max_iterations: 2000
+  boundary_mode: clip
+
+evaluation:
+  num_episodes: 50
+  horizon: 50
+  seed: 200
+  tail_threshold: 8
+  boundary_state: 20
+
+policy_grid:
+  max_state: 20
+  high_probability_threshold: 0.5

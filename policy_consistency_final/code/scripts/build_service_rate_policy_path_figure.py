@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Draw one service-rate-control BVI-vs-NNQ Bellman-target policy path."""
+"""Draw one service-rate-control v2 BVI-vs-NNQ Bellman-target policy path."""
 
 from __future__ import annotations
 
@@ -38,7 +38,7 @@ def main() -> int:
         choices=("learned_split", "learned_bvi", "random"),
         default="learned_split",
     )
-    parser.add_argument("--columns", type=int, default=15)
+    parser.add_argument("--columns", type=int, default=12)
     parser.add_argument(
         "--svg-output",
         default="results/figures/service_rate_policy_path_bvi_vs_nnq_bellman_h75.svg",
@@ -75,7 +75,7 @@ def main() -> int:
         _render_svg(
             env,
             rows,
-            title="Service-Rate Policy Path: BVI vs NNQ Bellman Target",
+            title="Service-Rate v2 Policy Path: BVI vs NNQ Bellman Target",
             subtitle=(
                 f"initial={args.initial_state}, env_seed={args.env_seed}, "
                 f"attacker={args.attacker_mode}, attacker_seed={args.attacker_seed}, "
@@ -129,6 +129,7 @@ def _simulate_same_state_path(
         bvi_attacker_probs = bvi_attacker[bvi_lookup_state]
         nnq_attacker_probs = nnq_attacker[nnq_lookup_state]
         attacker_u = float(attacker_rng.random())
+        defender_u = float(attacker_rng.random())
         if attacker_mode == "learned_bvi":
             bvi_attacker_action = int(attacker_u < bvi_attacker_probs[1])
             nnq_attacker_action = bvi_attacker_action
@@ -138,8 +139,8 @@ def _simulate_same_state_path(
         else:
             bvi_attacker_action = int(attacker_u < 0.5)
             nnq_attacker_action = bvi_attacker_action
-        bvi_action = _greedy(bvi_probs)
-        nnq_action = _greedy(nnq_probs)
+        bvi_action = int(defender_u < bvi_probs[1])
+        nnq_action = int(defender_u < nnq_probs[1])
         random_u = float(rng.random())
         next_bvi_state = _sample_transition(
             env, bvi_state, bvi_attacker_action, bvi_action, random_u
@@ -147,8 +148,16 @@ def _simulate_same_state_path(
         next_nnq_state = _sample_transition(
             env, nnq_state, nnq_attacker_action, nnq_action, random_u
         )
-        bvi_realized_mu = env.realized_mu(bvi_attacker_action, bvi_action)
-        nnq_realized_mu = env.realized_mu(nnq_attacker_action, nnq_action)
+        bvi_baseline_level = env.baseline_service_level(bvi_state)
+        nnq_baseline_level = env.baseline_service_level(nnq_state)
+        bvi_realized_level = env.realized_service_level(
+            bvi_state, bvi_attacker_action, bvi_action
+        )
+        nnq_realized_level = env.realized_service_level(
+            nnq_state, nnq_attacker_action, nnq_action
+        )
+        bvi_realized_mu = env.realized_mu(bvi_state, bvi_attacker_action, bvi_action)
+        nnq_realized_mu = env.realized_mu(nnq_state, nnq_attacker_action, nnq_action)
         rows.append(
             {
                 "step": step,
@@ -164,12 +173,25 @@ def _simulate_same_state_path(
                 "nnq_next_state": next_nnq_state,
                 "bvi_attacker_action": bvi_attacker_action,
                 "nnq_attacker_action": nnq_attacker_action,
+                "bvi_defender_action": bvi_action,
+                "nnq_defender_action": nnq_action,
+                "bvi_p_attack": float(bvi_attacker_probs[1]),
+                "nnq_p_attack": float(nnq_attacker_probs[1]),
                 "bvi_attacker_p_attack": float(bvi_attacker_probs[1]),
                 "nnq_attacker_p_attack": float(nnq_attacker_probs[1]),
                 "bvi_action": bvi_action,
                 "nnq_action": nnq_action,
+                "bvi_p_defend": float(bvi_probs[1]),
+                "nnq_p_defend": float(nnq_probs[1]),
                 "bvi_policy": list(float(value) for value in bvi_probs),
                 "nnq_policy": list(float(value) for value in nnq_probs),
+                "bvi_baseline_service_level": int(bvi_baseline_level),
+                "nnq_baseline_service_level": int(nnq_baseline_level),
+                "bvi_realized_service_level": int(bvi_realized_level),
+                "nnq_realized_service_level": int(nnq_realized_level),
+                "baseline_service_label": _service_label(bvi_baseline_level),
+                "bvi_service_label": _service_label(bvi_realized_level),
+                "nnq_service_label": _service_label(nnq_realized_level),
                 "realized_mu": float(bvi_realized_mu),
                 "bvi_realized_mu": float(bvi_realized_mu),
                 "nnq_realized_mu": float(nnq_realized_mu),
@@ -197,10 +219,10 @@ def _render_svg(
     columns: int,
 ) -> str:
     left = 138
-    col_w = 86
+    col_w = 108
     right = 56
     top = 156
-    panel_h = 326
+    panel_h = 432
     width = left + col_w * columns + right
     height = top + panel_h * ((len(rows) + columns - 1) // columns) + 96
     text = [
@@ -247,7 +269,7 @@ def _render_svg(
                 f"Path check: joint {agreements}/{len(rows)}, "
                 f"attacker {attacker_agreements}/{len(rows)}, "
                 f"defender {defender_agreements}/{len(rows)}; "
-                f"BVI actions L/M/H = {counts[0]}/{counts[1]}/{counts[2]}; "
+                f"BVI defends/not = {counts[1]}/{counts[0]}; "
                 f"BVI/NNQ attacks = {sum(row['bvi_attacker_action'] for row in rows)}/"
                 f"{sum(row['nnq_attacker_action'] for row in rows)}."
             ),
@@ -270,12 +292,13 @@ def _render_panel(
 ) -> None:
     labels = [
         ("state", 0),
-        ("BVI A", 42),
-        ("NNQ A", 84),
-        ("BVI D", 126),
-        ("NNQ D", 168),
-        ("event", 218),
-        ("step", 250),
+        ("mu", 42),
+        ("BVI A", 94),
+        ("NNQ A", 150),
+        ("BVI D", 206),
+        ("NNQ D", 262),
+        ("event", 332),
+        ("step", 364),
     ]
     for label, offset in labels:
         text.append(_txt(48, y0 + offset + 5, label, 13, weight=800, fill="#26364f"))
@@ -294,33 +317,56 @@ def _render_panel(
         state_fill = "#eef3f9" if row["same_state"] else "#fff3d6"
         text.append(f'<circle cx="{x}" cy="{y0}" r="14" fill="{state_fill}" stroke="#cfd8e6"/>')
         text.append(_txt(x, y0 + 5, state_label, 11, anchor="middle", weight=800, fill="#26364f"))
-        _render_attacker_action(text, x, y0 + 42, int(row["bvi_attacker_action"]))
-        _render_attacker_action(text, x, y0 + 84, int(row["nnq_attacker_action"]))
-        _render_action(text, x, y0 + 126, int(row["bvi_action"]))
-        _render_action(text, x, y0 + 168, int(row["nnq_action"]))
+        text.append(
+            _txt(
+                x,
+                y0 + 40,
+                f"base {row['baseline_service_label']}",
+                9,
+                anchor="middle",
+                weight=700,
+                fill="#596579",
+            )
+        )
+        text.append(
+            _txt(
+                x,
+                y0 + 57,
+                f"B/N {row['bvi_service_label']}/{row['nnq_service_label']}",
+                9,
+                anchor="middle",
+                weight=700,
+                fill="#1769aa",
+            )
+        )
+        _render_attacker_action(text, x, y0 + 94, int(row["bvi_attacker_action"]), float(row["bvi_p_attack"]))
+        _render_attacker_action(text, x, y0 + 150, int(row["nnq_attacker_action"]), float(row["nnq_p_attack"]))
+        _render_action(text, x, y0 + 206, int(row["bvi_action"]), float(row["bvi_p_defend"]))
+        _render_action(text, x, y0 + 262, int(row["nnq_action"]), float(row["nnq_p_defend"]))
         if not row["actions_agree"]:
             text.append(
-                f'<rect x="{x - 20}" y="{y0 + 28}" width="40" height="158" rx="8" '
+                f'<rect x="{x - 26}" y="{y0 + 76}" width="52" height="210" rx="8" '
                 'fill="none" stroke="#d92d20" stroke-width="2" stroke-dasharray="4 4"/>'
             )
         event = str(row["bvi_event_label"])
-        text.append(_txt(x, y0 + 223, event, 11, anchor="middle", weight=800, fill=_event_color(event)))
-        text.append(_txt(x, y0 + 255, str(row["step"]), 10, anchor="middle", weight=800, fill="#8a94a6"))
+        text.append(_txt(x, y0 + 337, event, 11, anchor="middle", weight=800, fill=_event_color(event)))
+        text.append(_txt(x, y0 + 369, str(row["step"]), 10, anchor="middle", weight=800, fill="#8a94a6"))
 
 
-def _render_action(text: list[str], x: int, y: int, action: int) -> None:
-    fills = {0: "#d3d9e3", 1: "#4f7db8", 2: "#2d7d46"}
-    strokes = {0: "#9aa5b5", 1: "#315d91", 2: "#1f5e35"}
-    labels = {0: "L", 1: "M", 2: "H"}
-    label_fill = "#26364f" if action == 0 else "#ffffff"
+def _render_action(text: list[str], x: int, y: int, action: int, probability: float) -> None:
+    fill = "#2d7d46" if action else "#d3d9e3"
+    stroke = "#1f5e35" if action else "#9aa5b5"
+    label = "D" if action else "N"
+    label_fill = "#ffffff" if action else "#26364f"
     text.append(
         f'<rect x="{x - 15}" y="{y - 15}" width="30" height="30" rx="6" '
-        f'fill="{fills[action]}" stroke="{strokes[action]}" stroke-width="1.2"/>'
+        f'fill="{fill}" stroke="{stroke}" stroke-width="1.2"/>'
     )
-    text.append(_txt(x, y + 5, labels[action], 15, anchor="middle", weight=800, fill=label_fill))
+    text.append(_txt(x, y + 5, label, 15, anchor="middle", weight=800, fill=label_fill))
+    text.append(_txt(x, y + 25, f"p={probability:.2f}", 9, anchor="middle", weight=700, fill="#596579"))
 
 
-def _render_attacker_action(text: list[str], x: int, y: int, action: int) -> None:
+def _render_attacker_action(text: list[str], x: int, y: int, action: int, probability: float) -> None:
     fill = "#c2410c" if action else "#f1f5f9"
     stroke = "#9a3412" if action else "#cbd5e1"
     label = "A" if action else "-"
@@ -330,19 +376,18 @@ def _render_attacker_action(text: list[str], x: int, y: int, action: int) -> Non
         f'fill="{fill}" stroke="{stroke}" stroke-width="1.2"/>'
     )
     text.append(_txt(x, y + 5, label, 14, anchor="middle", weight=800, fill=label_fill))
+    text.append(_txt(x, y + 25, f"p={probability:.2f}", 9, anchor="middle", weight=700, fill="#596579"))
 
 
 def _legend(x: float, y: float) -> str:
     return "\n".join(
         [
-            f'<rect x="{x}" y="{y - 15}" width="24" height="24" rx="5" fill="#d3d9e3" stroke="#9aa5b5"/>',
-            _txt(x + 34, y + 3, "L", 13, weight=700, fill="#26364f"),
-            f'<rect x="{x + 70}" y="{y - 15}" width="24" height="24" rx="5" fill="#4f7db8"/>',
-            _txt(x + 104, y + 3, "M", 13, weight=700, fill="#26364f"),
-            f'<rect x="{x + 140}" y="{y - 15}" width="24" height="24" rx="5" fill="#2d7d46"/>',
-            _txt(x + 174, y + 3, "H", 13, weight=700, fill="#26364f"),
-            f'<rect x="{x + 218}" y="{y - 15}" width="24" height="24" rx="5" fill="#c2410c"/>',
-            _txt(x + 252, y + 3, "A = attack", 13, weight=700, fill="#26364f"),
+            f'<rect x="{x}" y="{y - 15}" width="24" height="24" rx="5" fill="#c2410c"/>',
+            _txt(x + 34, y + 3, "A = attack", 13, weight=700, fill="#26364f"),
+            f'<rect x="{x + 136}" y="{y - 15}" width="24" height="24" rx="5" fill="#2d7d46"/>',
+            _txt(x + 170, y + 3, "D = defend", 13, weight=700, fill="#26364f"),
+            f'<rect x="{x + 270}" y="{y - 15}" width="24" height="24" rx="5" fill="#d3d9e3" stroke="#9aa5b5"/>',
+            _txt(x + 304, y + 3, "N = not defend", 13, weight=700, fill="#26364f"),
         ]
     )
 
@@ -356,9 +401,8 @@ def _load_bvi_policy_grid(path: Path) -> tuple[Policy, Policy]:
         row = json.loads(line)
         state = int(row["state"])
         defender[state] = (
-            float(row["p_low"]),
-            float(row["p_medium"]),
-            float(row["p_high"]),
+            float(row["p_no_defend"]),
+            float(row["p_defend"]),
         )
         attacker[state] = (float(row["p_no_attack"]), float(row["p_attack"]))
     return defender, attacker
@@ -370,7 +414,7 @@ def _load_nnq_bellman_target_policies(path: Path) -> tuple[Policy, Policy]:
         if not line.strip():
             continue
         row = json.loads(line)
-        matrix = matrices.setdefault(int(row["state"]), np.zeros((2, 3), dtype=float))
+        matrix = matrices.setdefault(int(row["state"]), np.zeros((2, 2), dtype=float))
         matrix[int(row["attacker_action"]), int(row["defender_action"])] = float(
             row["nnq_bellman_target"]
         )
@@ -422,16 +466,16 @@ def _mu_label(env: ServiceRateControlEnv, mu: float) -> str:
     return f"{mu:.1f}"
 
 
+def _service_label(level: int) -> str:
+    return {0: "L", 1: "M", 2: "H"}[int(level)]
+
+
 def _clip_state(state: int, policy: Policy) -> int:
     return min(int(state), max(policy))
 
 
-def _greedy(probs: tuple[float, ...]) -> int:
-    return int(max(range(len(probs)), key=lambda index: probs[index]))
-
-
 def _action_counts(rows: list[dict[str, Any]], key: str) -> dict[int, int]:
-    return {action: sum(1 for row in rows if int(row[key]) == action) for action in (0, 1, 2)}
+    return {action: sum(1 for row in rows if int(row[key]) == action) for action in (0, 1)}
 
 
 def _txt(

@@ -30,7 +30,9 @@ code/
 - `experiments/source_faithful_routing_consistency/plot_neural_fixed_point_rollout.py`
   - 生成 routing 的 BVI vs fitted minimax-DQN 75-step 决策链路图。
 - `scripts/build_service_rate_policy_path_figure.py`
-  - 使用 service-rate BVI policy grid 与 NNQ Bellman-target matrix game extraction 生成 75-step 决策链路图。
+  - 使用 service-rate-control v2 BVI policy grid 与 NNQ Bellman-target matrix game extraction 生成 75-step 决策链路图。
+- `scripts/build_service_rate_v2_artifacts.py`
+  - 重建 service-rate-control v2 的 BVI/NNQ artifact；旧 LMH setting 仅保存在 `_legacy/`。
 - `scripts/build_polling_policy_path_figure.py`
   - 使用三队列 polling BVI/NNQ policy inspection 生成 75-step 决策链路图。
 - `src/adversarial_queueing/`
@@ -85,29 +87,31 @@ python3 experiments/source_faithful_routing_consistency/plot_neural_fixed_point_
 ### Service-rate-control
 
 ```bash
+python3 scripts/build_service_rate_v2_artifacts.py
+
 python3 scripts/build_service_rate_policy_path_figure.py \
-  --bvi-run-dir artifacts/service_rate/bvi \
-  --nnq-run-dir artifacts/service_rate/nnq \
+  --bvi-run-dir artifacts/service_rate_v2/bvi \
+  --nnq-run-dir artifacts/service_rate_v2/nnq \
   --initial-state 0 --env-seed 3301 --attacker-seed 1929 \
-  --attacker-mode learned_split --horizon 75 --columns 15 \
-  --svg-output ../figures/service_rate_lmh_bvi_vs_nnq_initial_0_h75.svg \
-  --jsonl-output ../data/service_rate_lmh_bvi_vs_nnq_initial_0_h75.jsonl
+  --attacker-mode learned_split --horizon 75 --columns 12 \
+  --svg-output ../figures/service_rate_v2_bvi_vs_nnq_initial_0_h75.svg \
+  --jsonl-output ../data/service_rate_v2_bvi_vs_nnq_initial_0_h75.jsonl
 
 python3 scripts/build_service_rate_policy_path_figure.py \
-  --bvi-run-dir artifacts/service_rate/bvi \
-  --nnq-run-dir artifacts/service_rate/nnq \
-  --initial-state 4 --env-seed 3302 --attacker-seed 1930 \
-  --attacker-mode learned_split --horizon 75 --columns 15 \
-  --svg-output ../figures/service_rate_lmh_bvi_vs_nnq_initial_4_h75.svg \
-  --jsonl-output ../data/service_rate_lmh_bvi_vs_nnq_initial_4_h75.jsonl
+  --bvi-run-dir artifacts/service_rate_v2/bvi \
+  --nnq-run-dir artifacts/service_rate_v2/nnq \
+  --initial-state 8 --env-seed 3302 --attacker-seed 1930 \
+  --attacker-mode learned_split --horizon 75 --columns 12 \
+  --svg-output ../figures/service_rate_v2_bvi_vs_nnq_initial_8_h75.svg \
+  --jsonl-output ../data/service_rate_v2_bvi_vs_nnq_initial_8_h75.jsonl
 
 python3 scripts/build_service_rate_policy_path_figure.py \
-  --bvi-run-dir artifacts/service_rate/bvi \
-  --nnq-run-dir artifacts/service_rate/nnq \
-  --initial-state 8 --env-seed 3303 --attacker-seed 1931 \
-  --attacker-mode learned_split --horizon 75 --columns 15 \
-  --svg-output ../figures/service_rate_lmh_bvi_vs_nnq_initial_8_h75.svg \
-  --jsonl-output ../data/service_rate_lmh_bvi_vs_nnq_initial_8_h75.jsonl
+  --bvi-run-dir artifacts/service_rate_v2/bvi \
+  --nnq-run-dir artifacts/service_rate_v2/nnq \
+  --initial-state 16 --env-seed 3303 --attacker-seed 1931 \
+  --attacker-mode learned_split --horizon 75 --columns 12 \
+  --svg-output ../figures/service_rate_v2_bvi_vs_nnq_initial_16_h75.svg \
+  --jsonl-output ../data/service_rate_v2_bvi_vs_nnq_initial_16_h75.jsonl
 ```
 
 ### Polling 三队列
@@ -117,7 +121,7 @@ python3 scripts/build_polling_policy_path_figure.py \
   --bvi-run-dir artifacts/polling3/bvi \
   --nnq-run-dir artifacts/polling3/nnq \
   --initial-state 0,17,18,0 --env-seed 7201 --attacker-seed 8201 \
-  --horizon 75 --columns 15 \
+  --horizon 75 --columns 12 \
   --svg-output ../figures/polling3_bvi_vs_nnq_initial_0_17_18_0_h75.svg \
   --jsonl-output ../data/polling3_bvi_vs_nnq_initial_0_17_18_0_h75.jsonl
 
@@ -125,7 +129,7 @@ python3 scripts/build_polling_policy_path_figure.py \
   --bvi-run-dir artifacts/polling3/bvi \
   --nnq-run-dir artifacts/polling3/nnq \
   --initial-state 1,1,4,1 --env-seed 6534 --attacker-seed 2785 \
-  --horizon 75 --columns 15 \
+  --horizon 75 --columns 12 \
   --svg-output ../figures/polling3_bvi_vs_nnq_initial_1_1_4_1_h75.svg \
   --jsonl-output ../data/polling3_bvi_vs_nnq_initial_1_1_4_1_h75.jsonl
 
@@ -133,7 +137,7 @@ python3 scripts/build_polling_policy_path_figure.py \
   --bvi-run-dir artifacts/polling3/bvi \
   --nnq-run-dir artifacts/polling3/nnq \
   --initial-state 1,2,1,0 --env-seed 3021 --attacker-seed 4959 \
-  --horizon 75 --columns 15 \
+  --horizon 75 --columns 12 \
   --svg-output ../figures/polling3_bvi_vs_nnq_initial_1_2_1_0_h75.svg \
   --jsonl-output ../data/polling3_bvi_vs_nnq_initial_1_2_1_0_h75.jsonl
 ```
@@ -146,14 +150,8 @@ python3 scripts/build_polling_policy_path_figure.py \
 policy consistency = matched (attacker action, defender action) steps / total steps
 ```
 
-9 条正式轨迹均为：
+新版图使用 probability-aware sampled rollout。Routing 与 service-rate-control v2 三条轨迹均为 `75/75`；polling 因 defender 也改为 mixed-policy sampling，有一条轨迹会暴露明显概率差距。
 
 ```text
-75/75 = 100.00%
-```
-
-合计：
-
-```text
-675/675 = 100.00%
+overall = 654/675 = 96.89%
 ```
