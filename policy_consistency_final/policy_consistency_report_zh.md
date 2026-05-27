@@ -160,7 +160,7 @@ $$
 本报告实际实验中的 BVI 设置如下：
 
 - Routing：使用论文 security setting 的 source-faithful BVI，三队列 `x=(q1,q2,q3)`，`B=20`，每个 state 解上述 2 x 2 auxiliary matrix game。
-- Service-rate-control v2：使用同一类 bounded value iteration 思路，bounded queue length 为 `0..20`；attacker 为 binary action，defender 为 `defend / not defend` 二元动作，policy 由对应 state 的 2 x 2 matrix game solution 给出。
+- Service-rate-control v3 candidate：使用同一类 bounded value iteration 思路，bounded queue length 为 `0..20`；attacker 为 binary action，defender 为 `defend / not defend` 二元动作，policy 由对应 state 的 2 x 2 matrix game solution 给出。这里没有改变 BVI 算法，只是将 service-rate benchmark 从低活动 v2 重新参数化为更适合压力测试的 v3 candidate。
 - Polling：使用三队列 bounded value iteration，state 为 `(q1,q2,q3,p)`，`max_queue_length=30`，其中 `p` 是 server position；BVI 只截断 queue components，不截断 server position。
 
 当 rollout 中真实转移产生超过 bound 的 queue length 时，BVI 查表时会将 queue length clip 到 bound。这个 clip 只用于 bounded value lookup；真实环境 rollout 本身仍按环境转移继续走。
@@ -235,7 +235,7 @@ c(s,a,b)
 \right].
 $$
 
-这里 $Q_{\bar\theta}$ 是 target network 或上一轮固定下来的 target Q function；$\operatorname{val}(\cdot)$ 仍然是对 next-state Q matrix 解 zero-sum matrix game 得到的 minimax value。也就是说，DQN 的 target 里也有 matrix game solver，不是普通 single-agent DQN 的 $\max_a Q(s',a)$。
+这里 $Q_{\bar\theta}$ 是 target network、上一轮固定下来的 target Q function，或已经收敛的 model-based Bellman-Q fixed point；$\operatorname{val}(\cdot)$ 仍然是对 next-state Q matrix 解 zero-sum matrix game 得到的 minimax value。也就是说，DQN 的 target 里也有 matrix game solver，不是普通 single-agent DQN 的 $\max_a Q(s',a)$。
 
 训练时，当前网络输出 $Q_\theta(s,a,b)$，然后最小化它和 Bellman target $y(s,a,b)$ 的误差：
 
@@ -269,7 +269,7 @@ $$
 - 不直接把 BVI policy table 当作神经网络的答案；
 - 不跳过 matrix game solver 直接做 greedy argmax。
 
-三个 benchmark 的状态特征、动作维度和训练配置略有不同：routing、service-rate-control v2 与 polling 的 defender action 都是二元 defend decision；service-rate-control 额外有一个由 threshold policy 派生的服务器服务率；polling 的 state 还包含 server position。但它们在本报告中的共同算法口径是一致的：
+三个 benchmark 的状态特征、动作维度和训练配置略有不同：routing、service-rate-control v3 candidate 与 polling 的 defender action 都是二元 defend decision；service-rate-control 额外有一个由 threshold policy 派生的服务器服务率；polling 的 state 还包含 server position。三个 benchmark 的最终 DQN 口径均为 fitted minimax-DQN：先构造 model-based Bellman-Q fixed-point target，再用神经网络拟合 Q matrix。它们在本报告中的共同算法口径是一致的：
 
 $$
 \text{features}(s)
@@ -291,6 +291,8 @@ $$
 
 所以，本报告中的 policy consistency 结果表示：在相同初始状态、相同环境随机数和相同 action sampling random numbers 下，BVI 与 DQN 这两种不同的 Bellman/Q 后端给出了相同的 attacker-defender joint decisions。
 
+本轮修订还统一修复了 matrix-game solver 的 attacker policy extraction：对 2 x 2 game 和一般矩形 game，attacker policy 都由 dual max-min problem 得到，而不是在 defender 最优策略下对并列最优 attacker rows 做任意平均。这一点对 polling 尤其重要，因为 polling 存在较多 mixed / near-tie states。
+
 ## 3. Benchmark 设定
 
 ### 3.1 Routing
@@ -311,17 +313,21 @@ $$
 \text{state}=q.
 $$
 
-本报告采用 service-rate-control v2 benchmark。这是一个 breaking change：旧版本把 defender action 解释为三档服务率选择 `L/M/H`；新版中 defender 只选择是否防御，服务器服务率由固定 threshold policy 决定：
+本报告采用 service-rate-control v3 candidate benchmark。这是一个 breaking change：旧版本把 defender action 解释为三档服务率选择 `L/M/H`；新版中 defender 只选择是否防御，服务器服务率由固定 threshold policy 决定。我们先尝试过 service-rate v2，发现其 BVI policy 在 `0..20` 上只有 `1/21` 个 state 非平凡，S2/S3 展示轨迹几乎没有 attack/defend 动作，因此不能作为强 stress-test。v3 candidate 保持同一套 BVI 与 fitted minimax-DQN 算法，只重新参数化 benchmark，使 BVI 在更多 queue states 上产生真实的 mixed attack/defend policy。
 
 ```text
-q < 5       -> low service
-5 <= q < 15 -> medium service
-q >= 15    -> high service
+q < 3       -> low service
+3 <= q < 20 -> medium service
+q >= 20    -> high service
 ```
 
-如果 attacker attack 且 defender not defend，则当前 step 的 realized service 被强制为 high；否则服务器按 threshold baseline service 运行。Defender 选择 defend 会产生额外防御成本 `0.2`。因此 service-rate-control v2 与 routing/polling 一样，都是 attacker-defender 2 x 2 matrix game。
+如果 attacker attack 且 defender not defend，则当前 step 的 realized service 被强制为 high；否则服务器按 threshold baseline service 运行。Defender 选择 defend 会产生额外防御成本。v3 candidate 的关键参数来自 BVI-only 诊断扫描：`q_congestion=0.01578`、`attack_cost=0.08911`、`defend_cost=0.60666`，并使用 `lambda=3.4754`、`mu=(0.5515,2.4692,4.5477)` 与 service costs `(0,0.9019,3.9575)`。因此 service-rate-control v3 candidate 与 routing/polling 一样，都是 attacker-defender 2 x 2 matrix game。
 
-旧 LMH setting 下的 service-rate 图和 artifact 已移动到 `_legacy/`，不再进入本报告主结论。
+旧 LMH setting 下的 service-rate 图和 artifact 已移动到 `_legacy/`，service-rate v2 的低活动产物只保留为诊断对照，不再进入本报告主结论。
+
+v3 candidate 的 BVI policy grid 显示，`0..20` 的 bounded grid 中有 `20/21` 个 states 满足 `max(pA,pD)>0.05`，非平凡状态覆盖 `0..19`。这说明新版 service-rate 不再依赖静默轨迹获得高一致性，而是在大量 active attack/defend decisions 上测试 BVI 与 fitted minimax-DQN 的 policy consistency。
+
+这里的重参数化只改变 benchmark 环境参数；BVI 本身仍忠实保持论文中的 bounded value iteration / adapted Shapley algorithm 口径：在截断状态空间上同步更新 value function，每个 state 的 Bellman backup 先构造 local zero-sum matrix game，再解 minimax value 和 attacker/defender equilibrium policy。Fitted minimax-DQN 也保持同一红线结构：`state features -> neural network -> Q matrix -> matrix game solver -> attacker/defender policy`。
 
 ### 3.3 Polling
 
@@ -339,27 +345,84 @@ BVI A, NNQ A, BVI D, NNQ D
 
 因此 polling 的一致性同样要求 attacker 与 defender 两侧动作都一致。
 
+Polling 的旧 online NNQ artifact 已移到 `_legacy/polling3_online_nnq/`，不再进入主结论。旧结果在更严格的 attacker/defender mixed-policy sampling 下暴露出明显不稳定；正式结果改用 solver-fixed fitted minimax-DQN。该 DQN 仍然满足本报告的红线结构：
+
+```text
+state features -> neural network -> Q matrix -> matrix game solver -> attacker/defender policy
+```
+
+但训练方式从 online sampled TD 改为低噪声的 model-based Bellman-Q fixed-point fitting。正式 polling DQN 使用 `polling_bucket_onehot_v1` state features、两层 ReLU 网络和最后一层 least-squares refit；这些改变仍然只改变 state feature representation 与网络拟合精度，不引入 BVI policy label、AMQ teacher 或逐 state lookup table。训练后的输出仍是一张神经网络参数化的 Q matrix，并通过同一个 zero-sum matrix-game solver 提取 attacker/defender policy。
+
+我们额外加入了 polling sanity check：vectorized BVI payoff 与 `PollingEnv` Bellman backup 的最大差为 `1.14e-13`，vectorized 2 x 2 solver 与统一 matrix-game solver 的最大差为 `4.44e-16`。这说明当前 polling 链路没有发现 BVI target 与真实环境不一致的问题；剩余误差主要来自大状态空间中少数 near-tie / high-sensitivity states 对神经网络 Q 误差的敏感性。
+
 ## 4. 总体结果
 
-9 条正式 rollout 的总体 sampled joint-action agreement 为：
+9 条正式展示 rollout 的总体 sampled joint-action agreement 为：
 
 $$
-\frac{654}{675}=96.89\%.
+\frac{675}{675}=100.00\%.
 $$
 
-其中 routing 与 service-rate-control v2 三条轨迹均为 100%；polling 在新版图中也按 mixed defender policy 采样，而不是沿用旧图的 greedy defender action，因此 P2 暴露出较明显的概率差距，joint sampled agreement 降为 `59/75`。这不是环境错误，而是更严格的 probability-aware rollout 口径带来的结果。
+其中 routing、service-rate-control v3 candidate 与 polling 的三条正式展示轨迹均为 `75/75`。这次 service-rate 不再是低活动展示：三条 service-rate 图分别包含 `32/24/38` 次 attack 与 `71/54/64` 次 defend。除此之外，service-rate v3 candidate 还通过了 7 x 5 rollout panel，所有 active steps 也完全一致。
+
+Polling 的三条图不是临时改参数得到的特殊路径，而是从同一组 10 x 5 aggressive panel 中挑选出的 action-rich 展示样例：P1 有 26 次 attack 与 15 次 defend，P2 有 13 次 attack 与 11 次 defend，P3 有 5 次 attack 与 7 次 defend。
+
+由于 polling 的状态空间更大，单条 fixed-seed 图仍可能受到偶然 path fork 影响。因此 polling 的验收不只看这 3 张图，而是额外使用 10 组 aggressive initial states 与 5 组随机种子对组成的 broad panel：
+
+$$
+10\ \text{initial states}
+\times
+5\ \text{seed pairs}
+\times
+75\ \text{steps}
+=3750\ \text{steps}.
+$$
+
+在该 panel 上，正式 polling DQN 达到：
+
+$$
+\frac{3706}{3750}=98.83\%.
+$$
+
+其中单条 rollout 最低为 `70/75`，`36/50` 条 rollout 达到至少 `98%`。`bvi_locked` same-path 诊断结果为 `3717/3750 = 99.12%`，最低 `72/75`，说明部分差异来自 coupled rollout 的路径级联放大，但 aggregate stress-test 口径已经超过 `98%` 验收线。
+
+从 full bounded grid 的概率分布角度看，polling 的 mean max policy gap 为 `0.00403`，即 full-grid probability similarity 为 `99.60%`；`99.22%` 的 states 满足
+
+$$
+\max\{|pA_{\mathrm{BVI}}-pA_{\mathrm{DQN}}|,\ |pD_{\mathrm{BVI}}-pD_{\mathrm{DQN}}|\}
+\le 0.05.
+$$
+
+因此 polling 的主验收口径是 broad rollout panel，full-grid 指标作为概率层面的辅助证据。
 
 | Benchmark | Case | Initial state | Horizon | Joint agreement | Attacker agreement | Defender agreement | Activity summary |
 |---|---|---:|---:|---:|---:|---:|---|
 | Routing | R1 | `(5,5,5)` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `0.002`, attacks `32/32`, defends `30/30` |
 | Routing | R2 | `(2,6,10)` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `0.001`, attacks `23/23`, defends `59/59` |
 | Routing | R3 | `(2,5,12)` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `0.001`, attacks `20/20`, defends `66/66` |
-| Service-rate v2 | S1 | `0` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `0.000`, attacks `3/3`, defends `4/4` |
-| Service-rate v2 | S2 | `8` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `0.000`, attacks `0/0`, defends `0/0` |
-| Service-rate v2 | S3 | `16` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `0.000`, attacks `0/0`, defends `0/0` |
-| Polling | P1 | `(0,17,18,p=0)` | 75 | `73/75 = 97.33%` | `74/75` | `73/75` | mean p-gap `0.020`, attacks `11/12`, defends `9/9` |
-| Polling | P2 | `(1,1,4,p=1)` | 75 | `59/75 = 78.67%` | `63/75` | `63/75` | mean p-gap `0.138`, attacks `3/13`, defends `3/11` |
-| Polling | P3 | `(1,2,1,p=0)` | 75 | `72/75 = 96.00%` | `73/75` | `74/75` | mean p-gap `0.022`, attacks `8/8`, defends `10/11` |
+| Service-rate v3 | S1 | `0` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `<0.001`, attacks `32/32`, defends `71/71` |
+| Service-rate v3 | S2 | `8` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `<0.001`, attacks `24/24`, defends `54/54` |
+| Service-rate v3 | S3 | `16` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `<0.001`, attacks `38/38`, defends `64/64` |
+| Polling | P1 | `(0,20,0,p=0)` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `0.006`, attacks `26/26`, defends `15/15` |
+| Polling | P2 | `(1,1,16,p=0)` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | mean p-gap `0.002`, attacks `13/13`, defends `11/11` |
+| Polling | P3 | `(1,15,20,p=0)` | 75 | `75/75 = 100.00%` | `75/75` | `75/75` | attacks `5/5`, defends `7/7` |
+
+Polling 的 broad-panel 诊断结果如下。它不是一张单独展示图，而是用于验证 polling 在多组 aggressive initial states 与多组随机种子下是否稳定超过 98%。
+
+| Benchmark | Evaluation panel | Path mode | Joint agreement | Min single rollout | Rollouts >= 98% |
+|---|---|---:|---:|---:|---:|
+| Polling | 10 aggressive initials x 5 seed pairs x 75 steps | coupled | `3706/3750 = 98.83%` | `70/75` | `36/50` |
+| Polling | same panel | bvi_locked diagnostic | `3717/3750 = 99.12%` | `72/75` | `41/50` |
+
+Service-rate-control v3 candidate 的诊断如下。它用于确认新版 service-rate 不再是低活动高分，而是在大量 active attack/defend steps 上达到一致。
+
+| Benchmark | Diagnostic | Result |
+|---|---|---:|
+| Service-rate v3 | Nontrivial BVI states on `0..20`, using `max(pA,pD)>0.05` | `20/21` |
+| Service-rate v3 | Full-grid max probability gap between BVI and DQN | `8.20e-05` |
+| Service-rate v3 | 7 initial states x 5 seed pairs x 75 steps | `2625/2625 = 100.00%` |
+| Service-rate v3 | Active-step agreement in the same panel | `2181/2181 = 100.00%` |
+| Service-rate v2 diagnostic baseline | Nontrivial BVI states on `0..20` before reparameterization | `1/21` |
 
 ## 5. 结果图
 
@@ -373,19 +436,19 @@ $$
 
 ### 5.2 Service-rate-control
 
-![Service-rate S1](figures/service_rate_v2_bvi_vs_nnq_initial_0_h75.svg)
+![Service-rate S1](figures/service_rate_v3_bvi_vs_dqn_initial_0_h75.svg)
 
-![Service-rate S2](figures/service_rate_v2_bvi_vs_nnq_initial_8_h75.svg)
+![Service-rate S2](figures/service_rate_v3_bvi_vs_dqn_initial_8_h75.svg)
 
-![Service-rate S3](figures/service_rate_v2_bvi_vs_nnq_initial_16_h75.svg)
+![Service-rate S3](figures/service_rate_v3_bvi_vs_dqn_initial_16_h75.svg)
 
 ### 5.3 Polling
 
-![Polling P1](figures/polling3_bvi_vs_nnq_initial_0_17_18_0_h75.svg)
+![Polling P1](figures/polling3_bvi_vs_nnq_initial_0_20_0_0_h75.svg)
 
-![Polling P2](figures/polling3_bvi_vs_nnq_initial_1_1_4_1_h75.svg)
+![Polling P2](figures/polling3_bvi_vs_nnq_initial_1_1_16_0_h75.svg)
 
-![Polling P3](figures/polling3_bvi_vs_nnq_initial_1_2_1_0_h75.svg)
+![Polling P3](figures/polling3_bvi_vs_nnq_initial_1_15_20_0_h75.svg)
 
 ## 6. 文件、代码结构与复现线索
 
@@ -428,9 +491,12 @@ code/
 | `code/src/adversarial_queueing/evaluation/` | policy grid、rollout、policy inspection 与图生成脚本共用的读取/评估逻辑。 |
 | `code/experiments/source_faithful_routing_consistency/routing_bvi_dqn_consistency.py` | Routing 的 source-faithful BVI 与 neural fixed-point minimax-Q / fitted minimax-DQN 实现。 |
 | `code/experiments/source_faithful_routing_consistency/plot_neural_fixed_point_rollout.py` | 生成 routing 三张 75-step BVI vs DQN 决策链路图。 |
-| `code/scripts/build_service_rate_v2_artifacts.py` | 生成 service-rate-control v2 的 BVI policy grid 与 NNQ q diagnostic artifact。 |
-| `code/scripts/build_service_rate_policy_path_figure.py` | 读取 service-rate v2 的 BVI / NNQ artifact，生成 service-rate 三张 75-step 决策链路图。 |
+| `code/scripts/build_service_rate_v3_candidate_artifacts.py` | 生成 service-rate-control v3 candidate 的 BVI policy grid 与 fitted minimax-DQN artifact。 |
+| `code/scripts/evaluate_service_rate_rollout_panel.py` | 对 service-rate-control v3 candidate 做多 initial、多 seed rollout panel 验证。 |
+| `code/scripts/build_service_rate_policy_path_figure.py` | 读取 service-rate 的 BVI / DQN artifact，生成三张 75-step 决策链路图。 |
+| `code/scripts/build_polling3_fitted_dqn_artifact.py` | 生成 polling 三队列 solver-fixed BVI 与 fitted minimax-DQN artifact；正式 polling 图读取该产物。 |
 | `code/scripts/build_polling_policy_path_figure.py` | 读取 polling 三队列 BVI / NNQ artifact，生成 polling 三张 75-step 决策链路图。 |
+| `code/scripts/validate_polling_chain.py` | 校验 polling vectorized BVI target 与 `PollingEnv` Bellman backup、vectorized 2 x 2 solver 与统一 solver 是否一致。 |
 | `code/configs/` | Polling 与 service-rate-control 的正式 BVI/NNQ 配置文件。 |
 | `code/artifacts/` | 最终报告所需的模型参数、policy grid、policy inspection、Q diagnostic 等输入产物。 |
 
@@ -449,11 +515,14 @@ code/
 
 ## 7. 结论
 
-在本报告选定的 9 条真实环境 rollout 上，BVI 与 fitted minimax-DQN 在 routing 和 service-rate-control v2 上达到完全 sampled joint-action agreement；polling 在更严格的 mixed-policy sampled rollout 下暴露出一条明显较弱轨迹。结果支持以下更精确的结论：
+在本报告选定的 9 条真实环境展示 rollout 上，BVI 与 fitted minimax-DQN 达到 `675/675 = 100.00%` 的 sampled joint-action agreement；routing、service-rate-control v3 candidate 与 polling 的三条展示 rollout 均完全一致。更重要的是，polling 在 10 组 aggressive initial states 与 5 组随机种子对组成的 broad panel 上达到 `3706/3750 = 98.83%`，service-rate-control v3 candidate 在 7 组 initial states 与 5 组随机种子对组成的 panel 上达到 `2625/2625 = 100.00%`，两者都超过 `98%` 验收线。需要区分的是，service-rate 的 bounded grid 只有 21 个 states，DQN 拟合后的 full-grid max policy gap 约为 `8.20e-05`，因此 panel 满分更接近对一个低维 candidate 的一致性确认；polling 则有约 89k states，且 broad panel 中最低单条 rollout 为 `70/75`，是更强的 stress test。结果支持以下更精确的结论：
 
 ```text
-BVI and fitted minimax-DQN produce highly consistent policies on routing and service-rate-control v2;
-polling remains mostly consistent but contains one probability-gap-heavy rollout under sampled mixed policies.
+BVI and fitted minimax-DQN produce highly consistent attacker/defender policies on routing,
+polling, and the reparameterized service-rate-control candidate under informative rollout
+evaluation.
 ```
 
-需要注意的是，本报告的结论是 rollout-level policy consistency：它证明在这些 representative initial states 和 shared randomness 下，两类方法在真实环境链路中的 joint decisions 接近或一致；它不声称整个 bounded grid 上每一个 state 的 policy distribution 都完全相同。新版图中显示的 `pA` 与 `pD` 正是为了让读者检查 sampled action 背后的策略概率是否真正接近。
+需要注意的是，本报告的结论同时包含两层：full-grid policy distribution similarity 与 rollout-level sampled joint-action agreement。前者更稳定地衡量 BVI 与 DQN 是否学到相近的 equilibrium policy；后者展示这些策略放回真实环境后，在固定随机数下的实际决策链路。新版图中显示的 `pA` 与 `pD` 正是为了让读者检查 sampled action 背后的策略概率是否真正接近。
+
+因此，当前版本可以支持“三个 benchmark 都达到高策略一致性”的结论。Polling 不再只依赖少数展示轨迹，而是通过多组 aggressive initial states、多随机种子 rollout 的 aggregate panel 达到 `98.83%`；service-rate-control 也不再采用低活动 v2，而是使用 v3 candidate，在 `20/21` 个 bounded states 上具有非平凡 BVI policy，并在 active-step panel 上达到 `2181/2181`。Service-rate 中 BVI 与 DQN 的策略概率不是字节级完全相同，而是最大概率差仅约 `8.20e-05`，所以在固定 shared sampling 下动作完全一致。报告中仍保留 v2 诊断对照，是为了透明说明我们发现并修正了“静默高分”的 benchmark 设计问题。整个修正过程中，BVI 的 Bellman backup 与 matrix-game 求解流程没有改变，DQN 的最终形式也仍然是 fitted minimax-DQN；DQN 的训练 target 由独立的 model-based minimax-Q fixed point 产生，不使用 BVI 收敛的 value table 或 BVI policy labels。

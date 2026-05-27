@@ -1,0 +1,816 @@
+{
+  "aggregate_joint_rate": 0.9912,
+  "horizon": 75,
+  "max_joint_agreement": 75,
+  "mean_joint_agreement": 74.34,
+  "min_joint_agreement": 72,
+  "num_initial_states": 10,
+  "num_rollouts": 50,
+  "num_rollouts_ge_98_percent": 41,
+  "num_seed_pairs": 5,
+  "path_mode": "bvi_locked",
+  "rows": [
+    {
+      "attacker_agreement": 73,
+      "attacker_seed": 1729,
+      "defender_agreement": 75,
+      "env_seed": 301,
+      "horizon": 75,
+      "initial_state": [
+        5,
+        10,
+        15,
+        0
+      ],
+      "joint_agreement": 73,
+      "joint_rate": 0.9733333333333334,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 73,
+      "attacker_seed": 1730,
+      "defender_agreement": 75,
+      "env_seed": 302,
+      "horizon": 75,
+      "initial_state": [
+        5,
+        10,
+        15,
+        0
+      ],
+      "joint_agreement": 73,
+      "joint_rate": 0.9733333333333334,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 74,
+      "attacker_seed": 1731,
+      "defender_agreement": 75,
+      "env_seed": 303,
+      "horizon": 75,
+      "initial_state": [
+        5,
+        10,
+        15,
+        0
+      ],
+      "joint_agreement": 74,
+      "joint_rate": 0.9866666666666667,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1801,
+      "defender_agreement": 75,
+      "env_seed": 401,
+      "horizon": 75,
+      "initial_state": [
+        5,
+        10,
+        15,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1901,
+      "defender_agreement": 75,
+      "env_seed": 501,
+      "horizon": 75,
+      "initial_state": [
+        5,
+        10,
+        15,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1729,
+      "defender_agreement": 75,
+      "env_seed": 301,
+      "horizon": 75,
+      "initial_state": [
+        1,
+        1,
+        16,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1730,
+      "defender_agreement": 75,
+      "env_seed": 302,
+      "horizon": 75,
+      "initial_state": [
+        1,
+        1,
+        16,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1731,
+      "defender_agreement": 74,
+      "env_seed": 303,
+      "horizon": 75,
+      "initial_state": [
+        1,
+        1,
+        16,
+        0
+      ],
+      "joint_agreement": 74,
+      "joint_rate": 0.9866666666666667,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 72,
+      "attacker_seed": 1801,
+      "defender_agreement": 75,
+      "env_seed": 401,
+      "horizon": 75,
+      "initial_state": [
+        1,
+        1,
+        16,
+        0
+      ],
+      "joint_agreement": 72,
+      "joint_rate": 0.96,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 74,
+      "attacker_seed": 1901,
+      "defender_agreement": 74,
+      "env_seed": 501,
+      "horizon": 75,
+      "initial_state": [
+        1,
+        1,
+        16,
+        0
+      ],
+      "joint_agreement": 73,
+      "joint_rate": 0.9733333333333334,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1729,
+      "defender_agreement": 75,
+      "env_seed": 301,
+      "horizon": 75,
+      "initial_state": [
+        2,
+        14,
+        17,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 74,
+      "attacker_seed": 1730,
+      "defender_agreement": 75,
+      "env_seed": 302,
+      "horizon": 75,
+      "initial_state": [
+        2,
+        14,
+        17,
+        0
+      ],
+      "joint_agreement": 74,
+      "joint_rate": 0.9866666666666667,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1731,
+      "defender_agreement": 75,
+      "env_seed": 303,
+      "horizon": 75,
+      "initial_state": [
+        2,
+        14,
+        17,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1801,
+      "defender_agreement": 75,
+      "env_seed": 401,
+      "horizon": 75,
+      "initial_state": [
+        2,
+        14,
+        17,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 74,
+      "attacker_seed": 1901,
+      "defender_agreement": 75,
+      "env_seed": 501,
+      "horizon": 75,
+      "initial_state": [
+        2,
+        14,
+        17,
+        0
+      ],
+      "joint_agreement": 74,
+      "joint_rate": 0.9866666666666667,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1729,
+      "defender_agreement": 75,
+      "env_seed": 301,
+      "horizon": 75,
+      "initial_state": [
+        0,
+        17,
+        18,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1730,
+      "defender_agreement": 74,
+      "env_seed": 302,
+      "horizon": 75,
+      "initial_state": [
+        0,
+        17,
+        18,
+        0
+      ],
+      "joint_agreement": 74,
+      "joint_rate": 0.9866666666666667,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 74,
+      "attacker_seed": 1731,
+      "defender_agreement": 75,
+      "env_seed": 303,
+      "horizon": 75,
+      "initial_state": [
+        0,
+        17,
+        18,
+        0
+      ],
+      "joint_agreement": 74,
+      "joint_rate": 0.9866666666666667,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1801,
+      "defender_agreement": 75,
+      "env_seed": 401,
+      "horizon": 75,
+      "initial_state": [
+        0,
+        17,
+        18,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1901,
+      "defender_agreement": 75,
+      "env_seed": 501,
+      "horizon": 75,
+      "initial_state": [
+        0,
+        17,
+        18,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 74,
+      "attacker_seed": 1729,
+      "defender_agreement": 75,
+      "env_seed": 301,
+      "horizon": 75,
+      "initial_state": [
+        5,
+        10,
+        18,
+        0
+      ],
+      "joint_agreement": 74,
+      "joint_rate": 0.9866666666666667,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 73,
+      "attacker_seed": 1730,
+      "defender_agreement": 75,
+      "env_seed": 302,
+      "horizon": 75,
+      "initial_state": [
+        5,
+        10,
+        18,
+        0
+      ],
+      "joint_agreement": 73,
+      "joint_rate": 0.9733333333333334,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 73,
+      "attacker_seed": 1731,
+      "defender_agreement": 75,
+      "env_seed": 303,
+      "horizon": 75,
+      "initial_state": [
+        5,
+        10,
+        18,
+        0
+      ],
+      "joint_agreement": 73,
+      "joint_rate": 0.9733333333333334,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 72,
+      "attacker_seed": 1801,
+      "defender_agreement": 75,
+      "env_seed": 401,
+      "horizon": 75,
+      "initial_state": [
+        5,
+        10,
+        18,
+        0
+      ],
+      "joint_agreement": 72,
+      "joint_rate": 0.96,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 74,
+      "attacker_seed": 1901,
+      "defender_agreement": 75,
+      "env_seed": 501,
+      "horizon": 75,
+      "initial_state": [
+        5,
+        10,
+        18,
+        0
+      ],
+      "joint_agreement": 74,
+      "joint_rate": 0.9866666666666667,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1729,
+      "defender_agreement": 75,
+      "env_seed": 301,
+      "horizon": 75,
+      "initial_state": [
+        0,
+        20,
+        0,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 74,
+      "attacker_seed": 1730,
+      "defender_agreement": 75,
+      "env_seed": 302,
+      "horizon": 75,
+      "initial_state": [
+        0,
+        20,
+        0,
+        0
+      ],
+      "joint_agreement": 74,
+      "joint_rate": 0.9866666666666667,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1731,
+      "defender_agreement": 74,
+      "env_seed": 303,
+      "horizon": 75,
+      "initial_state": [
+        0,
+        20,
+        0,
+        0
+      ],
+      "joint_agreement": 74,
+      "joint_rate": 0.9866666666666667,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1801,
+      "defender_agreement": 75,
+      "env_seed": 401,
+      "horizon": 75,
+      "initial_state": [
+        0,
+        20,
+        0,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1901,
+      "defender_agreement": 74,
+      "env_seed": 501,
+      "horizon": 75,
+      "initial_state": [
+        0,
+        20,
+        0,
+        0
+      ],
+      "joint_agreement": 74,
+      "joint_rate": 0.9866666666666667,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1729,
+      "defender_agreement": 75,
+      "env_seed": 301,
+      "horizon": 75,
+      "initial_state": [
+        3,
+        3,
+        3,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1730,
+      "defender_agreement": 75,
+      "env_seed": 302,
+      "horizon": 75,
+      "initial_state": [
+        3,
+        3,
+        3,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1731,
+      "defender_agreement": 75,
+      "env_seed": 303,
+      "horizon": 75,
+      "initial_state": [
+        3,
+        3,
+        3,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1801,
+      "defender_agreement": 75,
+      "env_seed": 401,
+      "horizon": 75,
+      "initial_state": [
+        3,
+        3,
+        3,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1901,
+      "defender_agreement": 75,
+      "env_seed": 501,
+      "horizon": 75,
+      "initial_state": [
+        3,
+        3,
+        3,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1729,
+      "defender_agreement": 75,
+      "env_seed": 301,
+      "horizon": 75,
+      "initial_state": [
+        10,
+        10,
+        10,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1730,
+      "defender_agreement": 75,
+      "env_seed": 302,
+      "horizon": 75,
+      "initial_state": [
+        10,
+        10,
+        10,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1731,
+      "defender_agreement": 75,
+      "env_seed": 303,
+      "horizon": 75,
+      "initial_state": [
+        10,
+        10,
+        10,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1801,
+      "defender_agreement": 75,
+      "env_seed": 401,
+      "horizon": 75,
+      "initial_state": [
+        10,
+        10,
+        10,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1901,
+      "defender_agreement": 75,
+      "env_seed": 501,
+      "horizon": 75,
+      "initial_state": [
+        10,
+        10,
+        10,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1729,
+      "defender_agreement": 75,
+      "env_seed": 301,
+      "horizon": 75,
+      "initial_state": [
+        1,
+        15,
+        20,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1730,
+      "defender_agreement": 75,
+      "env_seed": 302,
+      "horizon": 75,
+      "initial_state": [
+        1,
+        15,
+        20,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1731,
+      "defender_agreement": 75,
+      "env_seed": 303,
+      "horizon": 75,
+      "initial_state": [
+        1,
+        15,
+        20,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1801,
+      "defender_agreement": 75,
+      "env_seed": 401,
+      "horizon": 75,
+      "initial_state": [
+        1,
+        15,
+        20,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1901,
+      "defender_agreement": 75,
+      "env_seed": 501,
+      "horizon": 75,
+      "initial_state": [
+        1,
+        15,
+        20,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1729,
+      "defender_agreement": 75,
+      "env_seed": 301,
+      "horizon": 75,
+      "initial_state": [
+        8,
+        12,
+        16,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 74,
+      "attacker_seed": 1730,
+      "defender_agreement": 75,
+      "env_seed": 302,
+      "horizon": 75,
+      "initial_state": [
+        8,
+        12,
+        16,
+        0
+      ],
+      "joint_agreement": 74,
+      "joint_rate": 0.9866666666666667,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 75,
+      "attacker_seed": 1731,
+      "defender_agreement": 75,
+      "env_seed": 303,
+      "horizon": 75,
+      "initial_state": [
+        8,
+        12,
+        16,
+        0
+      ],
+      "joint_agreement": 75,
+      "joint_rate": 1.0,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 73,
+      "attacker_seed": 1801,
+      "defender_agreement": 75,
+      "env_seed": 401,
+      "horizon": 75,
+      "initial_state": [
+        8,
+        12,
+        16,
+        0
+      ],
+      "joint_agreement": 73,
+      "joint_rate": 0.9733333333333334,
+      "same_state_steps": 75
+    },
+    {
+      "attacker_agreement": 73,
+      "attacker_seed": 1901,
+      "defender_agreement": 74,
+      "env_seed": 501,
+      "horizon": 75,
+      "initial_state": [
+        8,
+        12,
+        16,
+        0
+      ],
+      "joint_agreement": 72,
+      "joint_rate": 0.96,
+      "same_state_steps": 75
+    }
+  ],
+  "total_joint_agreement": 3717,
+  "total_steps": 3750
+}

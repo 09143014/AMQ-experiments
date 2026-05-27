@@ -1,18 +1,18 @@
 {
   "algorithm": "bvi",
   "benchmark": "polling",
-  "elapsed_seconds": 4.62753701210022,
-  "implementation": "vectorized_polling3_probe",
+  "elapsed_seconds": 3.8205060958862305,
+  "implementation": "vectorized_polling3_dual_attacker",
   "iterations": 322,
   "max_queue_length": 30,
   "num_states": 89373,
   "policy_inspection": {
+    "attack_probability_max": 0.3999944120678698,
+    "attack_probability_mean": 0.03989517167447168,
     "defend_probability_max": 0.9276365180142857,
-    "defend_probability_mean": 0.09636156394933135,
-    "defend_probability_threshold": 0.5,
+    "defend_probability_mean": 0.09636156394933157,
     "num_policy_states": 89373,
     "num_states_p_defend_at_least_threshold": 8370
   },
-  "residual": 9.856319138634717e-07,
-  "value_at_initial_state": 20.890637600988793
+  "residual": 9.856319138634717e-07
 }

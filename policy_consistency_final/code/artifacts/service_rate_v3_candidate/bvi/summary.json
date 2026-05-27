@@ -1,0 +1,56 @@
+{
+  "benchmark": "service_rate_control_v3_candidate",
+  "env_semantics": {
+    "attack_success_effect": "attack=1 and defend=0 forces high service for one step",
+    "attacker_actions": {
+      "0": "not_attack",
+      "1": "attack"
+    },
+    "bvi_algorithm": "unchanged bounded value iteration with local zero-sum matrix games",
+    "defender_actions": {
+      "0": "not_defend",
+      "1": "defend"
+    },
+    "threshold_policy": {
+      "high_otherwise": true,
+      "low_if_q_lt": 3,
+      "medium_if_q_lt": 20
+    },
+    "version": "service_rate_control_v3_candidate"
+  },
+  "iterations": 356,
+  "max_queue_length": 20,
+  "method": "bvi",
+  "nontrivial_bvi_states": {
+    "count": 20,
+    "states": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ]
+  },
+  "policy_grid": {
+    "first_state_p_attack_at_least_threshold": 13,
+    "first_state_p_defend_at_least_threshold": 0,
+    "high_probability_threshold": 0.5,
+    "policy_grid_max_state": 20
+  },
+  "residual": 9.726221605887986e-09
+}

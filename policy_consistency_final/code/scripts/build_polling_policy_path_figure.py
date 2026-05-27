@@ -35,6 +35,15 @@ def main() -> int:
     parser.add_argument("--attacker-seed", type=int, default=1729)
     parser.add_argument("--columns", type=int, default=12)
     parser.add_argument(
+        "--path-mode",
+        choices=["coupled", "bvi_locked"],
+        default="coupled",
+        help=(
+            "coupled lets BVI and DQN states evolve separately after a mismatch; "
+            "bvi_locked compares both policies on the same BVI-driven state path."
+        ),
+    )
+    parser.add_argument(
         "--svg-output",
         default="results/figures/polling_policy_path_bvi_vs_nnq_h75.svg",
     )
@@ -59,6 +68,7 @@ def main() -> int:
         horizon=args.horizon,
         env_seed=args.env_seed,
         attacker_seed=args.attacker_seed,
+        path_mode=args.path_mode,
     )
 
     svg_output = Path(args.svg_output)
@@ -72,7 +82,7 @@ def main() -> int:
             subtitle=(
                 f"initial={_fmt_state(tuple(rows[0]['state']))}, "
                 f"env_seed={args.env_seed}, attacker_seed={args.attacker_seed}, "
-                f"horizon={len(rows)}"
+                f"horizon={len(rows)}, path_mode={args.path_mode}"
             ),
             columns=args.columns,
         ),
@@ -107,6 +117,7 @@ def _simulate_same_state_path(
     horizon: int,
     env_seed: int,
     attacker_seed: int,
+    path_mode: str,
 ) -> list[dict[str, Any]]:
     rng = np.random.default_rng(env_seed)
     attacker_rng = np.random.default_rng(attacker_seed)
@@ -130,12 +141,16 @@ def _simulate_same_state_path(
         next_bvi_state = _sample_transition(
             env, bvi_state, bvi_attacker_action, bvi_action, random_u
         )
-        next_nnq_state = _sample_transition(
-            env, nnq_state, nnq_attacker_action, nnq_action, random_u
-        )
+        if path_mode == "bvi_locked":
+            next_nnq_state = next_bvi_state
+        else:
+            next_nnq_state = _sample_transition(
+                env, nnq_state, nnq_attacker_action, nnq_action, random_u
+            )
         rows.append(
             {
                 "step": step,
+                "path_mode": path_mode,
                 "state": list(bvi_state),
                 "bvi_state": list(bvi_state),
                 "nnq_state": list(nnq_state),

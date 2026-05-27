@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Draw one service-rate-control v2 BVI-vs-NNQ Bellman-target policy path."""
+"""Draw one service-rate-control BVI-vs-fitted-minimax-DQN policy path."""
 
 from __future__ import annotations
 
@@ -53,7 +53,7 @@ def main() -> int:
     nnq_run = Path(args.nnq_run_dir)
     env = ServiceRateControlEnv(build_service_rate_config(load_config(bvi_run / "config.yaml")))
     bvi_policy, bvi_attacker = _load_bvi_policy_grid(bvi_run / "policy_grid.jsonl")
-    nnq_policy, nnq_attacker = _load_nnq_bellman_target_policies(nnq_run / "q_diagnostic.jsonl")
+    nnq_policy, nnq_attacker = _load_nnq_policies(nnq_run)
     rows = _simulate_same_state_path(
         env,
         bvi_policy,
@@ -75,7 +75,7 @@ def main() -> int:
         _render_svg(
             env,
             rows,
-            title="Service-Rate v2 Policy Path: BVI vs NNQ Bellman Target",
+            title="Service-Rate Policy Path: BVI vs Fitted Minimax-DQN",
             subtitle=(
                 f"initial={args.initial_state}, env_seed={args.env_seed}, "
                 f"attacker={args.attacker_mode}, attacker_seed={args.attacker_seed}, "
@@ -408,6 +408,13 @@ def _load_bvi_policy_grid(path: Path) -> tuple[Policy, Policy]:
     return defender, attacker
 
 
+def _load_nnq_policies(run_dir: Path) -> tuple[Policy, Policy]:
+    policy_grid = run_dir / "policy_grid.jsonl"
+    if policy_grid.exists():
+        return _load_bvi_policy_grid(policy_grid)
+    return _load_nnq_bellman_target_policies(run_dir / "q_diagnostic.jsonl")
+
+
 def _load_nnq_bellman_target_policies(path: Path) -> tuple[Policy, Policy]:
     matrices: dict[int, np.ndarray] = {}
     for line in path.read_text(encoding="utf-8").splitlines():
@@ -415,9 +422,10 @@ def _load_nnq_bellman_target_policies(path: Path) -> tuple[Policy, Policy]:
             continue
         row = json.loads(line)
         matrix = matrices.setdefault(int(row["state"]), np.zeros((2, 2), dtype=float))
-        matrix[int(row["attacker_action"]), int(row["defender_action"])] = float(
-            row["nnq_bellman_target"]
-        )
+        value_key = "nnq_bellman_target"
+        if value_key not in row:
+            value_key = "dqn_centered_q"
+        matrix[int(row["attacker_action"]), int(row["defender_action"])] = float(row[value_key])
     defender: Policy = {}
     attacker: Policy = {}
     for state, matrix in matrices.items():

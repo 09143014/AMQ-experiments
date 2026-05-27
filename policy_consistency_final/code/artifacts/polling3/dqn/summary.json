@@ -1,0 +1,38 @@
+{
+  "algorithm": "fitted_minimax_dqn",
+  "architecture": "standard",
+  "batch_size": 8192,
+  "benchmark": "polling",
+  "center_targets": true,
+  "contrast_loss_weight": 0.0,
+  "elapsed_seconds": 11318.044589042664,
+  "epochs": 5000,
+  "feature_set": "polling_bucket_onehot_v1",
+  "final_abs_error_mean": 0.0033535661230298126,
+  "final_loss": 1.4249199514118963e-05,
+  "fixed_point_iterations": 322,
+  "fixed_point_residual": 9.856319138634717e-07,
+  "hidden_size": 512,
+  "implementation": "model_based_q_fixed_point_mlp",
+  "last_layer_refit": true,
+  "last_layer_refit_metrics": {
+    "abs_error_max": 0.0053303565711537715,
+    "abs_error_mean": 0.00040161667872886915
+  },
+  "last_layer_ridge": 1e-08,
+  "learning_rate": 0.0007,
+  "margin_state_weight": 0.0,
+  "mixed_state_weight": 0.0,
+  "notes": "DQN targets are produced by an independent model-based minimax-Q fixed-point solve. BVI values and BVI policies are not used as DQN training labels.",
+  "params_file": "dqn_params.npz",
+  "policy_inspection": {
+    "attack_probability_max": 0.3999839527667146,
+    "attack_probability_mean": 0.039459046432166196,
+    "defend_probability_max": 0.9279397728788301,
+    "defend_probability_mean": 0.09636653808248236,
+    "num_policy_states": 89373,
+    "num_states_p_defend_at_least_threshold": 8370
+  },
+  "seed": 3,
+  "target_source": "independent_model_based_minimax_q_fixed_point"
+}

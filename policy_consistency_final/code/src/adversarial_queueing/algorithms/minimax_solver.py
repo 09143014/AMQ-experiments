@@ -54,10 +54,7 @@ def solve_zero_sum_matrix_game(payoff: np.ndarray, player: str = "defender") -> 
     defender_strategy = defender_strategy / defender_strategy.sum()
     value = float(result.x[-1])
 
-    attacker_payoffs = matrix @ defender_strategy
-    best_attacker = np.isclose(attacker_payoffs, attacker_payoffs.max(), atol=1e-9)
-    attacker_strategy = best_attacker.astype(float)
-    attacker_strategy /= attacker_strategy.sum()
+    attacker_strategy = _solve_attacker_dual_lp(matrix)
 
     return {
         "value": value,
@@ -72,12 +69,16 @@ def _solve_two_by_two_game(matrix: np.ndarray) -> dict:
     Routing and polling use two attacker actions and two defender actions. Solving
     those tiny games with a full linear program dominates bounded value iteration
     at larger truncation levels, so we evaluate the two endpoints and the row
-    intersection directly.
+    intersection directly. The attacker strategy is the dual max-min solution,
+    not an arbitrary best response to the defender optimum.
     """
 
     a, b = float(matrix[0, 0]), float(matrix[0, 1])
     c, d = float(matrix[1, 0]), float(matrix[1, 1])
-    candidates = [0.0, 1.0]
+    # Prefer the no-defend column in completely degenerate ties. The optimum set
+    # is identical in that case, and this deterministic convention avoids turning
+    # numerical indifference into spurious defenses in rollouts.
+    candidates = [1.0, 0.0]
     denom = (a - b) - (c - d)
     if abs(denom) > 1e-12:
         x = (d - b) / denom
@@ -97,12 +98,72 @@ def _solve_two_by_two_game(matrix: np.ndarray) -> dict:
     defender_strategy = np.array([best_x, 1.0 - best_x], dtype=float)
     defender_strategy = np.clip(defender_strategy, 0.0, 1.0)
     defender_strategy = defender_strategy / defender_strategy.sum()
+    attacker_strategy = _solve_two_by_two_attacker_strategy(matrix)
     attacker_payoffs = matrix @ defender_strategy
-    best_attacker = np.isclose(attacker_payoffs, attacker_payoffs.max(), atol=1e-9)
-    attacker_strategy = best_attacker.astype(float)
-    attacker_strategy /= attacker_strategy.sum()
     return {
         "value": float(attacker_payoffs.max()),
         "attacker_strategy": attacker_strategy,
         "defender_strategy": defender_strategy,
     }
+
+
+def _solve_two_by_two_attacker_strategy(matrix: np.ndarray) -> np.ndarray:
+    """Solve the attacker dual ``max_alpha min_b alpha @ payoff[:, b]``."""
+
+    a, b = float(matrix[0, 0]), float(matrix[0, 1])
+    c, d = float(matrix[1, 0]), float(matrix[1, 1])
+    # Prefer the no-attack row in completely degenerate ties. The optimum set is
+    # identical in that case, and this deterministic convention avoids turning
+    # numerical indifference into spurious attacks in rollouts.
+    candidates = [1.0, 0.0]
+    denom = (a - c) - (b - d)
+    if abs(denom) > 1e-12:
+        y = (d - c) / denom
+        if 0.0 <= y <= 1.0:
+            candidates.append(float(y))
+
+    best_y = 0.0
+    best_value = -float("inf")
+    for y in candidates:
+        col0 = c + (a - c) * y
+        col1 = d + (b - d) * y
+        value = min(col0, col1)
+        if value > best_value + 1e-12:
+            best_y = y
+            best_value = value
+
+    attacker_strategy = np.array([best_y, 1.0 - best_y], dtype=float)
+    attacker_strategy = np.clip(attacker_strategy, 0.0, 1.0)
+    return attacker_strategy / attacker_strategy.sum()
+
+
+def _solve_attacker_dual_lp(matrix: np.ndarray) -> np.ndarray:
+    """Solve ``max_alpha min_b alpha @ payoff[:, b]`` for rectangular games."""
+
+    num_attacker, num_defender = matrix.shape
+    objective = np.zeros(num_attacker + 1)
+    objective[-1] = -1.0
+
+    # Variables are attacker probabilities alpha[0:A] and lower value v.
+    # For every defender column b: alpha @ matrix[:, b] >= v.
+    a_ub = np.column_stack([-matrix.T, np.ones(num_defender)])
+    b_ub = np.zeros(num_defender)
+    a_eq = np.zeros((1, num_attacker + 1))
+    a_eq[0, :num_attacker] = 1.0
+    b_eq = np.array([1.0])
+    bounds = [(0.0, 1.0)] * num_attacker + [(None, None)]
+
+    result = linprog(
+        objective,
+        A_ub=a_ub,
+        b_ub=b_ub,
+        A_eq=a_eq,
+        b_eq=b_eq,
+        bounds=bounds,
+        method="highs",
+    )
+    if not result.success:
+        raise RuntimeError(f"matrix-game attacker dual LP failed: {result.message}")
+    attacker_strategy = np.asarray(result.x[:num_attacker], dtype=float)
+    attacker_strategy = np.clip(attacker_strategy, 0.0, 1.0)
+    return attacker_strategy / attacker_strategy.sum()

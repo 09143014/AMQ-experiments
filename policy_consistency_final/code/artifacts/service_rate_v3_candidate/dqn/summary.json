@@ -1,0 +1,96 @@
+{
+  "benchmark": "service_rate_control_v3_candidate",
+  "center_targets": true,
+  "epochs": 4000,
+  "feature_set": "service_rate_threshold_poly",
+  "fit_metrics": [
+    {
+      "abs_error_max": 0.005928359026307374,
+      "abs_error_mean": 0.0013232700651500616,
+      "epoch": 2000,
+      "loss": 7.167660456472102e-06
+    },
+    {
+      "abs_error_max": 0.0013102650300819974,
+      "abs_error_mean": 0.00015877339677435523,
+      "epoch": 2500,
+      "loss": 8.016907604860546e-08
+    },
+    {
+      "abs_error_max": 0.0009104359583096827,
+      "abs_error_mean": 0.00011485431856113527,
+      "epoch": 3000,
+      "loss": 4.3264459814489895e-08
+    },
+    {
+      "abs_error_max": 0.01141707101788969,
+      "abs_error_mean": 0.0020273246858790854,
+      "epoch": 3500,
+      "loss": 1.1746335198545172e-05
+    },
+    {
+      "abs_error_max": 0.0008248156135503698,
+      "abs_error_mean": 9.517398600887777e-05,
+      "epoch": 4000,
+      "loss": 2.8419544731123122e-08
+    }
+  ],
+  "fixed_point_iterations": 356,
+  "fixed_point_residual": 9.726221605887986e-09,
+  "hidden_size": 64,
+  "input_size": 12,
+  "last_layer_refit": true,
+  "last_layer_refit_metrics": {
+    "abs_error_max": 1.457942433762821e-05,
+    "abs_error_mean": 1.1035671225124808e-06
+  },
+  "learning_rate": 0.001,
+  "method": "fitted_minimax_dqn",
+  "notes": "Fitted minimax-DQN: independently computed model-based minimax-Q fixed-point targets -> neural Q matrix -> zero-sum matrix-game policy extraction. No BVI values or BVI policy labels are used to train the DQN.",
+  "params_file": "dqn_params.npz",
+  "policy_grid": {
+    "nontrivial": {
+      "count": 20,
+      "states": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    "num_states": 21,
+    "p_attack_max": 0.5605500968313605,
+    "p_attack_mean": 0.3768312432368112,
+    "p_defend_max": 0.9774828992576433,
+    "p_defend_mean": 0.897029762017819
+  },
+  "policy_similarity_to_bvi": {
+    "fraction_gap_le_0_05": 1.0,
+    "max_probability_gap": 8.199963418642486e-05,
+    "mean_max_probability_gap": 1.1504471315566745e-05,
+    "similarity": 0.9999884955286844,
+    "similarity_percent": 99.99884955286844
+  },
+  "q_diagnostic": {
+    "centered_q_abs_error_max": 1.457942433762821e-05,
+    "centered_q_abs_error_mean": 1.1035671225124808e-06,
+    "num_q_entries": 84
+  },
+  "target_source": "independent_model_based_minimax_q_fixed_point"
+}

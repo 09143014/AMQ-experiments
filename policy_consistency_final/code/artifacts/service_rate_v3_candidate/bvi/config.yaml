@@ -1,0 +1,37 @@
+experiment:
+  name: service_rate_control_v3_candidate_bvi
+  output_dir: results
+
+env:
+  name: service_rate_control_v2
+  gamma: 0.95
+  lambda_arrival: 3.475423492777892
+  mu_levels: [0.5514706666461967, 2.4692164008316326, 4.54771245890074]
+  service_costs: [0.0, 0.9018773744939487, 3.9574507095506304]
+  attack_cost: 0.08911031621157754
+  defend_cost: 0.6066635789209619
+  q_congestion: 0.015777755633728255
+  initial_state: 0
+  uniformization_rate: 8.023135951678632
+  low_threshold: 3
+  high_threshold: 20
+
+algorithm:
+  name: bvi
+
+bvi:
+  max_queue_length: 20
+  tolerance: 0.00000001
+  max_iterations: 3000
+  boundary_mode: clip
+
+evaluation:
+  num_episodes: 50
+  horizon: 75
+  seed: 200
+  tail_threshold: 8
+  boundary_state: 20
+
+policy_grid:
+  max_state: 20
+  high_probability_threshold: 0.5
